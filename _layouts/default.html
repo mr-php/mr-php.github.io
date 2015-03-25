@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-  
+<head>
+
     {% include head.html %}
-    
-  </head>
 
-  <body>
+</head>
 
-    {% include header.html %}
+<body id="top" class="layout-default">
 
-    <div class="container">
-    
-      {{ content }}
-        
-    </div>
+{% include header.html %}
 
-    {% include footer.html %}
+{{ content }}
 
-    <!-- jQuery -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+{% include footer.html %}
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<!-- jQuery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="{{site.baseurl}}/assets/js/navbar.js"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script src="{{site.baseurl}}/assets/js/mrphp.js"></script>
+<!-- Plugin JavaScript -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/navbar.js"></script>
 
-  </body>
+<!-- Custom Theme JavaScript -->
+<script src="{{site.baseurl}}/assets/js/mrphp.js"></script>
+
+</body>
 
 </html>

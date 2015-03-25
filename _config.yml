@@ -1,25 +1,24 @@
 # Site settings
 
 title: Mr PHP
-slogan: Smart Web Development
-
 email: contact@mrphp.com.au
 address: PO Box 2030, Hackham, SA 5163
 phone: (08) 8463 1298
 abn: 30551301857
 
 description: >
-  Mr PHP provides contract and freelance web development services. 
-  We specialise in building custom cloud based applications including Online Shopping, Customer Relationship Management and Enterprise Resource Planning.
+  Providing contract and freelance web development services since 2000.
+  We specialise in building custom cloud based applications using agile development techniques.
 about: >
   Mr PHP was founded by Brett O'Donnell in 2000, and has been making web software ever since.
 
 image_src: /assets/img/logo/logo.png
+header_img: /assets/img/background/index.jpg
 baseurl: ""
 url: http://mrphp.com.au
-#permalink: /blog/:title
-paginate_path: "blog/page:num"
-paginate: 5
+permalink: /blog/:title
+paginate_path: /blog/page:num
+paginate: 10
 
 twitter_username: mrphp
 github_username:  mr-php
