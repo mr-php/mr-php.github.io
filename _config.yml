@@ -21,7 +21,7 @@ paginate_path: /blog/page:num
 paginate: 10
 
 twitter_username: mrphp
-github_username:  mr-php
+github_username:  cornernote
 facebook_page: pages/Mr-PHP/124929103375
 linkedin_company: mr-php
 mailchimp_subscribe_url: http://mrphp.us1.list-manage.com/subscribe?u=91727179f1c05b357b43bb4d3&id=4122328387
