@@ -1,0 +1,41 @@
+<footer>
+    <div class="container text-left">
+        <div class="row">
+            <div class="col-md-4">
+                <h3>{{ site.title }}</h3>
+                <address>{{ site.address }}</address>
+                <p class="copyright">Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}. ABN {{ site.abn }}.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>We're Social</h3>
+                <ul class="list-inline social-buttons">
+                    <li class="text-center">
+                        <a href="https://twitter.com/{{site.twitter_username}}" target="_blank"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li class="text-center">
+                        <a href="https://www.facebook.com/{{site.facebook_page}}" target="_blank"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li class="text-center">
+                        <a href="https://www.linkedin.com/company/{{site.linkedin_company}}" target="_blank"><i class="fa fa-linkedin"></i></a>
+                    </li>
+                    <li class="text-center">
+                        <a href="https://github.com/{{site.github_username}}" target="_blank"><i class="fa fa-github"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h3>About Us</h3>
+
+                <p class="text-muted">{{ site.about }}</p>
+                <ul class="list-inline quicklinks">
+                    <li>
+                        <a href="{{site.baseurl}}/blog" target="_blank">Blog</a>
+                    </li>
+                    <li>
+                        <a href="{{site.mailchimp_subscribe_url}}" target="_blank">Newsletter</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>

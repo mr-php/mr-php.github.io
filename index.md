@@ -1,0 +1,813 @@
+---
+layout: index
+---
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top"><img alt="Home" src="assets/img/logo/brand.png"></a>
+            <a class="navbar-brand page-scroll" href="#page-top">Mr PHP</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#services">Services</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#development">Web Dev</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#support">Support</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header class="intro">
+    <div class="container">
+        <div class="intro-text">
+            <h1>Smart Web Development</h1>
+
+            <div class="intro-heading">
+                Unleash your website with powerful web technologies including:<br/>PHP, MySQL, Yii, jQuery and AngularJS.
+            </div>
+            <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+        </div>
+    </div>
+</header>
+
+<!-- Services Section -->
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Services</h2>
+
+                <h3 class="section-subheading text-muted">We specialise in building custom web based applications.</h3>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4 col-sm-6">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-square fa-stack-2x text-primary"></i>
+                    <i class="fa fa-cloud fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Web Development</h4>
+
+                <p class="text-muted">Custom web-based applications to suit the ongoing requirements of your business.</p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-square fa-stack-2x text-primary"></i>
+                    <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">E-Commerce</h4>
+
+                <p class="text-muted">Shopping cart modifications are simple with our experienced developers.</p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-square fa-stack-2x text-primary"></i>
+                    <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Responsive Design</h4>
+
+                <p class="text-muted">Your site will look fantastic on all the types of devices your visitors use.</p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-square fa-stack-2x text-primary"></i>
+                    <i class="fa fa-server fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Server Management</h4>
+
+                <p class="text-muted">Systems administration and operating system management.</p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-square fa-stack-2x text-primary"></i>
+                    <i class="fa fa-database fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Database Administration</h4>
+
+                <p class="text-muted">Advanced database management techniques including replication.</p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-square fa-stack-2x text-primary"></i>
+                    <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Security</h4>
+
+                <p class="text-muted">Web security to protect your applications and servers from attackers.</p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-square fa-stack-2x text-primary"></i>
+                    <i class="fa fa-cogs fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">System Support</h4>
+
+                <p class="text-muted">We worry about your application, servers and backups so that you don't have to.</p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-square fa-stack-2x text-primary"></i>
+                    <i class="fa fa-retweet fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Integrations</h4>
+
+                <p class="text-muted">Extensive experience integrating with many APIs and cloud services.</p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-square fa-stack-2x text-primary"></i>
+                    <i class="fa fa-tasks fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Workflow Management</h4>
+
+                <p class="text-muted">Custom resource planning solutions to improve manufacturing workflow.</p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-square fa-stack-2x text-primary"></i>
+                    <i class="fa fa-google fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Search Engine Optimisation</h4>
+
+                <p class="text-muted">Improving SEO to get the most out of your organic search results.</p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-square fa-stack-2x text-primary"></i>
+                    <i class="fa fa-line-chart fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Search Engine Marketing</h4>
+
+                <p class="text-muted">Implementing, monitoring and improving SEM to increase revenue.</p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-square fa-stack-2x text-primary"></i>
+                    <i class="fa fa-download fa-stack-1x fa-inverse"></i>
+                </span>
+                <h4 class="service-heading">Backups</h4>
+
+                <p class="text-muted">Real-time and offsite backups of your applications and databases.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Web Development Section -->
+<section id="development" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Web Development Guide</h2>
+
+                <h3 class="section-subheading text-muted">Custom application development with cloud-based applications.</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image">
+                            <h4><i class="fa fa-flask fa-4x"></i></h4>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Your Requirements</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">You may have an abstract idea about what you want as an end result, but not what you want the software to do. We aim to take the concept out of your head and turn it into completed software.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4><i class="fa fa-code fa-4x"></i></h4>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Planning and Development</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">We will create a plan to bring all of your requirements to
+                                    life. While the plan is used as an overall guide to development, the
+                                    methods we use to develop are very flexible should you change your mind
+                                    on some of the details.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image">
+                            <h4><i class="fa fa-eye fa-4x"></i></h4>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Development Preview</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">Development changes will be deployed immediately to your staging server for
+                                    you to preview as we publish code. You will be able to work closely with us to ensure the application looks
+                                    and works exactly the way you imagined.</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4><i class="fa fa-bolt fa-4x"></i></h4>
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4>Deployment</h4>
+                            </div>
+                            <div class="timeline-body">
+                                <p class="text-muted">Once the application is ready for live deployment a trained engineer will
+                                    perform all required system changes including database modifications and
+                                    file updates. The application will then be given final testing.</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+<!-- System Support Section -->
+<section id="support">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">System Support</h2>
+
+                <h3 class="section-subheading text-muted">Our software engineers have extensive experience in a number of development languages and platforms.</h3>
+
+                <div class="row text-left">
+                    <div class="col-md-4 col-sm-6 support-item">
+                        <h4>Web Technologies</h4>
+                        <ul>
+                            <li>PHP</li>
+                            <li>MySQL / SQLite</li>
+                            <li>HTML5 / CSS3</li>
+                            <li>JavaScript / jQuery / AngularJS</li>
+                            <li>Git / SVN</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-6 support-item">
+                        <h4>PHP Frameworks</h4>
+                        <ul>
+                            <li>Yii Framework</li>
+                            <li>CakePHP</li>
+                            <li>CodeIgniter</li>
+                            <li>Drupal</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-6 support-item">
+                        <h4>E-Commerce Engines</h4>
+                        <ul>
+                            <li>OpenCart</li>
+                            <li>Magento</li>
+                            <li>Zen-Cart</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-6 support-item">
+                        <h4>Operating Systems</h4>
+                        <ul>
+                            <li>Ubuntu</li>
+                            <li>Docker</li>
+                            <li>Vagrant</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-6 support-item">
+                        <h4>Web Servers</h4>
+                        <ul>
+                            <li>Apache</li>
+                            <li>Varnish</li>
+                            <li>Nginx</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 col-sm-6 support-item">
+                        <h4>Cache Platforms</h4>
+                        <ul>
+                            <li>Redis</li>
+                            <li>Opcache</li>
+                            <li>APC</li>
+                            <li>Memcached</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Grid Section -->
+<section id="portfolio" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Portfolio</h2>
+
+                <h3 class="section-subheading text-muted">Our applications are built using modern web development tools.</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal-cloudpad" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="assets/img/portfolio/cloudpad.png" class="img-responsive" alt="">
+                </a>
+
+                <div class="portfolio-caption">
+                    <h4>cloudpad</h4>
+
+                    <p class="text-muted">Beautiful and Simple Todo List</p>
+                </div>
+            </div>
+            <!--
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal-luluandlipstick" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="assets/img/portfolio/luluandlipstick.png" class="img-responsive" alt="">
+                </a>
+
+                <div class="portfolio-caption">
+                    <h4>Lulu and Lipstick</h4>
+
+                    <p class="text-muted">E-Commerce</p>
+                </div>
+            </div>
+            -->
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal-afibranding" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="assets/img/portfolio/afibranding.png" class="img-responsive" alt="">
+                </a>
+
+                <div class="portfolio-caption">
+                    <h4>AFI Branding</h4>
+
+                    <p class="text-muted">Manufacturing Management</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal-serranoaustralia" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="assets/img/portfolio/serranoaustralia.png" class="img-responsive" alt="">
+                </a>
+
+                <div class="portfolio-caption">
+                    <h4>Serrano Australia</h4>
+
+                    <p class="text-muted">Wholesale E-Commerce</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal-newsmaker" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="assets/img/portfolio/newsmaker.png" class="img-responsive" alt="">
+                </a>
+
+                <div class="portfolio-caption">
+                    <h4>newsmaker</h4>
+
+                    <p class="text-muted">Press Release Distribution</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal-carbatec" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="assets/img/portfolio/carbatec.png" class="img-responsive" alt="">
+                </a>
+
+                <div class="portfolio-caption">
+                    <h4>Carba-Tec</h4>
+
+                    <p class="text-muted">Multi-Store E-Commerce</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal-mtgowikiprice" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="assets/img/portfolio/mtgowikiprice.png" class="img-responsive" alt="">
+                </a>
+
+                <div class="portfolio-caption">
+                    <h4>MTGO WikiPrice</h4>
+
+                    <p class="text-muted">Data Aggregation and Reporting</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Contact Us</h2>
+
+                <h3 class="section-subheading text-muted">Find out how we can help with contract and freelance web development services.</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <form name="sentMessage" id="contactForm" novalidate>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-lg-12 text-center">
+                            <div id="success"></div>
+                            <button type="submit" class="btn btn-xl">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include footer.html %}
+
+<!-- Portfolio Modal - serranoaustralia -->
+<div class="portfolio-modal modal fade" id="portfolioModal-serranoaustralia" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>Serrano Australia</h2>
+
+                        <p class="item-intro text-muted">Wholesale E-Commerce</p>
+                        <img class="img-responsive" src="assets/img/portfolio/serranoaustralia.png" alt="">
+
+                        <div class="text-left">
+                            <p>Develop ongoing solutions to ongoing e-commerce related business requirements.</p>
+                            <ul>
+                                <li>Implement and manage Multi-Master MySQL replication to ensure hot-swap backup is always available.</li>
+                                <li>Created entire Yii ecommerce administration based on OpenCart database and integrated Yii into front end to simplify future development.</li>
+                                <li>Import thousands of products from dozens of suppliers in many different formats directly into database on a reoccurring basis.</li>
+                                <li>Export selected products to CSV for customer feeds on a reoccurring basis.</li>
+                                <li>Automate the process of batch order creation from wholesale customers and batch orders to suppliers.</li>
+                                <li>Developed with AdWords API to auto-populate and manage AdWords campaign based on current categories and products.</li>
+                                <li>Implemented EBay API to create and and manage EBay items and sales based on current categories and products.</li>
+                                <li>Create drag-and-drop tools for newsletter generation and newsletter management using MailChimp API.</li>
+                                <li>Implement processes for Warranty and Returns based on users purchase history.</li>
+                                <li>Designed an inventory management system to support variations of products and other business requirements.</li>
+                            </ul>
+                        </div>
+
+                        <hr/>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+                            <i class="fa fa-times"></i> Close Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Modal - newsmaker -->
+<div class="portfolio-modal modal fade" id="portfolioModal-newsmaker" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>newsmaker</h2>
+
+                        <p class="item-intro text-muted">Press Release Distribution</p>
+                        <img class="img-responsive img-centered" src="assets/img/portfolio/newsmaker.png" alt="">
+
+                        <div class="text-left">
+                            <p>Port an existing application from Ruby on Rails to Yii in order to provide better performance and extend functionality.</p>
+                            <ul>
+                                <li>Design a better wizard process to allow users to create Press Releases.</li>
+                                <li>Extend the application by adding Newsrooms, Contact management and improving the Category and Media List management.</li>
+                                <li>Implement custom checkout with PayPal IPN.</li>
+                                <li>Provide management staff with administration pages to control all their data.</li>
+                            </ul>
+                        </div>
+
+                        <hr/>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+                            <i class="fa fa-times"></i> Close Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Modal - cloudpad -->
+<div class="portfolio-modal modal fade" id="portfolioModal-cloudpad" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>cloudpad</h2>
+
+                        <p class="item-intro text-muted">Beautiful and Simple Todo List</p>
+                        <img class="img-responsive img-centered" src="assets/img/portfolio/cloudpad.png" alt="">
+
+                        <div class="text-left">
+                            <p>Create a to-do list that is simple to use and beautiful to look at.</p>
+                            <ul>
+                                <li>Develop web application using AngularJS to simplify development of page updates without constant refreshes.</li>
+                                <li>Implement real-time push updates to all devices using NodeJS and Socket.IO.</li>
+                                <li>Full drag-and-drop interface, everything is point and click, no page reloads.</li>
+                                <li>Repeating tasks allow users to automatically enter a task across a range of days.</li>
+                                <li>Ability to share tasks with friends or collegues.</li>
+                                <li>User selectable custom themes to allow changes to images, colours and fonts.</li>
+                            </ul>
+                        </div>
+
+                        <hr/>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+                            <i class="fa fa-times"></i> Close Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Modal - luluandlipstick -->
+<div class="portfolio-modal modal fade" id="portfolioModal-luluandlipstick" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>Lulu and Lipstick</h2>
+
+                        <p class="item-intro text-muted">E-Commerce System Development</p>
+                        <img class="img-responsive img-centered" src="assets/img/portfolio/luluandlipstick.png" alt="">
+
+                        <div class="text-left">
+                            ...
+                        </div>
+
+                        <hr/>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+                            <i class="fa fa-times"></i> Close Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Modal - carbatec -->
+<div class="portfolio-modal modal fade" id="portfolioModal-carbatec" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>Carba-Tec</h2>
+
+                        <p class="item-intro text-muted">Multi-Store E-Commerce</p>
+                        <img class="img-responsive img-centered" src="assets/img/portfolio/carbatec.png" alt="">
+
+                        <div class="text-left">
+                            <p>Provide enterprise level ecommerce support and extensions for a company with 8 physical locations across Australia and New Zealand.</p>
+                            <ul>
+                                <li>Created custom admin based on zenCart database allowing extended functionality and ease of development.</li>
+                                <li>Implemented multistore functionality to allow independent category, product and price management for each of the 8 store branches including a NZ branch which trades in NZ$.</li>
+                                <li>Modified zenCart front end to meet the many advanced needs of the client.</li>
+                                <li>Search Engine Optimisation including Advanced SEO URLs, 301 redirects for duplicate content.</li>
+                            </ul>
+                        </div>
+
+                        <hr/>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+                            <i class="fa fa-times"></i> Close Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio Modal - afibranding -->
+<div class="portfolio-modal modal fade" id="portfolioModal-afibranding" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>AFI Branding</h2>
+
+                        <p class="item-intro text-muted">Manufacture Workflow Management</p>
+                        <img class="img-responsive img-centered" src="assets/img/portfolio/afibranding.png" alt="">
+
+                        <div class="text-left">
+                            <p>Design, develop and deploy an ERP (enterprise resource planning) application to manage the production and distribution of wideformat printed branding solutions.</p>
+                            <ul>
+                                <li>Spend time with managers and staff onsite to understand current production and distribution processes.</li>
+                                <li>Design requirements specifications describing the planned solution for customer to sign off before starting development.</li>
+                                <li>Develop a solution to manage and track Jobs which pass through approval stages, multiple production lines each with its own set of stages, outsourced production management, then to assembly and distribution, and finally to finance and reports.</li>
+                                <li>Implement an advanced audit mechanism to track every change to every field in the database, and relating it to a visit to the site. This allowed a comprehensive reporting engine that could tell us the who/what/why/where of any change to the entire database.</li>
+                                <li>Allow managers and staff complete control by providing detailed views including a master overview, calendar views, job and item views, production overviews, and reporting.</li>
+                                <li>Provided ongoing development and support to continue improvement of the application.</li>
+                            </ul>
+                        </div>
+
+                        <hr/>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+                            <i class="fa fa-times"></i> Close Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Portfolio Modal - mtgowikiprice -->
+<div class="portfolio-modal modal fade" id="portfolioModal-mtgowikiprice" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <h2>MTGO WikiPrice</h2>
+
+                        <p class="item-intro text-muted">Data Aggregation and Reporting</p>
+                        <img class="img-responsive img-centered" src="assets/img/portfolio/mtgowikiprice.png" alt="">
+
+                        <div class="text-left">
+                            <p>Develop a website to display MTGO card prices from a collection of clients.</p>
+                            <ul>
+                                <li>Import and sync over 9 million rows hourly with CSV data loaded by over 1000 clients.</li>
+                                <li>Determine best buyer/seller in realtime based on current data.</li>
+                                <li>Display data, allowing the user to filter and order the results using advanced joins and sorting.</li>
+                                <li>Obfuscate prices as images to prevent page scraping.</li>
+                                <li>Create a stunning visual experience for the user.</li>
+                            </ul>
+                        </div>
+
+                        <hr/>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">
+                            <i class="fa fa-times"></i> Close Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="assets/js/navbar.js"></script>
+
+<!-- Contact Form JavaScript -->
+<script src="assets/js/jqBootstrapValidation.js"></script>
+<script src="assets/js/contact.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="assets/js/mrphp.js"></script>

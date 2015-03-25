@@ -1,0 +1,59 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Site Info -->
+<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+<meta name="author" content="{{ site.title }}">
+<meta name="rights" content="Copyright 2000-{{ 'now' | date: "%Y" }} © {{ site.title }}. All rights reserved."/>
+
+<!-- Links -->
+<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+<link rel="image_src" href="{% if page.image_src %}{{ page.image_src | prepend: site.baseurl }}{% else %}{{ site.image_src | prepend: site.baseurl }}{% endif %}"/>
+
+<!-- Open Graph -->
+<meta property="og:site_name" content="{{ site.title }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"/>
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
+<meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"/>
+<meta property="og:image" content="{% if page.image_src %}{{ page.image_src | prepend: site.baseurl }}{% else %}{{ site.image_src | prepend: site.baseurl }}{% endif %}"/>
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@{{ site.twitter_username }}"/>
+<meta name="twitter:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}"/>
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}"/>
+<meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}"/>
+<meta name="twitter:image:src" content="{% if page.image_src %}{{ page.image_src | prepend: site.baseurl }}{% else %}{{ site.image_src | prepend: site.baseurl }}{% endif %}"/>
+
+<!-- FavIcon -->
+<link rel="shortcut icon" href="{{site.baseurl}}assets/img/logo/favicon.ico" type="image/vnd.microsoft.icon"/>
+
+<!-- Apple Logo -->
+<link href="{{site.baseurl}}/assets/img/logo/iconified/apple-touch-icon.png" rel="apple-touch-icon-precomposed"/>
+<link href="{{site.baseurl}}/assets/img/logo/iconified/apple-touch-icon-57x57.png" rel="apple-touch-icon-precomposed" sizes="57x57"/>
+<link href="{{site.baseurl}}/assets/img/logo/iconified/apple-touch-icon-72x72.png" rel="apple-touch-icon-precomposed" sizes="72x72"/>
+<link href="{{site.baseurl}}/assets/img/logo/iconified/apple-touch-icon-114x114.png" rel="apple-touch-icon-precomposed" sizes="114x114"/>
+<link href="{{site.baseurl}}/assets/img/logo/iconified/apple-touch-icon-144x144.png" rel="apple-touch-icon-precomposed" sizes="144x144"/>
+
+<!-- Bootstrap Core CSS -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ "/assets/css/mrphp.css" | prepend: site.baseurl }}">
+
+<!-- Custom Fonts -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href='//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
