@@ -3,9 +3,10 @@
         <div class="row">
             <div class="col-md-4">
                 <h3>{{ site.title }}</h3>
-                <abbr title="Phone">P</abbr>: {{ site.phone }}
+                <abbr title="Phone">P</abbr>: <a href="tel:{{ site.phone_int }}">{{ site.phone }}</a><br/>
+                <abbr title="Email">E</abbr>: <a href="mailto:{{ site.email }}">{{ site.email }}</a><br/>
+                <abbr title="Australian Business Number">ABN</abbr>: {{ site.abn }}<br/>
                 <address>{{ site.address }}</address>
-                <p class="copyright">Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}. ABN {{ site.abn }}.</p>
             </div>
             <div class="col-md-4">
                 <h3>We're Social</h3>
@@ -35,6 +36,9 @@
                     <li>
                         <a href="{{site.baseurl}}/resources/">Resources</a>
                     </li>
+                    <li>
+                        <a href="{{site.baseurl}}/contact/">Contact</a>
+                    </li>
                     <!--
                     <li>
                         <a href="{{site.baseurl}}/newsletter">Newsletter</a>
@@ -43,5 +47,7 @@
                 </ul>
             </div>
         </div>
+        <hr/>
+        <p class="copyright">Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}.</p>
     </div>
 </footer>

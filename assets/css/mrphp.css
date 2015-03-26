@@ -1,7 +1,23 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: #ffffff url(../img/background/body.png);
+}
+
+body {
+    margin-bottom: 370px;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 270px;
 }
 
 .text-muted {
@@ -60,7 +76,7 @@ h6 {
 }
 
 .bg-darkest-gray {
-    background: #222  url(../img/background/darkest-grey.png);
+    background: #222 url(../img/background/darkest-grey.png);
     color: #ccc;
 }
 
@@ -335,6 +351,13 @@ fieldset[disabled] .btn-xl.active {
 .intro-header .page-heading h1 {
     margin-top: 0;
     font-size: 50px;
+}
+
+.intro-header .site-heading hr,
+.intro-header .post-heading hr,
+.intro-header .page-heading hr {
+    width: 200px;
+    border-top: 4px solid #eee;
 }
 
 .intro-header .site-heading .subheading,
@@ -714,64 +737,67 @@ section#contact {
     /*background-repeat: no-repeat;*/
 }
 
-section#contact .form-group {
+#contactForm .form-group {
     margin-bottom: 25px;
 }
 
-section#contact .form-group input,
-section#contact .form-group textarea {
+#contactForm .form-group input,
+#contactForm .form-group textarea {
     padding: 20px;
 }
 
-section#contact .form-group input.form-control {
+#contactForm .form-group input.form-control {
     height: auto;
 }
 
-section#contact .form-group textarea.form-control {
+#contactForm .form-group textarea.form-control {
     height: 236px;
 }
 
-section#contact .form-control:focus {
+#contactForm .form-control:focus {
     border-color: #4d688b;
     box-shadow: none;
 }
 
-section#contact::-webkit-input-placeholder {
+#contactForm::-webkit-input-placeholder {
     text-transform: uppercase;
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#contact:-moz-placeholder {
+#contactForm:-moz-placeholder {
     text-transform: uppercase;
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#contact::-moz-placeholder {
+#contactForm::-moz-placeholder {
     text-transform: uppercase;
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#contact:-ms-input-placeholder {
+#contactForm:-ms-input-placeholder {
     text-transform: uppercase;
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 700;
     color: #bbb;
 }
 
-section#contact .text-danger {
+#contactForm .text-danger {
     color: #e74c3c;
 }
 
 footer {
-    margin-top: 50px;
     padding: 25px 0;
     background: #000 url("../img/background/footer.png");
+    color: #ddd;
+}
+
+footer a:hover, footer a:active {
     color: #ddd;
 }
 
