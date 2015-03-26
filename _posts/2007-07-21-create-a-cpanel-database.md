@@ -1,12 +1,11 @@
 ---
 layout: post
 title: Create a cPanel Database
-created: 1185026861
 ---
-This snippet will allow you to create a cPanel database using PHP.
-<!--break-->
 
-<pre class="brush:php">
+This snippet will allow you to create a cPanel database using PHP.
+
+```php
 // your cPanel username
 $cpanel_user = 'root';
 
@@ -36,6 +35,6 @@ $site = "http://$cpanel_user:$cpanel_pass@$cpanel_host:2082/frontend/$cpanel_ski
 $result = file_get_contents("{$site}adddb.html?db=$db_name");
 $result .= file_get_contents("{$site}adduser.html?user={$db_username}&pass={$db_userpass}");
 $result .= file_get_contents("{$site}addusertodb.html?user={$cpanel_user}_{$db_username}&db={$cpanel_user}_{$db_name}&ALL=ALL");
-</pre>
+```
 
-<p>Full documentation is available here: <a href="http://documentation.cpanel.net/display/SDK/UAPI+Functions">http://documentation.cpanel.net/display/SDK/UAPI+Functions</a>.</p>
+Full documentation is available here: <a href="http://documentation.cpanel.net/display/SDK/UAPI+Functions">http://documentation.cpanel.net/display/SDK/UAPI+Functions</a>.

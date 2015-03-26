@@ -1,8 +1,8 @@
 ---
 layout: post
 title: Prevent Cron Task Overlap in CakePHP
-created: 1275014444
 ---
+
 <p>If you have a task that runs every 5 minutes, and it takes more than 5 minutes to run then the next task will start causing even more server load.  This effect may stack up and eventually cause your server to come to a grinding halt.  For this reason it is very important that your scheduled tasks do not overlap.</p>
 
 <!--break-->
