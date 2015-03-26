@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Remove Array Nulls
+tags: [php]
 ---
 Recursively removes array keys with null values.
 <!--break-->

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Pretty Bash Prompt
+tags: [linux]
 ---
 Add this to your ~/.bash_profile to get a pretty prompt.
 

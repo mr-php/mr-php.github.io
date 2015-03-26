@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How to Enable Register Globals in PHP 5
+tags: [php]
 ---
 If you understand the potential security risks but you still need to run PHP with register_globals ON there are a couple of ways to do it.
 

@@ -1,0 +1,32 @@
+- slug: php
+  name: PHP
+
+- slug: mysql
+  name: MySQL
+
+- slug: cakephp
+  name: CakePHP
+
+- slug: yii
+  name: Yii
+
+- slug: drupal
+  name: Drupal
+
+- slug: performance
+  name: Performance
+
+- slug: cpanel
+  name: cPanel
+
+- slug: javascript
+  name: JavaScript
+
+- slug: regex
+  name: Regex
+
+- slug: linux
+  name: Linux
+
+- slug: ubuntu
+  name: Ubuntu

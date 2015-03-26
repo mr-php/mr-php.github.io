@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Regular Expression for Date or Datetime Validation
+tags: [php, regex]
 ---
 This Regular Expression will verify if a date is a valid YYYY-MM-DD with an optional HH:MM:SS.  It checks to see if the day is a valid day in the given month with the consideration of leap years.
 

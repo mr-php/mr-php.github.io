@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Deep In Array
+tags: [php]
 ---
 Function similar to in_array() but it recursively searches a multi-depth array.
 

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Apache Expires Headers with mod_expires
+tags: [performance]
 ---
 Quick example of how to set default expires headers.  This will help prevent browsers from re-downloading the same images more than once and therefore reduce the load on your image server.
 

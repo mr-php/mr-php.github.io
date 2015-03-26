@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Admin Editable Settings and Theme in CakePHP
+tags: [cakephp]
 ---
 
 Usually the client will request for me to give them a way to edit simple settings in their application.

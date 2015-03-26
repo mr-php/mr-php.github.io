@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Multiple Flash Messages with Style in CakePHP
+tags: [cakephp]
 ---
 <p>In this CakePHP tutorial I will explain how to output multiple flash messages.</p>
 <p>This forms a message stack that can be used to inform the user that multiple events have taken place.</p>

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How to make a simple form module in Drupal
+tags: [drupal]
 ---
 
 This example module will provide a form where you can enter your name and upon submission will display your name as a message on the following page.  It is very basic but will give you a start to making your first module.

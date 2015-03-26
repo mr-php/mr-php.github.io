@@ -1,6 +1,7 @@
 ---
 layout: post
 title: fuser taking 100% cpu on Ubuntu 11.10
+tags: [ubuntu]
 ---
 Server was running up super high load thanks to php5's cron task.
 

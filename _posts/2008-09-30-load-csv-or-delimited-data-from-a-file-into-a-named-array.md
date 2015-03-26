@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Load CSV or Delimited Data from a File into a Named Array
+tags: [php]
 ---
 This small snippet will allow you to load CSV or other delimited Data from a File into a named array.  The heads in the CSV file will be used for the names of the array keys.
 

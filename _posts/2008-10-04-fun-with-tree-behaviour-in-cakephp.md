@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Fun with Tree Behaviour in CakePHP
-created: 1223140579
+tags: [cakephp]
 ---
 I had a play with the Tree Behaviour in CakePHP and was very impressed at what you could create with such ease.
 

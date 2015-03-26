@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Search Forms in CakePHP
-created: 1223131207
+tags: [cakephp]
 ---
 <p>In this CakePHP tutorial I would like to show you how I handle search forms, while preserving pagination.</p>
 

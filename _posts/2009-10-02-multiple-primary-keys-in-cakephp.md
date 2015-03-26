@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Multiple Primary Keys in CakePHP
+tags: [cakephp]
 ---
 If you have ever tried to deal with multiple primary keys in cakePHP then you have probably hit a brick wall at some stage.
 

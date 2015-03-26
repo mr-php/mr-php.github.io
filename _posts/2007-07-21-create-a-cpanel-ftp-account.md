@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Create a cPanel FTP Account
+tags: [cpanel]
 ---
 
 This snippet will allow you to create a cPanel FTP account using PHP.

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Inner Resize Browser Window
+tags: [javascript]
 ---
 This JavaScript function will resize the inside of a browser window to the dimensions provided.
 

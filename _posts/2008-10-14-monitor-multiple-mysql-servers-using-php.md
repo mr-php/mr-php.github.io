@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Monitor Multiple MySQL Servers using PHP
-created: 1223981569
+tags: [php, mysql]
 ---
 This is a quick 1 page application to monitor your replicated MySQL servers.
 

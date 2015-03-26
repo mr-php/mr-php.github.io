@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Importing Data from CSV into CakePHP
-created: 1223523274
+tags: [cakephp]
 ---
 This is a quick little method that lets you get some data from a CSV into a table.
 

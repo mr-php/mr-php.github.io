@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Useful Exim Commands
+tags: [exim]
 ---
 A list of a few commands useful for managing an exim mail server.
 

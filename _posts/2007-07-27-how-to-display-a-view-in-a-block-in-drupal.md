@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How to display a View in a Block in Drupal
+tags: [drupal]
 ---
 If you want to use a view to get the power of pagers but you need it to render in a block then follow this guide.
 

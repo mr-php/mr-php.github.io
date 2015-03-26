@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Clear All Cache in Drupal
+tags: [drupal]
 ---
 Quick code snippet, just drop this into clearcache.php and then load it in your browser.
 

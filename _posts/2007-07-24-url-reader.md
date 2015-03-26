@@ -1,10 +1,12 @@
 ---
 layout: post
 title: URL Reader
+tags: [php]
 ---
 This function will download the contents of any URL and return it as a string that you can save to a file or database.
 
 It will use curl if it is installed.  Otherwise it will use fopen/fread.
+
 <!--break-->
 
 ```php

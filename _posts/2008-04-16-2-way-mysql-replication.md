@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 2-Way MySQL Replication
+tags: [mysql]
 ---
 
 Some notes and commands I want to keep handy the next time I setup MySQL replication.

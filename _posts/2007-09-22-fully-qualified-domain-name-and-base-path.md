@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Fully Qualified Domain Name and Base Path
+tags: [cakephp]
 ---
 This simple snippet will provide you with a HTTP or HTTPS Fully Qualified Domain Name URL and Base Path to your CakePHP installation.  I use it for the HTML base tag.
 

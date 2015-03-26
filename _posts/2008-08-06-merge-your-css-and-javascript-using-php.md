@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Merge Your CSS and JavaScript Using PHP
+tags: [php, performance]
 ---
 Merge all of your CSS and JS into one file to improve server speed.
 

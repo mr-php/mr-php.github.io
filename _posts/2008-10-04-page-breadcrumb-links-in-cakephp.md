@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Page Breadcrumb Links in CakePHP
-created: 1223133442
+tags: [cakephp]
 ---
 <p>I wanted to make a quick and easy breadcrumb that worked with a simple array.</p>
 <p>The breadcrumb is an array containing multiple links from html_helper::link().</p>

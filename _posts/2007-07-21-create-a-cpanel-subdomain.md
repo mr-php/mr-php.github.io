@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Create a cPanel Subdomain
+tags: [cpanel]
 ---
 This snippet will allow you to create a cPanel subdomain using PHP.
 <!--break-->

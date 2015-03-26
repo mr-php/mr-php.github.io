@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Working with HABTM Form Data in CakePHP
-created: 1223137444
+tags: [cakephp]
 ---
 I would like to document several speedy ways I have of working with HABTM data.
 

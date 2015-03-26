@@ -1,6 +1,7 @@
 ---
 layout: post
 title: MySQL Ordering the Group By
+tags: [mysql]
 ---
 A problem that I have faced with SQL many times is pre-ordering the `GROUP BY` clause.
 

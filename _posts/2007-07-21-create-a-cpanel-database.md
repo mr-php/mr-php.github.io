@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Create a cPanel Database
+tags: [cpanel]
 ---
 
 This snippet will allow you to create a cPanel database using PHP.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Simple Auth with Users HABTM Groups in CakePHP
-created: 1223143469
+tags: [cakephp]
 ---
 <p>In almost every project I need to setup some sort of login, and usually it requires group access to certain data depending on different criteria.</p>
 

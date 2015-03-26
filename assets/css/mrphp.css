@@ -165,13 +165,19 @@ fieldset[disabled] .btn-xl.active {
 
 .navbar-default {
     border-color: transparent;
-    background-color: #020015;
+    background-color: #000;
+}
+
+.navbar-default .navbar-logo {
+    padding-top: 10px;
+    padding-right: 0;
 }
 
 .navbar-default .navbar-brand {
     /*font-family: "Kaushan Script","Helvetica Neue",Helvetica,Arial,cursive;*/
     font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #4d688b;
+    font-size: 2em;
 }
 
 .navbar-default .navbar-brand:hover,
@@ -235,11 +241,22 @@ fieldset[disabled] .btn-xl.active {
         transition: padding .3s;
     }
 
+    .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+        margin-left: 0;
+    }
+
+    .navbar > .container .navbar-title, .navbar > .container-fluid .navbar-title {
+        margin-left: -15px;
+    }
+
     .navbar-default .navbar-brand {
-        font-size: 2em;
         -webkit-transition: all .3s;
         -moz-transition: all .3s;
         transition: all .3s;
+    }
+
+    .navbar-default .navbar-nav {
+        font-size: 12px;
     }
 
     .navbar-default .navbar-nav > .active > a {
@@ -256,8 +273,24 @@ fieldset[disabled] .btn-xl.active {
     }
 }
 
+@media (min-width: 992px) {
+    .navbar-default .navbar-nav {
+        font-size: 14px;
+    }
+}
+
 .intro-header {
-    background: #020015 no-repeat scroll center center;
+    padding: 60px 0 0;
+    background: #354F6F;
+    background-image: linear-gradient(left, rgb(53, 79, 111) 0%, rgb(127, 161, 215) 50%, rgb(53, 79, 111) 100%);
+    background-image: -o-linear-gradient(left, rgb(53, 79, 111) 0%, rgb(127, 161, 215) 50%, rgb(53, 79, 111) 100%);
+    background-image: -moz-linear-gradient(left, rgb(53, 79, 111) 0%, rgb(127, 161, 215) 50%, rgb(53, 79, 111) 100%);
+    background-image: -webkit-linear-gradient(left, rgb(53, 79, 111) 0%, rgb(127, 161, 215) 50%, rgb(53, 79, 111) 100%);
+    background-image: -ms-linear-gradient(left, rgb(53, 79, 111) 0%, rgb(127, 161, 215) 50%, rgb(53, 79, 111) 100%);
+    background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0, rgb(53, 79, 111)), color-stop(0.5, rgb(127, 161, 215)), color-stop(1, rgb(53, 79, 111)));
+    background-size: 100% auto;
+
+    /*background: #020015 no-repeat scroll center center;*/
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;

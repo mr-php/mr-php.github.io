@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Word Permutator Function
+tags: [php]
 ---
 Give this function a phrase and it will return all of the permutations of the words that make up the phrase.
 

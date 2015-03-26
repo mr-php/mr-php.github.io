@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Deep Array Reverse
+tags: [php]
 ---
 Recursively reverses a multi-depth array.
 
