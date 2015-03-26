@@ -7,13 +7,13 @@ I would like to document several speedy ways I have of working with HABTM data.
 
 <!--break-->
 
-* <a href="/code/working-habtm-form-data-cakephp#tables">The Tables</a>
-* <a href="/code/working-habtm-form-data-cakephp#models">The Models</a>
-* <a href="/code/working-habtm-form-data-cakephp#habtm_select">HABTM Select</a>
-* <a href="/code/working-habtm-form-data-cakephp#habtm_checkbox">HABTM Checkbox</a>
-* <a href="/code/working-habtm-form-data-cakephp#habtm_text_add">HABTM Text Add</a>
-* <a href="/code/working-habtm-form-data-cakephp#habtm_textarea_edit">HABTM TextArea Edit</a>
-* <a href="/code/working-habtm-form-data-cakephp#conclusion">Conclusion</a>
+* <a href="#tables">The Tables</a>
+* <a href="#models">The Models</a>
+* <a href="#habtm_select">HABTM Select</a>
+* <a href="#habtm_checkbox">HABTM Checkbox</a>
+* <a href="#habtm_text_add">HABTM Text Add</a>
+* <a href="#habtm_textarea_edit">HABTM TextArea Edit</a>
+* <a href="#conclusion">Conclusion</a>
 
 
 <h2><a name="tables" id="tables"></a>The Tables</h2>
