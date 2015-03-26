@@ -7,25 +7,17 @@ layout: default
 <!-- Page Header -->
 <header class="intro-header" style="{% if page.header_img %}background-image: url('{{ site.baseurl }}{{ page.header_img }}'){% endif %}">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="page-heading">
-                    <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
-                    {% if page.description %}
-                    <hr class="small">
-                    <span class="subheading">{{ page.description }}</span>
-                    {% endif %}
-                </div>
-            </div>
+        <div class="page-heading">
+            <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+            {% if page.description %}
+            <hr class="small">
+            <span class="subheading">{{ page.description }}</span>
+            {% endif %}
         </div>
     </div>
 </header>
 
 <!-- Page Content -->
 <div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            {{ content }}
-        </div>
-    </div>
+    {{ content }}
 </div>

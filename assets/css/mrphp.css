@@ -1,6 +1,7 @@
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: #ffffff url(../img/background/body.png);
 }
 
 .text-muted {
@@ -55,11 +56,12 @@ h6 {
 }
 
 .bg-light-gray {
-    background-color: #f7f7f7;
+    background: #f7f7f7 url(../img/background/light-grey.png);
 }
 
 .bg-darkest-gray {
-    background-color: #222;
+    background: #222  url(../img/background/darkest-grey.png);
+    color: #ccc;
 }
 
 .btn-primary {
@@ -245,7 +247,7 @@ fieldset[disabled] .btn-xl.active {
         margin-left: 0;
     }
 
-    .navbar > .container .navbar-title, .navbar > .container-fluid .navbar-title {
+    .navbar > .container .navbar-logo, .navbar > .container-fluid .navbar-logo {
         margin-left: -15px;
     }
 
@@ -707,14 +709,9 @@ section h3.section-subheading {
 }
 
 section#contact {
-    background-color: #222;
-    background-image: url(../img/pattern/bo_play_pattern/bo_play_pattern.png);
+    /*background-image: url(../img/pattern/bo_play_pattern/bo_play_pattern.png);*/
     /*background-position: center;*/
     /*background-repeat: no-repeat;*/
-}
-
-section#contact .section-heading {
-    color: #fff;
 }
 
 section#contact .form-group {
@@ -772,8 +769,10 @@ section#contact .text-danger {
 }
 
 footer {
+    margin-top: 50px;
     padding: 25px 0;
-    text-align: center;
+    background: #000 url("../img/background/footer.png");
+    color: #ddd;
 }
 
 footer span.copyright {
@@ -804,7 +803,7 @@ ul.social-buttons li a {
     line-height: 40px;
     outline: 0;
     color: #fff;
-    background-color: #222;
+    background-color: #646464;
     -webkit-transition: all .3s;
     -moz-transition: all .3s;
     transition: all .3s;
