@@ -3,25 +3,29 @@ layout: post
 title: Importing Data from CSV into CakePHP
 created: 1223523274
 ---
-<p>This is a quick little method that lets you get some data from a CSV into a table.</p>
+This is a quick little method that lets you get some data from a CSV into a table.
 
-<p>It should work with very large CSV files as it only has to read one row at a time.</p>
+It should work with very large CSV files as it only has to read one row at a time.
 
 <!--break-->
 
-<h2>The Data</h2>
-<b>tmp/uploads/Post/posts.csv</b>
-<pre class="brush:plain">
+## The Data
+
+`tmp/uploads/Post/posts.csv`
+
+```
 Post.title, Post.description
 My First Post, great posting with lots of information
 Another Post, another interesting article
-</pre>
+```
 
 
-<h2>The Controller</h2>
-<b>controllers/posts_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+## The Controller
+
+`controllers/posts_controller.php`
+
+```php
+<?php
 class PostsController extends AppController {
 	var $name = 'Posts';
 
@@ -31,13 +35,15 @@ class PostsController extends AppController {
 	}
 }
 ?>
-</pre>
+```
 
 
-<h2>The Model</h2>
-<b>models/post.php</b>
-<pre class="brush:php">
-&lt;?php
+## The Model
+
+`models/post.php`
+
+```php
+<?php
 class Post extends AppModel {
 	var $name = 'Post';
 
@@ -132,4 +138,4 @@ class Post extends AppModel {
 	}
 
 }
-</pre>
+```

@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Regular Expression for Date or Datetime Validation
-created: 1219380107
 ---
 This Regular Expression will verify if a date is a valid YYYY-MM-DD with an optional HH:MM:SS.  It checks to see if the day is a valid day in the given month with the consideration of leap years.
 
@@ -9,15 +8,16 @@ This Regular Expression will verify if a date is a valid YYYY-MM-DD with an opti
 
 I have created this regex several years ago and now I want to share it with the world.  It is not 100% documented however I have posted output from RegexBuddy's document function.
 
-<pre class="brush:php">
+```php
+<?php
 if (preg_match('/\\A(?:^((\\d{2}(([02468][048])|([13579][26]))[\\-\\/\\s]?((((0?[13578])|(1[02]))[\\-\\/\\s]?((0?[1-9])|([1-2][0-9])|(3[01])))|(((0?[469])|(11))[\\-\\/\\s]?((0?[1-9])|([1-2][0-9])|(30)))|(0?2[\\-\\/\\s]?((0?[1-9])|([1-2][0-9])))))|(\\d{2}(([02468][1235679])|([13579][01345789]))[\\-\\/\\s]?((((0?[13578])|(1[02]))[\\-\\/\\s]?((0?[1-9])|([1-2][0-9])|(3[01])))|(((0?[469])|(11))[\\-\\/\\s]?((0?[1-9])|([1-2][0-9])|(30)))|(0?2[\\-\\/\\s]?((0?[1-9])|(1[0-9])|(2[0-8]))))))(\\s(((0?[0-9])|(1[0-9])|(2[0-3]))\\:([0-5][0-9])((\\s)|(\\:([0-5][0-9])))?))?$)\\z/', $date)) {
 	// date is valid
 } else {
 	// date is invalid
 }
-</pre>
+```
 
-<pre class="brush:plain">
+```
 // ^((\d{2}(([02468][048])|([13579][26]))[\-\/\s]?((((0?[13578])|(1[02]))[\-\/\s]?((0?[1-9])|([1-2][0-9])|(3[01])))|(((0?[469])|(11))[\-\/\s]?((0?[1-9])|([1-2][0-9])|(30)))|(0?2[\-\/\s]?((0?[1-9])|([1-2][0-9])))))|(\d{2}(([02468][1235679])|([13579][01345789]))[\-\/\s]?((((0?[13578])|(1[02]))[\-\/\s]?((0?[1-9])|([1-2][0-9])|(3[01])))|(((0?[469])|(11))[\-\/\s]?((0?[1-9])|([1-2][0-9])|(30)))|(0?2[\-\/\s]?((0?[1-9])|(1[0-9])|(2[0-8]))))))(\s(((0?[0-9])|(1[0-9])|(2[0-3]))\:([0-5][0-9])((\s)|(\:([0-5][0-9])))?))?$
 // 
 // Assert position at the start of the string «^»
@@ -258,4 +258,4 @@ if (preg_match('/\\A(?:^((\\d{2}(([02468][048])|([13579][26]))[\\-\\/\\s]?((((0?
 //                   Match a single character in the range between "0" and "5" «[0-5]»
 //                   Match a single character in the range between "0" and "9" «[0-9]»
 // Assert position at the end of the string (or before the line break at the end of the string, if any) «$»
-</pre>
+```

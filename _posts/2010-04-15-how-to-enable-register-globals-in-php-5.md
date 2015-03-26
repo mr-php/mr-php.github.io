@@ -1,44 +1,43 @@
 ---
 layout: post
 title: How to Enable Register Globals in PHP 5
-created: 1271311033
 ---
-<p>If you understand the potential security risks but you still need to run PHP with register_globals ON there are a couple of ways to do it.  </p>
+If you understand the potential security risks but you still need to run PHP with register_globals ON there are a couple of ways to do it.
 
-<p>If you have access to the servers php.ini then its fairly easy, however if you don't have access to that file or if you are not willing to make this change server wide then there are other ways to go about it.</p>
+If you have access to the servers php.ini then its fairly easy, however if you don't have access to that file or if you are not willing to make this change server wide then there are other ways to go about it.
 
 <!--break-->
 
-<h2>php.ini</h2>
+## php.ini
 
-<p>In your servers php.ini simply set.</p>
+In your servers php.ini simply set.
 
-<pre class="brush:plain">
+```
 register_globals=1
-</pre>
+```
 
-<h2>.htaccess</h2>
+## .htaccess
 
-<p>If you don't have access to your servers php.ini file, you may be able to create/edit a .htaccess file in the same folder as your php file.  Simply add this code:</p>
+If you don't have access to your servers php.ini file, you may be able to create/edit a .htaccess file in the same folder as your php file.  Simply add this code:
 
-<pre class="brush:plain">
+```
 php_flag register_globals 1
-</pre>
+```
 
-<h2>coded solution</h2>
+## coded solution
 
-<p>If neither of the solutions above are available to you, then you need to get your hands a little bit dirty.  The following code was submitted to the PHP Manual by Ruquay K Calloway.  Simply add the following to the top of your PHP script: </p>
+If neither of the solutions above are available to you, then you need to get your hands a little bit dirty.  The following code was submitted to the PHP Manual by Ruquay K Calloway.  Simply add the following to the top of your PHP script:
 
-<pre class="brush:php">
-&lt;?php
+```
+<?php
 include('register_globals.php');
 register_globals();
-</pre>
+```
 
-<p>And then add the following into register_globals.php:</p>
+And then add the following into a new file called `register_globals.php`:
 
-<pre class="brush:php">
-&lt;?php
+```php
+<?php
 /**
  * function to emulate the register_globals setting in PHP
  * for all of those diehard fans of possibly harmful PHP settings :-)
@@ -92,5 +91,4 @@ function unregister_globals() {
         }
     }
 }
-?>
-</pre>
+```

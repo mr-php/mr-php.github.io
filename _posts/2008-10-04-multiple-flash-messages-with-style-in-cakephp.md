@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Multiple Flash Messages with Style in CakePHP
-created: 1223123204
 ---
 <p>In this CakePHP tutorial I will explain how to output multiple flash messages.</p>
 <p>This forms a message stack that can be used to inform the user that multiple events have taken place.</p>
@@ -11,7 +10,7 @@ created: 1223123204
 <p>We want to add a method to your app_controller to handle the message stack. Vary it to suit your needs</p>
 <b>app_controller.php</b>
 <pre class="brush:php">
-&lt;?php
+<?php
 class AppController extends Controller {
 	function _flash($message,$type='message') {
 		$messages = (array)$this->Session->read('Message.multiFlash');
@@ -30,7 +29,7 @@ class AppController extends Controller {
 <p>This is just a test action to view your messages.</p>
 <b>controllers/posts_controller.php</b>
 <pre class="brush:php">
-&lt;?php
+<?php
 class PostsController extends AppController {
 	var $name = 'Posts';
 	function admin_index() {
@@ -48,15 +47,15 @@ class PostsController extends AppController {
 <p>We want to display a message to the user for message we set.</p>
 <b>views/layouts/default.php</b>
 <pre class="brush:php; html-script:true">
-&lt;div id="messages">
-&lt;?php
+<div id="messages">
+<?php
 	if ($session->check('Message.flash')) $session->flash(); // the standard messages
 	// multiple messages
 	if ($messages = $session->read('Message.multiFlash')) {
 		foreach($messages as $k=>$v) $session->flash('multiFlash.'.$k);
 	}
 ?>
-&lt;/div>
+</div>
 </pre>
 
 <h2>Some CSS to Make it Pretty</h2>

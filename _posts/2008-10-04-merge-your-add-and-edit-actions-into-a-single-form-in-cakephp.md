@@ -3,15 +3,21 @@ layout: post
 title: Merge your Add and Edit actions into a Single Form in CakePHP
 created: 1223134945
 ---
-<p>This CakePHP example will show you how to merge your Add and Edit forms into a Single Form action.</p>
-<p>This may be of benefit if you have a form with complex controller logic that you don't want to duplicate.</p>
+
+This CakePHP example will show you how to merge your Add and Edit forms into a Single Form action.
+
+This may be of benefit if you have a form with complex controller logic that you don't want to duplicate.
+
 <!--break-->
 
-<h2>The Controller</h2>
-<p>We redirect the add and edit actions to use the form action.</p>
-<b>controllers/posts_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+## The Controller
+
+We redirect the add and edit actions to use the form action.
+
+`controllers/posts_controller.php`
+
+```php
+<?php
 class PostsController extends AppController {
 	var $name = 'Posts';
 
@@ -44,22 +50,24 @@ class PostsController extends AppController {
 		}
 	}
 }
-?>
-</pre>
+```
 
-<h2>The View</h2>
-<p>The view can be copied from your current edit template.</p>
-<b>views/posts/form.ctp</b>
-<pre class="brush:php; html-script:true">
-&lt;?php echo $form->create('Post');?>
-	&lt;fieldset>
- 		&lt;legend>&lt;?php __('Post Details');?>&lt;/legend>
-		&lt;?php
+## The View
+
+The view can be copied from your current edit template.
+
+`views/posts/form.ctp`
+
+```php
+<?php echo $form->create('Post');?>
+	<fieldset>
+ 		<legend><?php __('Post Details');?></legend>
+		<?php
 		echo $form->input('id');
 		echo $form->input('name');
 		echo $form->input('body');
 		echo $form->input('active',array('type'=>'checkbox'));
 		?>
-	&lt;/fieldset>
-&lt;?php echo $form->end('Submit');?>
-</pre>
+	</fieldset>
+<?php echo $form->end('Submit');?>
+```

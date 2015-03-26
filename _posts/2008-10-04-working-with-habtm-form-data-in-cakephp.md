@@ -4,20 +4,21 @@ title: Working with HABTM Form Data in CakePHP
 created: 1223137444
 ---
 I would like to document several speedy ways I have of working with HABTM data.
+
 <!--break-->
-<ul>
-	<li><a href="/code/working-habtm-form-data-cakephp#tables">The Tables</a></li>
-	<li><a href="/code/working-habtm-form-data-cakephp#models">The Models</a></li>
-	<li><a href="/code/working-habtm-form-data-cakephp#habtm_select">HABTM Select</a></li>
-	<li><a href="/code/working-habtm-form-data-cakephp#habtm_checkbox">HABTM Checkbox</a></li>
-	<li><a href="/code/working-habtm-form-data-cakephp#habtm_text_add">HABTM Text Add</a></li>
-	<li><a href="/code/working-habtm-form-data-cakephp#habtm_textarea_edit">HABTM TextArea Edit</a></li>
-    <li><a href="/code/working-habtm-form-data-cakephp#conclusion">Conclusion</a></li>
-</ul>
+
+* <a href="/code/working-habtm-form-data-cakephp#tables">The Tables</a>
+* <a href="/code/working-habtm-form-data-cakephp#models">The Models</a>
+* <a href="/code/working-habtm-form-data-cakephp#habtm_select">HABTM Select</a>
+* <a href="/code/working-habtm-form-data-cakephp#habtm_checkbox">HABTM Checkbox</a>
+* <a href="/code/working-habtm-form-data-cakephp#habtm_text_add">HABTM Text Add</a>
+* <a href="/code/working-habtm-form-data-cakephp#habtm_textarea_edit">HABTM TextArea Edit</a>
+* <a href="/code/working-habtm-form-data-cakephp#conclusion">Conclusion</a>
 
 
 <h2><a name="tables" id="tables"></a>The Tables</h2>
-<pre class="brush:sql">
+
+```sql
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(255) NOT NULL,
@@ -34,18 +35,18 @@ CREATE TABLE `posts_to_tags` (
   `tag_id` int(11) NOT NULL,
   PRIMARY KEY  (`post_id`,`tag_id`)
 );
-</pre>
+```
 
 <h2><a name="models" id="tables2"></a>The Models</h2>
 
 Before we get started, lets setup the models.
 
-<b>models/post.php</b>
-<pre class="brush:php">
-&lt;?php
+`models/post.php`
+
+```php
+<?php
 class Post extends AppModel {
 	var $name = 'Post';
-	
 	var $hasAndBelongsToMany = array(
 		'Tag' => array(
 			'className' => 'Tag',
@@ -55,44 +56,47 @@ class Post extends AppModel {
 			'with' => 'PostToTag',
 		),
 	);	
-	
 }
-</pre>
+```
 
-<b>models/tag.php</b>
-<pre class="brush:php">
-&lt;?php
+`models/tag.php`
+
+```php
+<?php
 class Tag extends AppModel {
 	var $name = 'Tag';
 }
-</pre>
+```
 
 
 <h2><a name="habtm_select" id="habtm_select"></a>HABTM Select</h2>
 
-<p>This is the default CakePHP way of handling HABTM forms.</p>
+This is the default CakePHP way of handling HABTM forms.
 
-<p>It will allow you to add or remove HABTM data using a multiple select box (by holding CTRL).</p>
+It will allow you to add or remove HABTM data using a multiple select box (by holding CTRL).
 
 [inline:habtm-select.jpg]
-<b>views/posts/form.ctp</b>
-<pre class="brush:php">
-&lt;?php echo $form->create('Post',array('url'=>array('action'=>'form')));?>
-	&lt;fieldset>
-		&lt;legend>&lt;?php __('Post Details');?>&lt;/legend>
-		&lt;?php
+
+`views/posts/form.ctp`
+
+```php
+<?php echo $form->create('Post',array('url'=>array('action'=>'form')));?>
+	<fieldset>
+		<legend><?php __('Post Details');?></legend>
+		<?php
 		echo $form->input('id');
 		echo $form->input('name');
 		echo $form->input('body');
 		echo $form->input('Tag.Tag');
 		?>
-	&lt;/fieldset>
-&lt;?php echo $form->end('Submit');?>
-</pre>
+	</fieldset>
+<?php echo $form->end('Submit');?>
+```
 
-<b>controllers/posts_controller.php</b>
-<pre class="brush:php">
-&lt;?php 
+`controllers/posts_controller.php`
+
+```php
+<?php 
 class PostsController extends AppController {
 	var $name = 'Posts';
 	
@@ -119,29 +123,31 @@ class PostsController extends AppController {
 		$this->set(compact('tags'));
 	}
 }
-</pre>
+```
 
 <h2><a name="habtm_checkbox" id="habtm_checkbox"></a>HABTM Checkbox</h2>
 
-<p>If you have too many options to list in a select box, or if the labels in the select options do not suit your needs then you may want to try HABTM Checkbox.</p>
+If you have too many options to list in a select box, or if the labels in the select options do not suit your needs then you may want to try HABTM Checkbox.
 
-<p>It will allow you to add or remove HABTM data using a checkbox for each HABTM item.</p>
+It will allow you to add or remove HABTM data using a checkbox for each HABTM item.
 
 [inline:habtm-checkbox.jpg]
-<b>views/posts/form.ctp</b>
-<pre class="brush:php">
-&lt;?php echo $form->create('Post',array('url'=>array('action'=>'form')));?>
-	&lt;fieldset>
-		&lt;legend>&lt;?php __('Post Details');?>&lt;/legend>
-		&lt;?php
+
+`views/posts/form.ctp`
+
+```php
+<?php echo $form->create('Post',array('url'=>array('action'=>'form')));?>
+	<fieldset>
+		<legend><?php __('Post Details');?></legend>
+		<?php
 		echo $form->input('id');
 		echo $form->input('name');
 		echo $form->input('body');
 		?>
-	&lt;/fieldset>
-	&lt;fieldset>
-		&lt;legend>&lt;?php __('Tags');?>&lt;/legend>
-		&lt;?php
+	</fieldset>
+	<fieldset>
+		<legend><?php __('Tags');?></legend>
+		<?php
 
 		// output all the checkboxes at once
 		echo $form->input('Tag',array(
@@ -165,12 +171,14 @@ class PostsController extends AppController {
 		}
 		*/
 		?>
-	&lt;/fieldset>
-&lt;?php echo $form->end('Submit');?>
-</pre>
-<b>controllers/posts_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+	</fieldset>
+<?php echo $form->end('Submit');?>
+```
+
+`controllers/posts_controller.php`
+
+```php
+<?php
 class PostsController extends AppController {
 	var $name = 'Posts';
 
@@ -202,29 +210,31 @@ class PostsController extends AppController {
 		$this->set(compact('tags'));
 	}
 }
-</pre>
+```
 
 <h2><a name="habtm_text_add" id="habtm_text_add"></a>HABTM Text Add</h2>
 
-<p>If you want to allow users to enter tags that are added to the current tags.</p>
+If you want to allow users to enter tags that are added to the current tags.
 
-<p>It will allow you to add but not remove HABTM data using a text input with comma seperated values.</p>
+It will allow you to add but not remove HABTM data using a text input with comma seperated values.
 
 [inline:habtm-textadd.jpg]
-<b>views/posts/form.ctp</b>
-<pre class="brush:php">
-&lt;?php echo $form->create('Post',array('url'=>array('action'=>'form')));?>
-	&lt;fieldset>
- 		&lt;legend>&lt;?php __('Post Details');?>&lt;/legend>
-	&lt;?php
+
+`views/posts/form.ctp`
+
+```php
+<?php echo $form->create('Post',array('url'=>array('action'=>'form')));?>
+	<fieldset>
+ 		<legend><?php __('Post Details');?></legend>
+	<?php
 		echo $form->input('id');
 		echo $form->input('name');
 		echo $form->input('body');
 	?>
-	&lt;/fieldset>
-	&lt;fieldset>
- 		&lt;legend>&lt;?php __('Tags');?>&lt;/legend>
-	&lt;?php
+	</fieldset>
+	<fieldset>
+ 		<legend><?php __('Tags');?></legend>
+	<?php
 		// display current tags
 		$links = array();
 		if ($post['Tag']) {
@@ -232,23 +242,24 @@ class PostsController extends AppController {
 				$links[] = $row['name'];
 			}
 		}
-		echo '&lt;div>';
-		echo __('Current tags',true).':&lt;br/>';
+		echo '<div>';
+		echo __('Current tags',true).':<br/>';
 		echo implode(', ',$links);
-		echo '&lt;/div>';
+		echo '</div>';
 	    echo $form->input('Tag.tags',array(
 			'type' => 'text',
 			'label' => __('Add Tags',true),
 			'after' => __('Seperate each tag with a comma.  Eg: family, sports, icecream',true)
 		));
 	?>
-	&lt;/fieldset>
-&lt;?php echo $form->end('Submit');?>
-</pre>
+	</fieldset>
+<?php echo $form->end('Submit');?>
+```
 
-<b>controllers/posts_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+`controllers/posts_controller.php`
+
+```php
+<?php
 class PostsController extends AppController {
 	var $name = 'Posts';
 
@@ -305,42 +316,46 @@ class PostsController extends AppController {
 		$this->set(compact('post'));
 	}
 }
-</pre>
+```
 
 
 <h2><a name="habtm_textarea_edit" id="habtm_textarea_edit"></a>HABTM TextArea Edit</h2>
 
-<p>Finally, your admin may ask you if they can just edit all of the data as a comma seperated list.</p>
+Finally, your admin may ask you if they can just edit all of the data as a comma separated list.
 
-<p>It will allow you to add and remove HABTM data using a textarea input with comma seperated values.</p>
+It will allow you to add and remove HABTM data using a textarea input with comma separated values.
 
 [inline:habtm-textareaedit.jpg]
-<b>views/posts/form.ctp</b>
-<pre class="brush:php">
-&lt;?php echo $form->create('Post',array('url'=>array('action'=>'form')));?>
-	&lt;fieldset>
- 		&lt;legend>&lt;?php __('Post Details');?>&lt;/legend>
-		&lt;?php
+
+`views/posts/form.ctp`
+
+```php
+<?php echo $form->create('Post',array('url'=>array('action'=>'form')));?>
+	<fieldset>
+ 		<legend><?php __('Post Details');?></legend>
+		<?php
 		echo $form->input('id');
 		echo $form->input('name');
 		echo $form->input('body');
 		?>
-	&lt;/fieldset>
-	&lt;fieldset>
- 		&lt;legend>&lt;?php __('Tags');?>&lt;/legend>
-	&lt;?php
+	</fieldset>
+	<fieldset>
+ 		<legend><?php __('Tags');?></legend>
+	<?php
 	    echo $form->input('Post.tags',array(
 			'type' => 'textarea',
 			'label' => __('Tags',true),
 			'after' => __('Seperate each tag with a comma.  Eg: family, sports, icecream',true)
 		));
 	?>
-	&lt;/fieldset>
-&lt;?php echo $form->end('Submit');?>
-</pre>
-<b>controllers/posts_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+	</fieldset>
+<?php echo $form->end('Submit');?>
+```
+
+`controllers/posts_controller.php`
+
+```php
+<?php
 class PostsController extends AppController {
 	var $name = 'Posts';
 
@@ -396,9 +411,9 @@ class PostsController extends AppController {
 		$this->set(compact('post'));
 	}
 }
-</pre>
+```
 
 
 <h2><a name="conclusion" id="conclusion"></a>Conclusion</h2>
 
-<p>There are many great ways to work with HABTM data, these are just a few examples of what can be done.  Enjoy your CakePHP.</p>
+There are many great ways to work with HABTM data, these are just a few examples of what can be done.  Enjoy your CakePHP.

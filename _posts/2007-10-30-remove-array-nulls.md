@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Remove Array Nulls
-created: 1193738952
 ---
 Recursively removes array keys with null values.
 <!--break-->

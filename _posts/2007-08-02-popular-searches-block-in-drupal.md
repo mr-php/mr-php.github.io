@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Popular Searches Block in Drupal
-created: 1186055629
 ---
 This php code can be used in a drupal block to display the most popular searches on your site.
 

@@ -1,15 +1,15 @@
 ---
 layout: post
 title: Word Permutator Function
-created: 1216958873
 ---
 Give this function a phrase and it will return all of the permutations of the words that make up the phrase.
 
 <!--break-->
 
-<h2>the function</h2>
-<pre class="brush:php">
-&lt;?php
+## the function
+
+```php
+<?php
 function wordperms($phrase,$top='') {
 	$output = array();
 	
@@ -28,12 +28,12 @@ function wordperms($phrase,$top='') {
 	}
 	return $output;	
 }
-?>
-</pre>
+```
 
-<h2>example</h2>
-<pre class="brush:php">
-&lt;?php
+## example
+
+```php
+<?php
 // example
 print_r(wordperms("three word phrase"));
 /*
@@ -56,4 +56,4 @@ Array
     [14] => phrase word three
 )
 */
-</pre>
+```

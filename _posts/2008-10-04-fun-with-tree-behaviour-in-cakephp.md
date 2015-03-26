@@ -3,15 +3,19 @@ layout: post
 title: Fun with Tree Behaviour in CakePHP
 created: 1223140579
 ---
-<p>I had a play with the Tree Behaviour in CakePHP and was very impressed at what you could create with such ease.</p>
+I had a play with the Tree Behaviour in CakePHP and was very impressed at what you could create with such ease.
+
 <!--break-->
 
-<h2>The Models</h2>
-<p>Before we get started, lets setup the models.</p>
-<p>Category needs to have the Tree behaviour, and we also add a new function to count the related Post records.</p>
-<b>models/category.php</b>
-<pre class="brush:php">
-&lt;?php
+## The Models
+
+Before we get started, lets setup the models.
+
+Category needs to have the Tree behaviour, and we also add a new function to count the related Post records.
+
+`models/category.php`
+```php
+<?php
 class Category extends AppModel {
 	var $name = 'Category';
 	var $actsAs = array('Tree');
@@ -37,11 +41,12 @@ class Category extends AppModel {
 
 }
 ?>
-</pre>
+```
 
-<b>models/post.php</b>
-<pre class="brush:php">
-&lt;?php
+`models/post.php`
+
+```php
+<?php
 class Post extends AppModel {
 	var $name = 'Post';
     var $belongsTo = array(
@@ -52,14 +57,18 @@ class Post extends AppModel {
 	);
 }
 ?>
-</pre>
+```
 
-<h2>Setting Up the Data</h2>
-<p>If you are like me, you probably already have your categories in a table with a parent_id style hierarchy.</p>
-<p>In order to get started you need to add a lft and rght column to the table, and then populate the fields.  Luckily there is an easy way to do this.</p>
-<b>controllers/categories_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+## Setting Up the Data
+
+If you are like me, you probably already have your categories in a table with a parent_id style hierarchy.
+
+In order to get started you need to add a lft and rght column to the table, and then populate the fields.  Luckily there is an easy way to do this.
+
+`controllers/categories_controller.php`
+
+```php
+<?php
 class CategoriesController extends AppController {
 	var $name = 'Categories';
 	function recover() {
@@ -69,14 +78,16 @@ class CategoriesController extends AppController {
 		echo 'recovery completed...';
 	}
 }
-?>
-</pre>
+``
 
-<h2>Finding Your Data</h2>
-<p>It is now very easy to get your data, and also very light on the database.</p>
-<b>controllers/categories_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+## Finding Your Data
+
+It is now very easy to get your data, and also very light on the database.
+
+`controllers/categories_controller.php`
+
+```php
+<?php
 class CategoriesController extends AppController {
 	var $name = 'Categories';
 
@@ -117,5 +128,4 @@ class CategoriesController extends AppController {
 		debug($postCount); 
 	}
 }
-?>
-</pre>
+```

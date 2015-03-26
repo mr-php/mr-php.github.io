@@ -1,13 +1,14 @@
 ---
 layout: post
 title: Attach Comments to Any Model in CakePHP
-created: 1223139210
 ---
-<p>This method of linking models allows you to have a single table of data, say Comment, that is related to any one of a number of other Models (eg: Post, Event).</p>
+This method of linking models allows you to have a single table of data, say Comment, that is related to any one of a number of other Models (eg: Post, Event).
+
 <!--break-->
 
-<h2>The Tables</h2>
-<pre class="brush:sql">
+## The Tables
+
+```sql
 CREATE TABLE IF NOT EXISTS `comments` (
   `id` int(11) NOT NULL auto_increment,
   `class` varchar(128) NOT NULL,
@@ -26,21 +27,25 @@ CREATE TABLE IF NOT EXISTS `events` (
   `name` varchar(255) NOT NULL,
   PRIMARY KEY  (`id`)
 );
-</pre>
+```
 
-<h2>The Models</h2>
-<p>Before we get started, lets setup the models.</p>
-<b>models/comment.php</b>
-<pre class="brush:php">
-&lt;?php
+## The Models
+
+Before we get started, lets setup the models.
+
+`models/comment.php`
+
+```php
+<?php
 class Comment extends AppModel {
 	var $name = 'Comment';
 }
-</pre>
+```
 
-<b>models/post.php</b>
-<pre class="brush:php">
-&lt;?php
+`models/post.php`
+
+```php
+<?php
 class Post extends AppModel {
 	var $name = 'Post';
 	var $hasMany = array(
@@ -51,11 +56,12 @@ class Post extends AppModel {
 		),
 	);
 }
-</pre>
+```
 
-<b>models/event.php</b>
-<pre class="brush:php">
-&lt;?php
+`models/event.php`
+
+```php
+<?php
 class Event extends AppModel {
 	var $name = 'Event';
 	var $hasMany = array(
@@ -66,31 +72,36 @@ class Event extends AppModel {
 		),
 	);
 }
-</pre>
+```
 
-<h2>The View</h2>
-<b>views/posts/view.ctp</b>
-<pre class="brush:php">
-&lt;h2>&lt;?php __('Post Details');?>&lt;/h2>
-&lt;?php debug($post); ?>
+## The View
 
-&lt;?php echo $form->create('Comment',array('url'=>array('controller'=>'posts','action'=>'view',$post['Post']['id'])));?>
-	&lt;fieldset>
-		&lt;legend>&lt;?php __('Add Comment');?>&lt;/legend>
-	&lt;?php
+`views/posts/view.ctp`
+
+```php
+<h2><?php __('Post Details');?></h2>
+<?php debug($post); ?>
+
+<?php echo $form->create('Comment',array('url'=>array('controller'=>'posts','action'=>'view',$post['Post']['id'])));?>
+	<fieldset>
+		<legend><?php __('Add Comment');?></legend>
+	<?php
 		echo $form->input('Comment.name');
 		echo $form->input('Comment.body');
 	?>
-	&lt;/fieldset>
-&lt;?php echo $form->end('Submit');?>
-</pre>
+	</fieldset>
+<?php echo $form->end('Submit');?>
+```
 
 
-<h2>The Controller</h2>
-<p>Now to save the data.</p>
-<b>controllers/posts_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+## The Controller
+
+Now to save the data.
+
+`controllers/posts_controller.php`
+
+```php
+<?php
 class PostsController extends AppController {
 	var $name = 'Posts';
 
@@ -117,7 +128,8 @@ class PostsController extends AppController {
 		$this->set(compact('post'));
 	}
 }
-</pre>
+```
 
-<h2>In Conclusion</h2>
-<p>That's all there is to it, now you can save comments related to any other model record!</p>
+## In Conclusion
+
+That's all there is to it, now you can save comments related to any other model record!

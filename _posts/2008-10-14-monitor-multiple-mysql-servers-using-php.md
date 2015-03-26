@@ -3,17 +3,17 @@ layout: post
 title: Monitor Multiple MySQL Servers using PHP
 created: 1223981569
 ---
-<p>This is a quick 1 page application to monitor your replicated MySQL servers.</p>
+This is a quick 1 page application to monitor your replicated MySQL servers.
 
-<p>Use it as you will.  Enjoy!</p>
+Use it as you will.  Enjoy!
 
 <!--break-->
 
 
-<h2>The Code</h2>
+## The Code
 
-<pre class="brush:php; html-script:true">
-&lt;?php
+```php
+<?php
 
 $level = (int)$_GET['level'];
 $refresh = (int)$_GET['refresh'];
@@ -22,13 +22,13 @@ function printServer($host,$user,$pass,$level=0){
 	$db = mysql_connect($host,$user,$pass,true);
 	mysql_select_db('factory_cre',$db);
 
-	echo '&lt;div class="server">';
-	echo '&lt;h2>'.$ip.'&lt;/h2>';
+	echo '<div class="server">';
+	echo '<h2>'.$ip.'</h2>';
 
 	// Slave Status	
 	$stats = mysql_fetch_assoc(mysql_query('SHOW SLAVE STATUS',$db));
-	echo '&lt;h3>Slave Status&lt;/h3>';
-	echo '&lt;dl>';
+	echo '<h3>Slave Status</h3>';
+	echo '<dl>';
 	foreach($stats as $label=>$field) {
 		$class = array();
 		switch($label) {
@@ -49,47 +49,47 @@ function printServer($host,$user,$pass,$level=0){
 					$class[]="error";
 				break;
 		}
-		echo '&lt;dt>'.$label.'&lt;/dt>&lt;dd class="'.implode(' ',$class).'">'.str_replace(',',', ',$field).'&lt;/dd>';
+		echo '<dt>'.$label.'</dt><dd class="'.implode(' ',$class).'">'.str_replace(',',', ',$field).'</dd>';
 	}
-	echo '&lt;/dl>';
+	echo '</dl>';
 
 	// Master Status	
 	$stats = mysql_fetch_assoc(mysql_query('SHOW MASTER STATUS',$db));
-	echo '&lt;h3>Master Status&lt;/h3>';
-	echo '&lt;dl>';
+	echo '<h3>Master Status</h3>';
+	echo '<dl>';
 	foreach($stats as $label=>$field) {
 		$class = array();
-		echo '&lt;dt>'.$label.'&lt;/dt>&lt;dd class="'.implode(' ',$class).'">'.str_replace(',',', ',$field).'&lt;/dd>';
+		echo '<dt>'.$label.'</dt><dd class="'.implode(' ',$class).'">'.str_replace(',',', ',$field).'</dd>';
 	}
-	echo '&lt;/dl>';
+	echo '</dl>';
 
 	// Server Status	
 	if ($level>0){
 		$stats = mysql_query('show status',$db);
-		echo '&lt;h3>Server Status&lt;/h3>';
-		echo '&lt;dl>';
+		echo '<h3>Server Status</h3>';
+		echo '<dl>';
 		while($row = mysql_fetch_assoc($stats)) {
 			$class = array();
-			echo '&lt;dt class="'.implode(' ',$class).'">'.$row['Variable_name'].'&lt;/dt>&lt;dd class="'.implode(' ',$class).'">'.$row['Value'].'&lt;/dd>';
+			echo '<dt class="'.implode(' ',$class).'">'.$row['Variable_name'].'</dt><dd class="'.implode(' ',$class).'">'.$row['Value'].'</dd>';
 		}
-		echo '&lt;/dl>';
+		echo '</dl>';
 	}
 
 	mysql_close($db);
-	echo '&lt;/div>';
+	echo '</div>';
 }
 
 ?>
-&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-&lt;html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 
-&lt;head>
-	&lt;meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
-	&lt;?php if($refresh): ?>
-		&lt;meta http-equiv="refresh" content="&lt;?php echo $refresh; ?>">
-	&lt;?php endif; ?>
-	&lt;title>MySQL Server Replication Status 2&lt;/title>
-	&lt;style>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+	<?php if($refresh): ?>
+		<meta http-equiv="refresh" content="<?php echo $refresh; ?>">
+	<?php endif; ?>
+	<title>MySQL Server Replication Status 2</title>
+	<style>
 	body {
 		font-family: Arial;
 		font-size: 78%;
@@ -136,24 +136,21 @@ function printServer($host,$user,$pass,$level=0){
 		border-bottom: 1px solid #77BBBF;
 		min-height: 1em;
 	}	
-	&lt;/style>
-&lt;/head>
+	</style>
+</head>
 
-&lt;body>
+<body>
 
-	&lt;h1>MySQL Replication Status&lt;/h1>
-	&lt;a href="?refresh=0">Refresh off&lt;/a>
-	| &lt;a href="?refresh=5">Refresh 5&lt;/a>
-	| &lt;a href="?refresh=30">Refresh 30&lt;/a>
-	| &lt;a href="?level=1">Expert&lt;/a>
+	<h1>MySQL Replication Status</h1>
+	<a href="?refresh=0">Refresh off</a>
+	| <a href="?refresh=5">Refresh 5</a>
+	| <a href="?refresh=30">Refresh 30</a>
+	| <a href="?level=1">Expert</a>
 
-	&lt;?php printServer('123.123.123.1','enter-server-1-username','enter-server-1-password',$level); ?>
-	&lt;?php printServer('123.123.123.2','enter-server-2-username','enter-server-2-password',$level); ?>
-	&lt;div class="clear">&lt;/div>
+	<?php printServer('123.123.123.1','enter-server-1-username','enter-server-1-password',$level); ?>
+	<?php printServer('123.123.123.2','enter-server-2-username','enter-server-2-password',$level); ?>
+	<div class="clear"></div>
 
-&lt;/body>
-&lt;/html>
-</pre>
-
-<h2>How It Looks</h2>
-[inline:monitor-multiple-mysql-servers-php.jpg]
+</body>
+</html>
+```

@@ -1,20 +1,20 @@
 ---
 layout: post
 title: Cache Function for PHP
-created: 1275307944
+github_url: https://github.com/cornernote/php-cache-function
 ---
-<p>This is a fantastic function that will allow you to cache your data.  By default it will cache using memcache, however if you do not have memcache installed or a connection cannot be achieved it will fall back to file based cache.</p>
+This is a fantastic function that will allow you to cache your data.  By default it will cache using memcache, however if you do not have memcache installed or a connection cannot be achieved it will fall back to file based cache.
 
-<p>The single function supports cache read, cache write, cache clear key and cache clear all.  The cached data can be given an expirey time so that your data does not become stale.</p>
+The single function supports cache read, cache write, cache clear key and cache clear all.  The cached data can be given an expirey time so that your data does not become stale.
 
-<p>Usage is very simple and the performance results of caching using memcache are fantastic.</p>
+Usage is very simple and the performance results of caching using memcache are fantastic.
 
 <!--break-->
 
-<h2>Example Usage</h2>
+## Example Usage
 
-<pre class="brush:php">
-&lt;?php
+```php
+<?php
 require('cache.php');
 
 // start the page timer to see how much time we saved
@@ -55,16 +55,16 @@ function microtime_float() {
 	return ((float)$usec + (float)$sec);
 }
 function debug($debug) {
-	echo '&lt;pre>';
+	echo '<pre>';
 	print_r($debug);
-	echo '&lt;/pre>';
+	echo '</pre>';
 }
-</pre>
+```
 
-<h2>The Function</h2>
+## The Function
 
-<pre class="brush:php">
-&lt;?php
+```php
+<?php
 
 // prevent conflicts between different applications using the same memcache server
 define('CACHE_NAMESPACE','my-cache-namespace');
@@ -127,7 +127,7 @@ function cache($key,$value=null,$expires='+1 year'){
 		// read cache
 		if ($value===null) {
 			$time = $memcache->get($file.'.time');
-			if (!$expires || $time &lt;= $now) {
+			if (!$expires || $time <= $now) {
 				$memcache->delete($file.'.time');
 				$memcache->delete($file.'.data');
 			}
@@ -151,7 +151,7 @@ function cache($key,$value=null,$expires='+1 year'){
 		if ($value===null) {
 			if (file_exists($file)) {
 				$result = unserialize(file_get_contents($file));
-				if (!$expires || $result['time'] &lt;= $now) {
+				if (!$expires || $result['time'] <= $now) {
 					@unlink($file);
 				}
 				else {
@@ -171,6 +171,4 @@ function cache($key,$value=null,$expires='+1 year'){
 	// return the data
 	return $value;
 }
-</pre>
-
-<h2><a href="https://github.com/cornernote/php-cache-function">Fork me on GitHub</a></h2>
+```

@@ -1,16 +1,16 @@
 ---
 layout: post
 title: MySQL Backup Script
-created: 1210754583
 ---
 Here is what I use to make a backup library of MySQL daily that will keep backups for 30 days.
 
 <!--break-->
 
-<h2>MySQL Backup Script</h2>
+## MySQL Backup Script
 
-<b>mysql_backup.sh</b>
-<pre class="brush:bash">
+`mysql_backup.sh`
+
+```bash
 #!/bin/sh
 
 #
@@ -37,12 +37,13 @@ ${MYSQLDUMP} --flush-logs -h${DBHOST} -u${DBUSER} -p${DBPASS} --databases ${DBNA
 
 # delete old backups
 ${FIND} ${BACKUPDIR} -mtime +${BACKUPDAYS} -delete -print
-</pre>
+```
 
-<h2>MySQL Backup Script with MyDumper</h2>
+## MySQL Backup Script with MyDumper
 
 Similar script using the <a href="http://dammit.lt/2009/02/03/mydumper/">super fast mysql backup script <b>mydumper</b></a> by Doomas Mituzas which will backup each table to its own compressed file using multiple threads:
-<pre class="brush:bash">
+
+```bash
 #!/bin/sh
 
 #
@@ -65,4 +66,4 @@ ${MYDUMPER} -t 4 -o ${BACKUPDIR}${BACKUPFOLDER} -c
 
 # delete old backups
 ${FIND} ${BACKUPDIR} -mtime +${BACKUPDAYS} -print -exec rm {} \;
-</pre>
+```

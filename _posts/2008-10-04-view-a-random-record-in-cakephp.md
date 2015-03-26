@@ -1,15 +1,19 @@
 ---
 layout: post
 title: View a Random Record in CakePHP
-created: 1223134092
 ---
-<p>This is a simple action to display a random record.  Possibly useful for sites wanting to keep people clicking on something.</p>
+This is a simple action to display a random record.  Possibly useful for sites wanting to keep people clicking on something.
+
 <!--break-->
-<h2>The Controller</h2>
-<p>We find a random record, and then we reuse the current view action and template.</p>
-<b>controllers/posts_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+
+## The Controller
+
+We find a random record, and then we reuse the current view action and template.
+
+`controllers/posts_controller.php`
+
+```php
+<?php
 class PostsController extends AppController {
 	var $name = 'Posts';
 
@@ -25,4 +29,4 @@ class PostsController extends AppController {
 		$this->render('view');
 	}
 }
-</pre>
+```

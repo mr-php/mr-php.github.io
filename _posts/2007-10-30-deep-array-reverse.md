@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Deep Array Reverse
-created: 1193739052
 ---
 Recursively reverses a multi-depth array.
 

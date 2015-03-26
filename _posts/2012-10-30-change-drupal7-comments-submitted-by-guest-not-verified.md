@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Change Drupal7 Comments - Submitted by Guest (not verified)
-created: 1351594408
 ---
-<p>By default, if an anonymous user comments on some content in your drupal site, your comments box will show something like <strong>Submitted by Guest (not verified)</strong>.  The user may have left a username, so we would like to use that instead.</p>
+By default, if an anonymous user comments on some content in your drupal site, your comments box will show something like <strong>Submitted by Guest (not verified)</strong>.  The user may have left a username, so we would like to use that instead.
 
-<p>In your theme's <code>template.php</code>, add this function:</p>
+<!--break-->
 
-<pre class="brush:php">
+In your theme's `template.php`, add this function:
+
+```php
+<?php
 function yourtheme_username($variables) {
   $variables['extra'] = trim(str_replace('(not verified)','',$variables['extra']));
   if ($variables['account']->uid==0) {
@@ -17,4 +19,4 @@ function yourtheme_username($variables) {
   }
   return theme_username($variables);
 }
-</pre>
+```

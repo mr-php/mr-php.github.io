@@ -3,20 +3,21 @@ layout: post
 title: Prevent Cron Task Overlap in CakePHP
 ---
 
-<p>If you have a task that runs every 5 minutes, and it takes more than 5 minutes to run then the next task will start causing even more server load.  This effect may stack up and eventually cause your server to come to a grinding halt.  For this reason it is very important that your scheduled tasks do not overlap.</p>
+If you have a task that runs every 5 minutes, and it takes more than 5 minutes to run then the next task will start causing even more server load.  This effect may stack up and eventually cause your server to come to a grinding halt.  For this reason it is very important that your scheduled tasks do not overlap.
 
 <!--break-->
 
-<p>I have created a Component for CakePHP that will create a lock file containing a process ID.  If the task tries to run while another instance is already running the Component will cause the script to exit instead of attempting to run the task again.  This provides a safe way to run the scheduled tasks at very short intervals with no risk of overlaps.</p>
+I have created a Component for CakePHP that will create a lock file containing a process ID.  If the task tries to run while another instance is already running the Component will cause the script to exit instead of attempting to run the task again.  This provides a safe way to run the scheduled tasks at very short intervals with no risk of overlaps.
 
 
-<h2>Prevent Cron Overlaps in your Controllers</h2>
+## Prevent Cron Overlaps in your Controllers
 
-<p>Simply pass the actions that you want to lock when you declare the Component.  If the action is already running then the script will exit before executing any code in your action.</p>
+Simply pass the actions that you want to lock when you declare the Component.  If the action is already running then the script will exit before executing any code in your action.
 
-<b>app/controller/posts_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+`app/controller/posts_controller.php`
+
+```php
+<?php
 class PostsController extends AppController {
 	var $name = 'Posts';
 	var $components = array('Lock'=>array('cron'));
@@ -28,16 +29,17 @@ class PostsController extends AppController {
 	}
 
 }
-</pre>
+```
 
 
-<h2>Prevent Cron Overlaps in your Shells</h2>
+## Prevent Cron Overlaps in your Shells
 
-<p>The preferred way to run your cron jobs is using CakePHP Shells.  You will however have to include the Component in your Shell class or Task class aswell as calling the lock() method before any other code executes.</p>
+The preferred way to run your cron jobs is using CakePHP Shells.  You will however have to include the Component in your Shell class or Task class aswell as calling the lock() method before any other code executes.
 
-<b>app/vendors/shells/my.php</b>
-<pre class="brush:php">
-&lt;?php 
+`app/vendors/shells/my.php
+
+```php
+<?php 
 App::import('Core', 'Controller');
 App::import('Component', 'Lock');
 
@@ -54,14 +56,15 @@ class MyShell extends Shell {
 	}
 
 }
-</pre>
+```
 
 
-<h2>The Component</h2>
+## The Component
 
-<b>app/controllers/components/lock.php</b>
-<pre class="brush:php">
-&lt;?php
+`app/controllers/components/lock.php`
+
+```php
+<?php
 class LockComponent extends Object {
 	var $actions;
 	var $controller;
@@ -113,4 +116,4 @@ class LockComponent extends Object {
 	}
 
 }
-</pre>
+```

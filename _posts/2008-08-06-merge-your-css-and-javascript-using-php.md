@@ -1,21 +1,24 @@
 ---
 layout: post
 title: Merge Your CSS and JavaScript Using PHP
-created: 1218041290
 ---
-<p>Merge all of your CSS and JS into one file to improve server speed.</p>
+Merge all of your CSS and JS into one file to improve server speed.
 
 <!--break-->
 
-<h3>Inside the body tags on your pages</h3>
-<pre class="brush:php; html-script:true">
-&lt;link href="css/css.php?set=&lt;?php echo base64_encode(serialize(array('screen','index','boxes'))); ?>" rel="stylesheet" type="text/css" />
-&lt;script language="javascript" type="text/javascript" src="js/js.php?set=&lt;?php echo base64_encode(serialize(array('general','popup','tooltip'))); ?>">&lt;/script>
-</pre>
+## Inside the body tags on your pages
 
-<h3>yoursite.com/css/css.php</h3>
-<pre class="brush:php">
-&lt;?php 
+```php
+<link href="css/css.php?set=<?php echo base64_encode(serialize(array('screen','index','boxes'))); ?>" rel="stylesheet" type="text/css" />
+<script language="javascript" type="text/javascript" src="js/js.php?set=<?php echo base64_encode(serialize(array('general','popup','tooltip'))); ?>"></script>
+```
+
+## CSS Loader
+
+Create a file called `yoursite.com/css/css.php`:
+
+```php
+<?php 
 header("Content-type: text/css");
 if(isset($_GET['set'])) {
 	$files = unserialize(base64_decode($_GET['set']));
@@ -27,11 +30,14 @@ if(isset($_GET['set'])) {
 	}
 	echo implode("\n",$data);	
 }
-</pre>
+```
 
-<h3>yoursite.com/js/js.php</h3>
-<pre class="brush:php">
-&lt;?php 
+## JS Loader
+
+Create a file called `yoursite.com/js/js.php`:
+
+```php
+<?php 
 if(isset($_GET['set'])) {
 	$files = unserialize(base64_decode($_GET['set']));
 	if (!empty($files)) {
@@ -42,4 +48,4 @@ if(isset($_GET['set'])) {
 	}
 	echo implode("\n",$data);	
 }
-</pre>
+```

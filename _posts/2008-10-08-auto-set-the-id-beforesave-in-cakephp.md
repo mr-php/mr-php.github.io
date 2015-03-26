@@ -1,18 +1,16 @@
 ---
 layout: post
 title: Auto-Set the ID beforeSave in CakePHP
-created: 1223460587
 ---
-<p>In this quick snippet of code I will be setting the ID of a model based on other fields given.</p>
+In this quick snippet of code I will be setting the ID of a model based on other fields given.
 
-<p>We want to save a note about each Post that is different for every Client, however we do not want to have to get the ID every time we save the data. </p>
+We want to save a note about each Post that is different for every Client, however we do not want to have to get the ID every time we save the data.
 
 <!--break-->
 
+## The Tables
 
-<h2>The Tables</h2>
-
-<pre class="brush:sql">
+```sql
 CREATE TABLE IF NOT EXISTS `clients_to_posts` (
   `id` int(11) NOT NULL auto_increment,
   `client_id` int(11) NOT NULL,
@@ -20,14 +18,15 @@ CREATE TABLE IF NOT EXISTS `clients_to_posts` (
   PRIMARY KEY  (`id`),
   UNIQUE KEY `clientpost` (`client_id`,`post_id`)
 );
-</pre>
+```
 
 
-<h2>The Models</h2>
+## The Models
 
-<b>models/post.php</b>
-<pre class="brush:php">
-&lt;?php
+`models/post.php`
+
+```php
+<?php
 class Post extends AppModel {
 	var $name = 'Post';
 
@@ -39,11 +38,12 @@ class Post extends AppModel {
 	);
 }
 ?>
-</pre>
+```
 
-<b>models/client_to_post.php</b>
-<pre class="brush:php">
-&lt;?php
+`models/client_to_post.php`
+
+```php
+<?php
 class ClientToPost extends AppModel {
 	var $name = 'ClientToPost';
 	var $useTable = 'clients_to_posts';
@@ -93,15 +93,16 @@ class ClientToPost extends AppModel {
 	}
 	
 }
-</pre>
+```
 
 
 
-<h2>The Controller</h2>
+## The Controller
 
-<b>controllers/posts_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+`controllers/posts_controller.php`
+
+```php
+<?php
 class PostsController extends AppController
 	var $name = 'Posts';
 
@@ -127,4 +128,4 @@ class PostsController extends AppController
 		$this->Post->ClientToPost->save($data);
 	}	
 }
-</pre>
+```

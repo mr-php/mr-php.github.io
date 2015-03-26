@@ -14,6 +14,7 @@ The thumb will be stored on your server at `your.com/thumbs/50x50/images/image.j
 About a year ago I came across a fantastic script called phpThumb.  It is an open source project used to resize images.  Sure you can do the same thing with tools such as GD2 or imagemagick (or magickwand), however its much nicer to not have to worry about those things and just focus on getting the right image with ease.
 
 It was as easy as
+
 ```html
 <img src="/phpthumb/phpThumb.php?src=myimage.jpg&w=100&h=100">
 ```

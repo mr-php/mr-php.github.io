@@ -1,16 +1,18 @@
 ---
 layout: post
 title: Admin Editable Settings and Theme in CakePHP
-created: 1223144647
 ---
-<p>Usually the client will request for me to give them a way to edit simple settings in their application.</p>
-<p>I decided to read all the variables from the database in the beforeFilter to make them available in any controller.</p>
+
+Usually the client will request for me to give them a way to edit simple settings in their application.
+I decided to read all the variables from the database in the beforeFilter to make them available in any controller.
 
 <!--break-->
 
-<h2>The Tables</h2>
-<b>settings</b>
-<pre class="brush:sql">
+## The Tables
+
+`settings`
+
+```sql
 CREATE TABLE IF NOT EXISTS `settings` (
   `id` int(11) NOT NULL auto_increment,
   `name` varchar(255) NOT NULL,
@@ -30,23 +32,29 @@ INSERT INTO `settings` (`id`, `name`, `description`, `category`, `setting`, `val
 (6, 'Delivery', 'Delivery method.  Valid options are: mail, smtp or debug.', 'smtp', 'delivery', 'debug', NOW(), NOW()),
 (7, 'Username', 'SMTP Username.', 'smtp', 'username', NULL, NOW(), NOW()),
 (8, 'Password', 'SMTP Password.', 'smtp', 'password', NULL, NOW(), NOW());
-</pre>
+```
 
-<h2>The Models</h2>
-<p>Before we get started, lets setup the models.</p>
-<b>models/setting.php</b>
-<pre class="brush:php">
-&lt;?php
+## The Models
+
+Before we get started, lets setup the models.
+
+`models/setting.php`
+
+```php
+<?php
 class Setting extends AppModel {
 	var $name = 'Setting';
 }
-</pre>
+```
 
-<h2>The Controller</h2>
-<p>The app_controller will do the work of setting the Settings and the Theme.</p>
-<b>app_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+## The Controller
+
+The app_controller will do the work of setting the Settings and the Theme.
+
+`app_controller.php`
+
+```php
+<?php
 class AppController extends Controller {
 	var $view = 'Theme'; // important for theming
 
@@ -81,12 +89,14 @@ class AppController extends Controller {
 	}
 
 }
-</pre>
+```
 
-<p>The settings controller handles the administration of the settings.</p>
-<b>controllers/settings_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+The settings controller handles the administration of the settings.
+
+`controllers/settings_controller.php`
+
+```php
+<?php
 class SettingsController extends AppController{
 	var $name = 'Settings';
 	var $multiActions = array('admin_multi_delete');
@@ -146,34 +156,36 @@ class SettingsController extends AppController{
 	}
 	
 }
-</pre>
+```
 
-<h2>The Views</h2>
-<b>views/settings/admin_index.ctp</b>
-<pre class="brush:php; html-script:true">
-&lt;div class="actions">
-	&lt;ul>
-		&lt;li>&lt;?php echo $html->link(__('New Setting', true), array('action'=>'add')); ?>&lt;/li>
-	&lt;/ul>
-&lt;/div>
+## The Views
 
-&lt;div class="settings index">
+`views/settings/admin_index.ctp`
 
-	&lt;h2>&lt;?php __('Settings');?>&lt;/h2>
+```php
+<div class="actions">
+	<ul>
+		<li><?php echo $html->link(__('New Setting', true), array('action'=>'add')); ?></li>
+	</ul>
+</div>
+
+<div class="settings index">
+
+	<h2><?php __('Settings');?></h2>
 	
-	&lt;?php echo $form->create('Setting',array('id'=>'SettingListForm','url'=>array('controller'=>'settings','action'=>'multi')));?>
-	&lt;table cellpadding="0" cellspacing="0" class="listTable">
-		&lt;tr>
-			&lt;th>&lt;span class="select_all">a&lt;/span>|&lt;span class="select_none">n&lt;/span>&lt;/th>
-			&lt;th>&lt;?php echo $paginator->sort('id');?>&lt;/th>
-			&lt;th>&lt;?php echo $paginator->sort('name');?>&lt;/th>
-			&lt;th>&lt;?php echo $paginator->sort('category');?>&lt;/th>
-			&lt;th>&lt;?php echo $paginator->sort('setting');?>&lt;/th>
-			&lt;th>&lt;?php echo $paginator->sort('value');?>&lt;/th>
-			&lt;th>&lt;?php echo $paginator->sort('modified');?>&lt;/th>
-			&lt;th class="actions">&lt;?php __('Actions');?>&lt;/th>
-		&lt;/tr>
-		&lt;?php
+	<?php echo $form->create('Setting',array('id'=>'SettingListForm','url'=>array('controller'=>'settings','action'=>'multi')));?>
+	<table cellpadding="0" cellspacing="0" class="listTable">
+		<tr>
+			<th><span class="select_all">a</span>|<span class="select_none">n</span></th>
+			<th><?php echo $paginator->sort('id');?></th>
+			<th><?php echo $paginator->sort('name');?></th>
+			<th><?php echo $paginator->sort('category');?></th>
+			<th><?php echo $paginator->sort('setting');?></th>
+			<th><?php echo $paginator->sort('value');?></th>
+			<th><?php echo $paginator->sort('modified');?></th>
+			<th class="actions"><?php __('Actions');?></th>
+		</tr>
+		<?php
 		$i = 0;
 		foreach ($settings as $setting):
 			$class = null;
@@ -181,61 +193,62 @@ class SettingsController extends AppController{
 				$class = ' class="altrow"';
 			}
 		?>
-			&lt;tr&lt;?php echo $class;?>>
-				&lt;td>
-					&lt;?php echo $form->input($setting['Setting']['id'],array(
+			<tr<?php echo $class;?>>
+				<td>
+					<?php echo $form->input($setting['Setting']['id'],array(
 						'type'=>'checkbox',
 						'label'=>false,
 						'name'=>'record['.$setting['Setting']['id'].']',
 						'id'=>'listRecord_'.$setting['Setting']['id'],
 					)); ?>
-				&lt;/td>
-				&lt;td>
-					&lt;?php echo $setting['Setting']['id']; ?>
-				&lt;/td>
-				&lt;td>
-					&lt;?php echo $setting['Setting']['name']; ?>
-				&lt;/td>
-				&lt;td>
-					&lt;?php echo $setting['Setting']['category']; ?>
-				&lt;/td>
-				&lt;td>
-					&lt;?php echo $setting['Setting']['setting']; ?>
-				&lt;/td>
-				&lt;td>
-					&lt;?php echo $setting['Setting']['value']; ?>
-				&lt;/td>
-				&lt;td>
-					&lt;?php echo $setting['Setting']['modified']; ?>
-				&lt;/td>
-				&lt;td class="actions">
-					&lt;?php echo $html->link(__('Edit', true), array('action'=>'edit', $setting['Setting']['id'])); ?>
-				&lt;/td>
-			&lt;/tr>
-		&lt;?php endforeach; ?>
-	&lt;/table>
+				</td>
+				<td>
+					<?php echo $setting['Setting']['id']; ?>
+				</td>
+				<td>
+					<?php echo $setting['Setting']['name']; ?>
+				</td>
+				<td>
+					<?php echo $setting['Setting']['category']; ?>
+				</td>
+				<td>
+					<?php echo $setting['Setting']['setting']; ?>
+				</td>
+				<td>
+					<?php echo $setting['Setting']['value']; ?>
+				</td>
+				<td>
+					<?php echo $setting['Setting']['modified']; ?>
+				</td>
+				<td class="actions">
+					<?php echo $html->link(__('Edit', true), array('action'=>'edit', $setting['Setting']['id'])); ?>
+				</td>
+			</tr>
+		<?php endforeach; ?>
+	</table>
 	
-	&lt;?php echo $form->end();?>
-	&lt;?php echo $this->renderElement('paging');?>
+	<?php echo $form->end();?>
+	<?php echo $this->renderElement('paging');?>
 	
-&lt;/div>
-</pre>
+</div>
+```
 
 
-<b>views/settings/admin_form.ctp</b>
-<pre class="brush:php; html-script:true">
-&lt;div class="actions">
-	&lt;ul>
-		&lt;li>&lt;?php echo $html->link(__('List Settings', true), array('action'=>'index'));?>&lt;/li>
-	&lt;/ul>
-&lt;/div>
+`views/settings/admin_form.ctp`
 
-&lt;div class="settings form">
-	&lt;h2>&lt;?php __('Edit Setting');?>&lt;/h2>
-	&lt;?php echo $form->create('Setting');?>
-		&lt;fieldset>
-	 		&lt;legend>&lt;?php __('Setting Details');?>&lt;/legend>
-		&lt;?php
+```php
+<div class="actions">
+	<ul>
+		<li><?php echo $html->link(__('List Settings', true), array('action'=>'index'));?></li>
+	</ul>
+</div>
+
+<div class="settings form">
+	<h2><?php __('Edit Setting');?></h2>
+	<?php echo $form->create('Setting');?>
+		<fieldset>
+	 		<legend><?php __('Setting Details');?></legend>
+		<?php
 			echo $form->input('id');
 			echo $form->input('name');
 			echo $form->input('description');
@@ -243,7 +256,7 @@ class SettingsController extends AppController{
 			echo $form->input('setting');
 			echo $form->input('value');
 		?>
-		&lt;/fieldset>
-	&lt;?php echo $form->end('Submit');?>
-&lt;/div>
-</pre>
+		</fieldset>
+	<?php echo $form->end('Submit');?>
+</div>
+```

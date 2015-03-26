@@ -1,27 +1,22 @@
 ---
 layout: post
 title: 2-Way MySQL Replication
-created: 1208350010
 ---
+
 Some notes and commands I want to keep handy the next time I setup MySQL replication.
+
 <!--break-->
 
-<h2>Pre-Setup Information</h2>
-<ul>
-<li>
-Make sure both server have exactly the same MySQL version.
-</li>
-<li>
-Make sure both server are in the same time zone.
-</li>
-<li>
-Make sure you do not have any fields in your current database with unique keys (other than the primary key).
-</li>
-</ul>
+## Pre-Setup Information
+
+* Make sure both server have exactly the same MySQL version.
+* Make sure both server are in the same time zone.
+* Make sure you do not have any fields in your current database with unique keys (other than the primary key).
 
 
-<h2>Some Notes</h2>
-<pre class="brush:plain">
+## Some Notes
+
+```
 #-----
 # SERVER_1: CHANGES TO my.cnf
 #-----
@@ -139,11 +134,13 @@ mysql> flush tables with read lock;
 sh> mysqldump mydb | gzip -9 > mydb.gz
 mysql> unlock tables;
 
-</pre>
+```
 
 
-<h2>PHP CLI Script to Ensure Matching Data</h2>
-<pre class="brush:php">
+## PHP CLI Script to Ensure Matching Data
+
+```
+<?php
 # command line usage:
 # php mysql_check_replication.php
 #
@@ -272,11 +269,12 @@ if (file_exists($checksum_file)) {
 	}
 }
 
-// email $_output ?
+// store output
 file_put_contents($log_file,$_output);
-</pre>
+```
 
 
-<h2>More Information</h2>
-<p>also see this site for more mysql replication help tools:<br/><a href="http://www.maatkit.org/">http://www.maatkit.org/</a></p>
-<p>lots of useful links on replication:<br/><a href="http://forums.mysql.com/read.php?26,198705,198705">http://forums.mysql.com/read.php?26,198705,198705</a></p>
+## More Information
+
+* See this site for more mysql replication help tools: <a href="http://www.maatkit.org/">http://www.maatkit.org/</a>.
+* Lots of useful links on replication: <a href="http://forums.mysql.com/read.php?26,198705,198705">http://forums.mysql.com/read.php?26,198705,198705</a>

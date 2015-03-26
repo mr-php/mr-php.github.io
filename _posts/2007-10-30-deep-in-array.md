@@ -1,7 +1,6 @@
 ---
 layout: post
 title: Deep In Array
-created: 1193738530
 ---
 Function similar to in_array() but it recursively searches a multi-depth array.
 

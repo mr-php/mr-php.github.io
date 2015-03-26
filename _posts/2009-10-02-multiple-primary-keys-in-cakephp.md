@@ -1,42 +1,43 @@
 ---
 layout: post
 title: Multiple Primary Keys in CakePHP
-created: 1254455733
 ---
-<p>If you have ever tried to deal with multiple primary keys in cakePHP then you have probably hit a brick wall at some stage.</p>
+If you have ever tried to deal with multiple primary keys in cakePHP then you have probably hit a brick wall at some stage.
 
-<p>Although you still need to add a single id field, this example will allow you to save your data without needing to know the id.</p>
+Although you still need to add a single id field, this example will allow you to save your data without needing to know the id.
 
 <!--break-->
 
-<h2>Usage</h2>
+## Usage
 
-<pre class="brush:php">
-&lt;?php
+``php
+<?php
 $this->GroupToUser->save(array(
 	'user_id' => 111,
 	'group_id' => 222, 
 	'another_field' => 'my data', 
 ));
-</pre>
+```
 
-<p>SQL generated when row does not exist</p>
-<pre class="brush:sql">
+SQL generated when row does not exist
+
+```sql
 SELECT `GroupToUser`.`id` FROM `groups_to_users` AS `GroupToUser` WHERE `GroupToUser`.`user_id` = 111 AND `GroupToUser`.`group_id` = 222 LIMIT 1;
 INSERT INTO `groups_to_users` (`user_id`, `group_id`, `another_field`) VALUES (111, 222, 'my data');
-</pre>
+```
 
-<p>SQL generated when row exists</p>
-<pre class="brush:sql">
+SQL generated when row exists
+
+```sql
 SELECT `GroupToUser`.`id` FROM `groups_to_users` AS `GroupToUser` WHERE `GroupToUser`.`user_id` = 111 AND `GroupToUser`.`group_id` = 222 LIMIT 1
 UPDATE `groups_to_users` SET `user_id` = 111, `group_id` = 222, `another_field` = 'my data' WHERE `groups_to_users`.`id` = 9
-</pre>
+```
 
 
-<h2>Here Is The Magic</h2>
+## Here Is The Magic
 
-<pre class="brush:php">
-&lt;?php
+```php
+<?php
 class GroupToUser extends AppModel {
 
 	var $name = 'GroupToUser';
@@ -72,4 +73,4 @@ class GroupToUser extends AppModel {
 	}
 	
 }
-</pre>
+```

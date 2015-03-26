@@ -14,11 +14,8 @@ about: >
 
 image_src: /assets/img/logo/logo.png
 header_img: /assets/img/background/index.jpg
-baseurl: ""
 url: http://mrphp.com.au
-permalink: /blog/:title
-paginate_path: /blog/page:num
-paginate: 10
+baseurl: ""
 
 twitter_username: mrphp
 github_username:  cornernote
@@ -28,7 +25,12 @@ mailchimp_subscribe_url: http://mrphp.us1.list-manage.com/subscribe?u=91727179f1
 
 
 # Build settings
-
+permalink: /blog/:title
+paginate_path: /blog/page:num
+paginate: 10
+excerpt_separator: <!--break-->
 markdown: redcarpet
 highlighter: pygments
 exclude: ["README.md"]
+gems:
+- jekyll-redirect-from
