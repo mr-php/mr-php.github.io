@@ -1,9 +1,3 @@
-// force https
-//if (window.location.protocol != 'https:') {
-    //alert(window.location.protocol);
-    //window.location.protocol = 'https';
-//}
-
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function () {
     $('a.page-scroll').bind('click', function (event) {
