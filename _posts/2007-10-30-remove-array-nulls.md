@@ -3,11 +3,12 @@ layout: post
 title: Remove Array Nulls
 created: 1193738952
 ---
-<p>Recursively removes array keys with null values.</p>
+Recursively removes array keys with null values.
 <!--break-->
 
+```php
+<?php
 
-<pre class="brush:php">
 function remove_array_nulls($data)
 {
   foreach ($data as $key=>$value)
@@ -23,4 +24,4 @@ function remove_array_nulls($data)
   }
   return $output;
 }
-</pre>
+```

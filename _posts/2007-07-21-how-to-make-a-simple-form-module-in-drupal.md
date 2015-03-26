@@ -1,24 +1,26 @@
 ---
 layout: post
 title: How to make a simple form module in Drupal
-created: 1185003400
 ---
-<p>This example module will provide a form where you can enter your name and upon submission will display your name as a message on the following page.  It is very basic but will give you a start to making your first module.</p>
+
+This example module will provide a form where you can enter your name and upon submission will display your name as a message on the following page.  It is very basic but will give you a start to making your first module.
 
 <!--break-->
 
-<p>You can change all instances of the word example to the name of your module.</p>
+You can change all instances of the word example to the name of your module.
 
-First you need to create a file called <strong>example.info</strong>:
-<pre class="brush:plain">
+First you need to create a file called `example.info`:
+```
 name = Example
 description = "Example module."
 version = "5.x-1.0"
 project = "example"
-</pre>
+```
 
-Next you need the <strong>example.module</strong> file:
-<pre class="brush:php">
+Next you need the `example.module` file:
+```php
+<?php
+
 function example_help($section) {
   switch ($section) {
     case 'admin/modules#description':
@@ -60,6 +62,6 @@ function example_page_form_submit($form_id, $form_values) {
   $message = 'You have submitted the ' . $form_id . ' form which contains the following data: ' . print_r($form_values,true);
   drupal_set_message(t($message));
 }
-</pre>
+```
 
 Now you can enable the module, and visit <b>http://yoursite.com/example</b>.

@@ -1,12 +1,15 @@
 ---
 layout: post
 title: Create a cPanel FTP Account
-created: 1185027305
 ---
-This snippet will allow you to create a cPanel database using PHP.
+
+This snippet will allow you to create a cPanel FTP account using PHP.
+
 <!--break-->
 
-<pre class="brush:php">
+```php
+<?php
+
 // your cPanel username
 $cpanel_user = 'root';
 
@@ -50,6 +53,6 @@ $request .= "&homedir={$ftp_home}";
 $request .= "&amp;quota={$ftp_quota}";
 $result = file_get_contents($request);
 echo $result;
-</pre>
+```
 
-<p>Full documentation is available here: <a href="http://documentation.cpanel.net/display/SDK/UAPI+Functions">http://documentation.cpanel.net/display/SDK/UAPI+Functions</a>.</p>
+Full documentation is available here: <a href="http://documentation.cpanel.net/display/SDK/UAPI+Functions">http://documentation.cpanel.net/display/SDK/UAPI+Functions</a>.

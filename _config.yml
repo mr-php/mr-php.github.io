@@ -29,6 +29,6 @@ mailchimp_subscribe_url: http://mrphp.us1.list-manage.com/subscribe?u=91727179f1
 
 # Build settings
 
-#markdown: redcarpet
-#highlighter: pygments
+markdown: redcarpet
+highlighter: pygments
 exclude: ["README.md"]

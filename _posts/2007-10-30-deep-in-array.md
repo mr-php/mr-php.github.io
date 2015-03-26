@@ -3,10 +3,13 @@ layout: post
 title: Deep In Array
 created: 1193738530
 ---
-<p>Function similar to in_array() but it recursively searches a multi-depth array.</p>
+Function similar to in_array() but it recursively searches a multi-depth array.
 
 <!--break-->
-<pre class="brush:php">
+
+```php
+<?php
+
 function deep_in_array($value, $array, $case_insensitive = false)
 {
   foreach($array as $item)
@@ -26,4 +29,4 @@ function deep_in_array($value, $array, $case_insensitive = false)
   }
   return false;
 }
-</pre>
+```

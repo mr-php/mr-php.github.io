@@ -7,11 +7,11 @@ This simple snippet will provide you with a HTTP or HTTPS Fully Qualified Domain
 <!--break-->
 
 Thanks to Nate for pointing out the best way to do this in CakePHP 1.2:
-<pre class="brush:php; html-script:true">
-&lt;base href="&lt;?php echo Router::url("/", true); >" />
-</pre>
+```php
+<base href="<?php echo Router::url("/", true); >" />
+```
 
 For historical purposes, here is the CakePHP 1.1 way of doing it.
-<pre class="brush:php; html-script:true">
-&lt;base href="&lt;?php echo (env('HTTPS') ? 'https://' : 'http://') . env('HTTP_HOST') . $this->webroot; ?>" />
-</pre>
+```php
+<base href="<?php echo (env('HTTPS') ? 'https://' : 'http://') . env('HTTP_HOST') . $this->webroot; ?>" />
+```

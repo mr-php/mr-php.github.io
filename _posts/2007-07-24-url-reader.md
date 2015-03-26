@@ -1,14 +1,15 @@
 ---
 layout: post
 title: URL Reader
-created: 1185251228
 ---
 This function will download the contents of any URL and return it as a string that you can save to a file or database.
 
 It will use curl if it is installed.  Otherwise it will use fopen/fread.
 <!--break-->
 
-<pre class="brush:php">
+```php
+<?php
+
 function url_reader($url,$referer=null) {
   if (function_exists('curl_init')) {
     $ch  =  curl_init();
@@ -30,4 +31,4 @@ function url_reader($url,$referer=null) {
   }
   return $data;
 }
-</pre>
+```

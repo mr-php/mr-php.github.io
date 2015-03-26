@@ -1,12 +1,15 @@
 ---
 layout: post
 title: Create a WHM/cPanel Account
-created: 1185025162
 ---
+
 This snippet will allow you to create a cPanel account using PHP.
+
 <!--break-->
 
-<pre class="brush:php">
+```php
+<?php
+
 // your WHM username
 $whm_user = 'root';
 
@@ -40,4 +43,6 @@ $params .= "&password={$user_pass}";
 $params .= "&contactemail={$user_email}";
 $result = file_get_contents($site.$params);
 echo $result;
-</pre>
+```
+
+Full documentation is available here: <a href="http://documentation.cpanel.net/display/SDK/cPanel+API+2+-+SubDomain">http://documentation.cpanel.net/display/SDK/cPanel+API+2+-+SubDomain</a>.

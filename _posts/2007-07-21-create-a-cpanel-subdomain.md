@@ -1,12 +1,13 @@
 ---
 layout: post
 title: Create a cPanel Subdomain
-created: 1185026148
 ---
 This snippet will allow you to create a cPanel subdomain using PHP.
 <!--break-->
 
-<pre class="brush:php">
+```php
+<?php
+
 // your cPanel username
 $cpanel_user = 'root';
 
@@ -44,8 +45,8 @@ while (!feof($sock)) {
 fclose($sock);
 
 echo $result;
-</pre>
+```
 
-<p>If you want to delete the subdomain then change <strong>doadddomain.html</strong> to <strong>dodeldomain.html</strong>.</p>
+If you want to delete the subdomain then change <strong>doadddomain.html</strong> to <strong>dodeldomain.html</strong>.
 
-<p>Full documentation is available here: <a href="http://documentation.cpanel.net/display/SDK/cPanel+API+2+-+SubDomain">http://documentation.cpanel.net/display/SDK/cPanel+API+2+-+SubDomain</a>.</p>
+Full documentation is available here: <a href="http://documentation.cpanel.net/display/SDK/cPanel+API+2+-+SubDomain">http://documentation.cpanel.net/display/SDK/cPanel+API+2+-+SubDomain</a>.

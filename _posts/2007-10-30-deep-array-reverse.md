@@ -7,7 +7,9 @@ Recursively reverses a multi-depth array.
 
 <!--break-->
 
-<pre class="brush:php">
+```php
+<?php
+
 function deep_array_reverse($data)
 {
   $output = array();
@@ -25,4 +27,4 @@ function deep_array_reverse($data)
  }
  return $output;
 }
-</pre>
+```

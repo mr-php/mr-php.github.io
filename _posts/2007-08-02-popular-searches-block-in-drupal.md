@@ -3,10 +3,13 @@ layout: post
 title: Popular Searches Block in Drupal
 created: 1186055629
 ---
-<p>This php code can be used in a drupal block to display the most popular searches on your site.</p>
+This php code can be used in a drupal block to display the most popular searches on your site.
 
 <!--break-->
-<pre class="brush:php">
+
+```php
+<?php
+
 $query = "SELECT message from {watchdog} WHERE type = 'search'";
 $result = db_query($query);
 $search_strings = array();
@@ -29,4 +32,4 @@ if(count($search_strings)) {
   }
   return theme('item_list',$items,'','ol');
 }
-</pre>
+```
