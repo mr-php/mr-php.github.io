@@ -1,5 +1,6 @@
 // force https
-if (window.location.protocol != 'https') {
+if (window.location.protocol != 'https:') {
+    alert(window.location.protocol);
     window.location.protocol = 'https';
 }
 
