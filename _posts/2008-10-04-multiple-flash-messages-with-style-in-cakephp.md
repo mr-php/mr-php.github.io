@@ -3,14 +3,19 @@ layout: post
 title: Multiple Flash Messages with Style in CakePHP
 tags: [cakephp]
 ---
-<p>In this CakePHP tutorial I will explain how to output multiple flash messages.</p>
-<p>This forms a message stack that can be used to inform the user that multiple events have taken place.</p>
+In this CakePHP tutorial I will explain how to output multiple flash messages.
+
+This forms a message stack that can be used to inform the user that multiple events have taken place.
+
 <!--break-->
 
-<h2>The Multi-Flash Function</h2>
-<p>We want to add a method to your app_controller to handle the message stack. Vary it to suit your needs</p>
-<b>app_controller.php</b>
-<pre class="brush:php">
+## The Multi-Flash Function
+
+We want to add a method to your app_controller to handle the message stack. Vary it to suit your needs
+
+`app_controller.php`
+
+```php
 <?php
 class AppController extends Controller {
 	function _flash($message,$type='message') {
@@ -24,12 +29,15 @@ class AppController extends Controller {
 		$this->Session->write('Message.multiFlash', $messages);
 	}
 }
-</pre>
+```
 
-<h2>Controller Method</h2>
-<p>This is just a test action to view your messages.</p>
-<b>controllers/posts_controller.php</b>
-<pre class="brush:php">
+## Controller Method
+
+This is just a test action to view your messages.
+
+`controllers/posts_controller.php`
+
+```php
 <?php
 class PostsController extends AppController {
 	var $name = 'Posts';
@@ -42,12 +50,15 @@ class PostsController extends AppController {
 		$this->set('posts',$this->paginate());
 	}
 }
-</pre>
+```
 
-<h2>Display The Messages</h2>
-<p>We want to display a message to the user for message we set.</p>
-<b>views/layouts/default.php</b>
-<pre class="brush:php; html-script:true">
+## Display The Messages
+
+We want to display a message to the user for message we set.
+
+`views/layouts/default.php`
+
+```php
 <div id="messages">
 <?php
 	if ($session->check('Message.flash')) $session->flash(); // the standard messages
@@ -57,11 +68,13 @@ class PostsController extends AppController {
 	}
 ?>
 </div>
-</pre>
+```
 
-<h2>Some CSS to Make it Pretty</h2>
-<p>This will set some colours and images.</p>
-<pre class="brush:css">
+## Some CSS to Make it Pretty
+
+This will set some colours and images.
+
+```css
 .message, .info, .success, .warning, .error {
 	border: 1px solid;
 	margin: 10px 0px;
@@ -94,8 +107,10 @@ class PostsController extends AppController {
 	background-color: #FFBABA;
 	background-image: url('../../img/message/error.png');
 }
-</pre>
+```
 
-<h2>The Final Product</h2>
-<p>Here is how your messages will look.</p>
+## The Final Product
+
+Here is how your messages will look.
+
 [inline:multiple-flash-messages-with-style.jpg]

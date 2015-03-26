@@ -3,22 +3,23 @@ layout: post
 title: Search Forms in CakePHP
 tags: [cakephp]
 ---
-<p>In this CakePHP tutorial I would like to show you how I handle search forms, while preserving pagination.</p>
+In this CakePHP tutorial I would like to show you how I handle search forms, while preserving pagination.
 
-<p>The basic principal is to read the posted variables, and redirect the user to a page with the appropriate filters in the URL.</p>
+The basic principal is to read the posted variables, and redirect the user to a page with the appropriate filters in the URL.
 
 <!--break-->
 
-<h2>Add the Search Form</h2>
+## Add the Search Form
 
 Lets add a search form on the index page to search through the records.
 
-<b>index.ctp</b>
-<pre class="brush:php">
-&lt;?php echo $form->create('Post',array('action'=>'search'));?>
-	&lt;fieldset>
- 		&lt;legend>&lt;?php __('Post Search');?>&lt;/legend>
-	&lt;?php
+`index.ctp`
+
+```php
+<?php echo $form->create('Post',array('action'=>'search'));?>
+	<fieldset>
+ 		<legend><?php __('Post Search');?></legend>
+	<?php
 		echo $form->input('Search.keywords');
 		echo $form->input('Search.id');
 		echo $form->input('Search.name',array('after'=>__('wildcard is *',true)));
@@ -36,20 +37,21 @@ Lets add a search form on the index page to search through the records.
 		echo $form->input('Search.tag_id');
 		echo $form->submit('Search');
 	?>
-	&lt;/fieldset>
-&lt;?php echo $form->end();?>
-</pre>
+	</fieldset>
+<?php echo $form->end();?>
+```
 
 
-<h2>Controller Method</h2>
+## Controller Method
 
 The search action will handle reading the posted variables, and redirecting back to the index url.
 
 The index action will handle setting up the pagination options.
 
-<b>controllers/posts_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+`controllers/posts_controller.php`
+
+```php
+<?php
 class PostsController extends AppController {
 	var $name = 'Posts';
 
@@ -143,13 +145,13 @@ class PostsController extends AppController {
 		
 		//
 		// filter by created
-		// allowing searches starting with &lt;, >, &lt;=, >=
+		// allowing searches starting with <, >, <=, >=
 		// allow human dates "2 weeks ago", "last thursday"
 		//
 		if(isset($this->passedArgs['Search.created'])) {
 			$field = '';
 			$date = explode(' ',$this->passedArgs['Search.created']);
-			if (isset($date[1]) && in_array($date[0],array('&lt;','>','&lt;=','>='))) { 
+			if (isset($date[1]) && in_array($date[0],array('<','>','<=','>='))) { 
 				$field = ' '.array_shift($date);
 			}
 			$date = implode(' ',$date);
@@ -240,31 +242,33 @@ class PostsController extends AppController {
 	}
 
 }
-</pre>
+```
 
 
-<h2>Getting Pagination to Remember Search Options</h2>
+## Getting Pagination to Remember Search Options
 
-<p>A quick trick to get pagination to remember the search options.</p>
+A quick trick to get pagination to remember the search options.
 
-<b>views/posts/index.php</b>
-<pre class="brush:php">
-&lt;?php $paginator->options(array('url' => $this->passedArgs)); ?>
-</pre>
+`views/posts/index.php`
+
+```php
+<?php $paginator->options(array('url' => $this->passedArgs)); ?>
+```
 
 
-<h2>Hiding the Search Form</h2>
+## Hiding the Search Form
 
-<p>Here is some JavaScript that will allow you to hide the search form when it's not needed.</p>
+Here is some JavaScript that will allow you to hide the search form when it's not needed.
 
-<p>This Javascript requires <a href="http://jquery.com/">jQuery</a>.</p>
+This Javascript requires <a href="http://jquery.com/">jQuery</a>.
 
-<b>views/posts/index.php</b>
-<pre class="brush:php">
-&lt;?php echo $html->link(__('Search', true), 'javascript:void(0)', array('class'=>'search-toggle')); ?>
-</pre>
+`views/posts/index.php`
 
-<pre class="brush:jscript">
+```php
+<?php echo $html->link(__('Search', true), 'javascript:void(0)', array('class'=>'search-toggle')); ?>
+```
+
+```javascript
 $(document).ready(function(){
 	// toggle the search form
 	$('.search-toggle').click(function(){
@@ -272,11 +276,11 @@ $(document).ready(function(){
 	});
 	$('#PostSearchForm').hide();
 });
-</pre>
+```
 
 
-<h2>The Final Product</h2>
+## The Final Product
 
-<p>Here is an example of how the form will look.</p>
+Here is an example of how the form will look.
 
 [inline:search-forms-in-cakephp.jpg]

@@ -3,20 +3,20 @@ layout: post
 title: Simple Auth with Users HABTM Groups in CakePHP
 tags: [cakephp]
 ---
-<p>In almost every project I need to setup some sort of login, and usually it requires group access to certain data depending on different criteria.</p>
+In almost every project I need to setup some sort of login, and usually it requires group access to certain data depending on different criteria.
 
-<p>For example I may have groups Admin+Member and I want Members to only be able to see other Users Profiles if the other Profile is active.</p>
+For example I may have groups Admin+Member and I want Members to only be able to see other Users Profiles if the other Profile is active.
 
 <!--break-->
 
+## Little Helper
 
-<h2>Little Helper</h2>
+This function checks if the user is in a group.
 
-<p>This function checks if the user is in a group.</p>
+`config/bootstrap.php`
 
-<b>config/bootstrap.php</b>
-<pre class="brush:php">
-&lt;?php
+```php
+<?php
 function in_group($group,$groups) {
 	if (isset($groups['Group'])) {
 		$groups = $groups['Group'];
@@ -34,11 +34,11 @@ function in_group($group,$groups) {
 	return $allow;
 }
 ?>
-</pre>
+```
 
-<h2>The Tables</h2>
+## The Tables
 
-<pre class="brush:sql">
+```sql
 # users
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL auto_increment,
@@ -62,18 +62,19 @@ CREATE TABLE IF NOT EXISTS `groups_to_users` (
   `user_id` int(11) NOT NULL,
   PRIMARY KEY  (`group_id`,`user_id`)
 );
-</pre>
+```
 
 
-<h2>The Models</h2>
+## The Models
 
-<p>Before we get started, lets setup the models.</p>
+Before we get started, lets setup the models.
 
-<p>I have added some validation to get you started.</p>
+I have added some validation to get you started.
 
-<b>app_model.php</b>
-<pre class="brush:php">
-&lt;?php
+`app_model.php`
+
+```php
+<?php
 class AppModel extends Model {
 	function validUnique($value,$field){
 		if (is_array($field)) {
@@ -94,11 +95,12 @@ class AppModel extends Model {
 }
 ?>
 {/syntaxhighlighter}
-</pre>
+```
 
-<b>models/user.php</b>
-<pre class="brush:php">
-&lt;?php
+`models/user.php`
+
+```php
+<?php
 class User extends AppModel {
 
     var $name = 'User';
@@ -158,11 +160,12 @@ class User extends AppModel {
         return true;
     }
 }
-</pre>
+```
 
-<b>models/group.php</b>
-<pre class="brush:php">
-&lt;?php
+`models/group.php`
+
+```php
+<?php
 class Group extends AppModel {
 	var $name = 'Group';
 	var $validate = array(
@@ -178,16 +181,17 @@ class Group extends AppModel {
 		),
 	);	
 }
-</pre>
+```
 
 
 <h2>The Controllers</h2>
 
 <p>The app_controller will do the work of setting the related Groups into the Auth data.</p>
 
-<b>app_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+`app_controller.php`
+
+```php
+<?php
 class AppController extends Controller {
     var $components = array('Auth');
 
@@ -235,15 +239,16 @@ class AppController extends Controller {
 	}
 
 }
-</pre>
+```
 
 <p>Next I have provided a fully working users_controller, complete with account register, account management and lost password email.</p>
 
 <p>I have also included some extra goodies such as habtm checkbox, breadcrumbs, search and multi-actions.</p>
 
-<b>controllers/users_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+`controllers/users_controller.php`
+
+```php
+<?php
 class UsersController extends AppController {
 	var $name = 'Users';
 	var $components = array('Email');
@@ -424,7 +429,7 @@ class UsersController extends AppController {
 			$this->Email->to = $user['User']['email'];
 			$this->Email->subject = 'New Password for '.Configure::read('Settings.app.name');
 			$this->Email->replyTo = Configure::read('Settings.app.email');
-			$this->Email->from = Configure::read('Settings.app.name').' &lt;'.Configure::read('Settings.app.email').'>';
+			$this->Email->from = Configure::read('Settings.app.name').' <'.Configure::read('Settings.app.email').'>';
 			$this->Email->template = 'password'; 
 			$this->Email->sendAs = 'both';
 			$this->Email->delivery = Configure::read('Settings.smtp.delivery');
@@ -625,75 +630,82 @@ class UsersController extends AppController {
 	
 
 }
-</pre>
+```
 
 
 <h2>The Views</h2>
-<b>views/users/login.php</b>
-<pre class="brush:php">
-&lt;?php 
+
+`views/users/login.php`
+
+```php
+<?php 
 if  ($session->check('Message.auth')) $session->flash('auth'); 
 echo $form->create('User', array('action' => 'login'));
 echo $form->input('username');
 echo $form->input('password');
 echo $form->end('Login');
-</pre>
+```
 
-<b>views/users/index.php</b>
-<pre class="brush:php; html-script:true">
-&lt;?php debug($auth); ?>
-</pre>
+`views/users/index.php`
 
-<b>views/users/account.php</b>
-<pre class="brush:php; html-script:true">
-&lt;?php 
+```php
+<?php debug($auth); ?>
+```
+
+`views/users/account.php
+
+```php
+<?php 
 echo $form->create('User',array('url'=>array('action'=>'account')));
 echo $form->input('email');
 echo $form->input('username');
 echo $form->input('password_change',array('type'=>'password','after'=>__('Leave blank if you do not wish to change the password.',true)));
 echo $form->input('password_confirm',array('type'=>'password'));
 echo $form->end('Save');
-</pre>
+```
 
-<b>views/users/register.php</b>
-<pre class="brush:php; html-script:true">
-&lt;?php
+`views/users/register.php`
+
+```php
+<?php
 echo $form->create('User', array('action' => 'register'));
 echo $form->input('email');
 echo $form->input('username');
 echo $form->input('password_change',array('label'=>__('Password',true),'type'=>'password'));
 echo $form->input('password_confirm',array('type'=>'password'));
 echo $form->end('Register');
-</pre>
+```
 
 
-<b>views/users/admin_login.php</b>
-<pre class="brush:php; html-script:true">
-&lt;?php
+`views/users/admin_login.php`
+
+```php
+<?php
 if  ($session->check('Message.auth')) $session->flash('auth');
 echo $form->create('User', array('action' => 'login'));
 echo $form->input('username');
 echo $form->input('password');
 echo $form->end('Login');
-</pre>
+```
 
-<b>views/users/admin_index.php</b>
-<pre class="brush:php; html-script:true">
-&lt;div class="actions">
-	&lt;ul>
-		&lt;li>&lt;?php echo $html->link(__('New User', true), array('action'=>'add')); ?>&lt;/li>
-		&lt;li>&lt;?php echo $html->link(__('Search', true), 'javascript:void(0)', array('class'=>'search-toggle')); ?>&lt;/li>
-	&lt;/ul>
-&lt;/div>
+`views/users/admin_index.php`
 
-&lt;div class="users index">
+```php
+<div class="actions">
+	<ul>
+		<li><?php echo $html->link(__('New User', true), array('action'=>'add')); ?></li>
+		<li><?php echo $html->link(__('Search', true), 'javascript:void(0)', array('class'=>'search-toggle')); ?></li>
+	</ul>
+</div>
 
-	&lt;h2>&lt;?php __('Users');?>&lt;/h2>
+<div class="users index">
 
-	&lt;?php echo $form->create('User',array('action'=>'search'));?>
-		&lt;fieldset>
-	 		&lt;legend>&lt;?php __('User Search');?>&lt;/legend>
-		&lt;?php
+	<h2><?php __('Users');?></h2>
+
+	<?php echo $form->create('User',array('action'=>'search'));?>
+		<fieldset>
+	 		<legend><?php __('User Search');?></legend>
+		<?php
 			echo $form->input('Search.keywords');
 			echo $form->input('Search.id');
 			echo $form->input('Search.username',array(
@@ -705,23 +717,23 @@ echo $form->end('Login');
 			echo $form->input('Search.group_id',array('empty'=>__('All',true)));
 			echo $form->submit('Search');
 		?>
-		&lt;/fieldset>
-	&lt;?php echo $form->end();?>
+		</fieldset>
+	<?php echo $form->end();?>
 
-	&lt;?php echo $form->create('User',array('id'=>'UserListForm','url'=>array('controller'=>'users','action'=>'multi')));?>
-		&lt;table cellpadding="0" cellspacing="0" class="listTable">
-		&lt;tr>
-			&lt;th>
-				&lt;span class="select_all">a&lt;/span>|&lt;span class="select_none">n&lt;/span>
-			&lt;/th>
-			&lt;th>&lt;?php echo $paginator->sort('id');?>&lt;/th>
-			&lt;th>&lt;?php echo $paginator->sort('username');?>&lt;/th>
-			&lt;th>&lt;?php echo $paginator->sort('email');?>&lt;/th>
-			&lt;th>&lt;?php echo $paginator->sort('created');?>&lt;/th>
-			&lt;th>&lt;?php echo $paginator->sort('modified');?>&lt;/th>
-			&lt;th class="actions">&lt;?php __('Actions');?>&lt;/th>
-		&lt;/tr>
-		&lt;?php
+	<?php echo $form->create('User',array('id'=>'UserListForm','url'=>array('controller'=>'users','action'=>'multi')));?>
+		<table cellpadding="0" cellspacing="0" class="listTable">
+		<tr>
+			<th>
+				<span class="select_all">a</span>|<span class="select_none">n</span>
+			</th>
+			<th><?php echo $paginator->sort('id');?></th>
+			<th><?php echo $paginator->sort('username');?></th>
+			<th><?php echo $paginator->sort('email');?></th>
+			<th><?php echo $paginator->sort('created');?></th>
+			<th><?php echo $paginator->sort('modified');?></th>
+			<th class="actions"><?php __('Actions');?></th>
+		</tr>
+		<?php
 		$i = 0;
 		foreach ($users as $user):
 			$class = null;
@@ -729,103 +741,104 @@ echo $form->end('Login');
 				$class = ' class="altrow"';
 			}
 		?>
-			&lt;tr&lt;?php echo $class;?>>
-				&lt;td>
-					&lt;?php echo $form->input($user['User']['id'],array(
+			<tr<?php echo $class;?>>
+				<td>
+					<?php echo $form->input($user['User']['id'],array(
 						'type'=>'checkbox',
 						'label'=>false,
 						'name'=>'record['.$user['User']['id'].']',
 						'id'=>'listRecord_'.$user['User']['id'],
 					)); ?>
-				&lt;/td>
-				&lt;td>
-					&lt;?php echo $user['User']['id']; ?>
-				&lt;/td>
-				&lt;td>
-					&lt;b>&lt;?php echo $user['User']['username']; ?>&lt;/b>
-				&lt;/td>
-				&lt;td>
-					&lt;?php echo $user['User']['email']; ?>
-				&lt;/td>
-				&lt;td align="center">
-					&lt;?php echo str_replace(' ','&lt;br/>',$user['User']['created']); ?>
-				&lt;/td>
-				&lt;td align="center">
-					&lt;?php echo str_replace(' ','&lt;br/>',$user['User']['modified']); ?>
-				&lt;/td>
-				&lt;td class="actions">
-					&lt;?php echo $html->link(__('View', true), array('action'=>'view', $user['User']['id'])); ?>
-					&lt;?php echo $html->link(__('Edit', true), array('action'=>'edit', $user['User']['id'])); ?>
-					&lt;?php echo $html->link(__('Delete', true), array('action'=>'delete', $user['User']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $user['User']['id'])); ?>
-				&lt;/td>
-			&lt;/tr>
-		&lt;?php endforeach; ?>
-		&lt;/table>
+				</td>
+				<td>
+					<?php echo $user['User']['id']; ?>
+				</td>
+				<td>
+					<b><?php echo $user['User']['username']; ?></b>
+				</td>
+				<td>
+					<?php echo $user['User']['email']; ?>
+				</td>
+				<td align="center">
+					<?php echo str_replace(' ','<br/>',$user['User']['created']); ?>
+				</td>
+				<td align="center">
+					<?php echo str_replace(' ','<br/>',$user['User']['modified']); ?>
+				</td>
+				<td class="actions">
+					<?php echo $html->link(__('View', true), array('action'=>'view', $user['User']['id'])); ?>
+					<?php echo $html->link(__('Edit', true), array('action'=>'edit', $user['User']['id'])); ?>
+					<?php echo $html->link(__('Delete', true), array('action'=>'delete', $user['User']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $user['User']['id'])); ?>
+				</td>
+			</tr>
+		<?php endforeach; ?>
+		</table>
 
-		&lt;div class="multi_actions">
-			&lt;input type="submit" name="data[action][multi_delete]" value="Delete" onclick="return confirm('&lt;?php __('Are you sure you want to delete the selected records?'); ?>');"/>
-		&lt;/div>
+		<div class="multi_actions">
+			<input type="submit" name="data[action][multi_delete]" value="Delete" onclick="return confirm('<?php __('Are you sure you want to delete the selected records?'); ?>');"/>
+		</div>
 
-	&lt;?php echo $form->end();?>
-	&lt;?php echo $this->renderElement('paging');?>
-&lt;/div>
-</pre>
+	<?php echo $form->end();?>
+	<?php echo $this->renderElement('paging');?>
+</div>
+```
 
-<b>views/users/admin_view.php</b>
-<pre class="brush:php; html-script:true">
-&lt;div class="actions">
-	&lt;ul>
-		&lt;li>&lt;?php echo $html->link(__('Edit User', true), array('action'=>'edit', $user['User']['id'])); ?> &lt;/li>
-		&lt;li>&lt;?php echo $html->link(__('Delete User', true), array('action'=>'delete', $user['User']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $user['User']['id'])); ?> &lt;/li>
-		&lt;li>&lt;?php echo $html->link(__('List Users', true), array('action'=>'index')); ?> &lt;/li>
-		&lt;li>&lt;?php echo $html->link(__('New User', true), array('action'=>'add')); ?> &lt;/li>
-	&lt;/ul>
-&lt;/div>
+`views/users/admin_view.php`
 
-&lt;h2>&lt;?php  __('User');?>&lt;/h2>
+```php
+<div class="actions">
+	<ul>
+		<li><?php echo $html->link(__('Edit User', true), array('action'=>'edit', $user['User']['id'])); ?> </li>
+		<li><?php echo $html->link(__('Delete User', true), array('action'=>'delete', $user['User']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $user['User']['id'])); ?> </li>
+		<li><?php echo $html->link(__('List Users', true), array('action'=>'index')); ?> </li>
+		<li><?php echo $html->link(__('New User', true), array('action'=>'add')); ?> </li>
+	</ul>
+</div>
 
-&lt;div class="users view">
+<h2><?php  __('User');?></h2>
 
-	&lt;dl>&lt;?php $i = 0; $class = ' class="altrow"';?>
-		&lt;dt&lt;?php if ($i % 2 == 0) echo $class;?>>&lt;?php __('Id'); ?>&lt;/dt>
-		&lt;dd&lt;?php if ($i++ % 2 == 0) echo $class;?>>
-			&lt;?php echo $user['User']['id']; ?>
+<div class="users view">
+
+	<dl><?php $i = 0; $class = ' class="altrow"';?>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Id'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $user['User']['id']; ?>
 			&nbsp;
-		&lt;/dd>
-		&lt;dt&lt;?php if ($i % 2 == 0) echo $class;?>>&lt;?php __('Username'); ?>&lt;/dt>
-		&lt;dd&lt;?php if ($i++ % 2 == 0) echo $class;?>>
-			&lt;?php echo $user['User']['username']; ?>
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Username'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $user['User']['username']; ?>
 			&nbsp;
-		&lt;/dd>
-		&lt;dt&lt;?php if ($i % 2 == 0) echo $class;?>>&lt;?php __('Email'); ?>&lt;/dt>
-		&lt;dd&lt;?php if ($i++ % 2 == 0) echo $class;?>>
-			&lt;?php echo $user['User']['email']; ?>
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Email'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $user['User']['email']; ?>
 			&nbsp;
-		&lt;/dd>
-		&lt;dt&lt;?php if ($i % 2 == 0) echo $class;?>>&lt;?php __('Created'); ?>&lt;/dt>
-		&lt;dd&lt;?php if ($i++ % 2 == 0) echo $class;?>>
-			&lt;?php echo $user['User']['created']; ?>
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Created'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $user['User']['created']; ?>
 			&nbsp;
-		&lt;/dd>
-		&lt;dt&lt;?php if ($i % 2 == 0) echo $class;?>>&lt;?php __('Modified'); ?>&lt;/dt>
-		&lt;dd&lt;?php if ($i++ % 2 == 0) echo $class;?>>
-			&lt;?php echo $user['User']['modified']; ?>
+		</dd>
+		<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Modified'); ?></dt>
+		<dd<?php if ($i++ % 2 == 0) echo $class;?>>
+			<?php echo $user['User']['modified']; ?>
 			&nbsp;
-		&lt;/dd>
-	&lt;/dl>
+		</dd>
+	</dl>
 
-&lt;/div>
+</div>
 
-&lt;div class="related">
-	&lt;h3>&lt;?php __('Groups');?>&lt;/h3>
-    &lt;?php if (!empty($user['Group'])):?>
-        &lt;table cellpadding="0" cellspacing="0" class="listTable">
-            &lt;tr>
-                &lt;th>&lt;?php __('Id'); ?>&lt;/th>
-                &lt;th width="90%">&lt;?php __('Name'); ?>&lt;/th>
-                &lt;th class="actions">&lt;?php __('Actions');?>&lt;/th>
-            &lt;/tr>
-            &lt;?php
+<div class="related">
+	<h3><?php __('Groups');?></h3>
+    <?php if (!empty($user['Group'])):?>
+        <table cellpadding="0" cellspacing="0" class="listTable">
+            <tr>
+                <th><?php __('Id'); ?></th>
+                <th width="90%"><?php __('Name'); ?></th>
+                <th class="actions"><?php __('Actions');?></th>
+            </tr>
+            <?php
 	            $i = 0;
 				foreach ($user['Group'] as $group):
 					$class = null;
@@ -833,39 +846,40 @@ echo $form->end('Login');
 						$class = ' class="altrow"';
 					}
                 ?>
-                    &lt;tr&lt;?php echo $class;?>>
-                        &lt;td>&lt;?php echo $group['id'];?>&lt;/td>
-                        &lt;td>&lt;?php echo $group['name'];?>&lt;/td>
-                        &lt;td class="actions">
-                                &lt;?php echo $html->link(__('View Users', true), array('controller'=> 'users', 'action'=>'index', 'group_id'=>$group['id'])); ?>
-                        &lt;/td>
-                    &lt;/tr>
-            &lt;?php endforeach; ?>
-        &lt;/table>
-        &lt;?php echo $form->end();?>
-    &lt;?php endif; ?>
-&lt;/div>
-</pre>
+                    <tr<?php echo $class;?>>
+                        <td><?php echo $group['id'];?></td>
+                        <td><?php echo $group['name'];?></td>
+                        <td class="actions">
+                                <?php echo $html->link(__('View Users', true), array('controller'=> 'users', 'action'=>'index', 'group_id'=>$group['id'])); ?>
+                        </td>
+                    </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php echo $form->end();?>
+    <?php endif; ?>
+</div>
+```
 
-<b>views/users/admin_form.php</b>
-<pre class="brush:php; html-script:true">
-&lt;div class="actions">
-	&lt;ul>
-		&lt;li>&lt;?php echo $html->link(__('View', true), array('action'=>'view', $form->value('User.id')));?>&lt;/li>
-		&lt;li>&lt;?php echo $html->link(__('Delete', true), array('action'=>'delete', $form->value('User.id')), null, sprintf(__('Are you sure you want to delete # %s?', true), $form->value('User.id'))); ?>&lt;/li>
-		&lt;li>&lt;?php echo $html->link(__('List Users', true), array('action'=>'index'));?>&lt;/li>
-	&lt;/ul>
-&lt;/div>
+`views/users/admin_form.php`
 
-&lt;div class="users form">
+```php
+<div class="actions">
+	<ul>
+		<li><?php echo $html->link(__('View', true), array('action'=>'view', $form->value('User.id')));?></li>
+		<li><?php echo $html->link(__('Delete', true), array('action'=>'delete', $form->value('User.id')), null, sprintf(__('Are you sure you want to delete # %s?', true), $form->value('User.id'))); ?></li>
+		<li><?php echo $html->link(__('List Users', true), array('action'=>'index'));?></li>
+	</ul>
+</div>
 
-	&lt;h2>&lt;?php __('Edit User'); ?>&lt;/h2>
+<div class="users form">
+
+	<h2><?php __('Edit User'); ?></h2>
 
 
-    &lt;?php echo $form->create('User');?>
-	&lt;fieldset>
-		&lt;legend>&lt;?php __('User');?>&lt;/legend>
-	&lt;?php
+    <?php echo $form->create('User');?>
+	<fieldset>
+		<legend><?php __('User');?></legend>
+	<?php
 		echo $form->input('id');
 		echo $form->input('email');
 		echo $form->input('username');
@@ -873,11 +887,11 @@ echo $form->end('Login');
 		echo $form->input('password_change',array('type'=>'password','after'=>__('Leave blank if you do not wish to change the password.',true)));
 		echo $form->input('password_confirm',array('type'=>'password'));
 	?>
-	&lt;/fieldset>
+	</fieldset>
 
-	&lt;fieldset>
- 		&lt;legend>&lt;?php __('Groups');?>&lt;/legend>
-	&lt;?php
+	<fieldset>
+ 		<legend><?php __('Groups');?></legend>
+	<?php
 		$checked = $form->value("Group.Group");
 		foreach ($groups as $id=>$label) {
 			echo $form->input("Group.checkbox.$id", array(
@@ -887,9 +901,9 @@ echo $form->end('Login');
 			));
 		}
 	?>
-	&lt;/fieldset>
+	</fieldset>
 
-    &lt;?php echo $form->end('Submit');?>
+    <?php echo $form->end('Submit');?>
 
-&lt;/div>
-</pre>
+</div>
+```

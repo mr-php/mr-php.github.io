@@ -3,23 +3,24 @@ layout: post
 title: Update Multiple Records using Multi-Actions in CakePHP
 tags: [cakephp]
 ---
-<p>In this CakePHP tutorial I will explain how to update multiple records in a single action.</p>
+In this CakePHP tutorial I will explain how to update multiple records in a single action.
 
-<p>This will typically be used as an extension to the index views in your application, allowing a user to select which rows they would like to update, and then performing an action.</p>
+This will typically be used as an extension to the index views in your application, allowing a user to select which rows they would like to update, and then performing an action.
 
 <!--break-->
 
-<h2>The Multi-Action Function</h2>
+## The Multi-Action Function
 
-<p>The first thing we need to do is add a function to your controller to handle all of the multi-actions we will be creating. It will check to see if a multi-action is allowed, and will call that action.</p>
+The first thing we need to do is add a function to your controller to handle all of the multi-actions we will be creating. It will check to see if a multi-action is allowed, and will call that action.
 
-<p>I have also included a function called multiFlash to handle multiple messages to display back to the user after a redirect.</p>
+I have also included a function called multiFlash to handle multiple messages to display back to the user after a redirect.
 
-<p>I prefer to use app_controller.php because then I do not need to put the code into every controller.</p>
+I prefer to use app_controller.php because then I do not need to put the code into every controller.
 
-<b>app_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+`app_controller.php`
+
+```php
+<?php
 class AppController extends Controller {
 	var $multiActions = array();
 
@@ -49,23 +50,23 @@ class AppController extends Controller {
 		$messages[] = array('message'=>$message, 'layout'=>'default', 'params'=>array('class'=>$type));
 		$this->Session->write('Message.multiFlash', $messages);
 	}
-
-?>
-</pre>
-
+}
+```
 
 
-<h2>The Multi-Delete Function</h2>
 
-<p>This action will handle deleting all of the records that are selected.</p>
+## The Multi-Delete Function
 
-<p>This code goes inside your controller to handle the deleting of the selected records.</p>
+This action will handle deleting all of the records that are selected.
 
-<p>There is also an action included to list the data.</p>
+This code goes inside your controller to handle the deleting of the selected records.
 
-<b>controllers/posts_controller.php</b>
-<pre class="brush:php">
-&lt;?php
+There is also an action included to list the data.
+
+`controllers/posts_controller.php`
+
+```php
+<?php
 class PostsController extends AppController {
 	var $name = 'Posts';
 	var $multiActions = array('admin_multi_delete');
@@ -91,86 +92,87 @@ class PostsController extends AppController {
 		$this->redirect($this->referer(), null, true);
 	}
 }
-?>
-</pre>
+```
 
-<h2>Display The Messages</h2>
+## Display The Messages
 
-<p>We want to display a message to the user for each row we handled.</p>
+We want to display a message to the user for each row we handled.
 
-<b>views/layouts/default.php</b>
-<pre class="brush:php; html-script:true">
-&lt;div id="messages">
-&lt;?php
+`views/layouts/default.php`
+
+```php
+<div id="messages">
+<?php
 	if ($session->check('Message.flash')) $session->flash();
 	if ($messages = $session->read('Message.multiFlash')) {
 		foreach($messages as $k=>$v) $session->flash('multiFlash.'.$k);
 	}
 ?>
-&lt;/div>
-</pre>
+</div>
+```
 
 
 
-<h2>Display The Records</h2>
+## Display The Records
 
-</p>In our index view we want to provide a checkbox for each row, and a submit button so the user can choose which action they would like to take.</p>
+In our index view we want to provide a checkbox for each row, and a submit button so the user can choose which action they would like to take.
 
-<b>views/posts/index.ctp</b>
-<pre class="brush:php; html-script:true">
-&lt;?php echo $form->create('Post',array('id'=>'PostListForm','url'=>array('controller'=>'posts','action'=>'multi')));?>
-&lt;table cellpadding="0" cellspacing="0" class="listTable">
-	&lt;tr>
-		&lt;th>&lt;span class="select_all">a&lt;/span>|&lt;span class="select_none">n&lt;/span>&lt;/th>
-		&lt;th>&lt;?php echo $paginator->sort(__('ID',true),'id');?>&lt;/th>
-		&lt;th>&lt;?php echo $paginator->sort(__('Name',true),'name');?>&lt;/th>
-		&lt;th class="actions">&lt;?php __('Actions');?>&lt;/th>
-	&lt;/tr>
-	&lt;?php
+`views/posts/index.ctp`
+
+```php
+<?php echo $form->create('Post',array('id'=>'PostListForm','url'=>array('controller'=>'posts','action'=>'multi')));?>
+<table cellpadding="0" cellspacing="0" class="listTable">
+	<tr>
+		<th><span class="select_all">a</span>|<span class="select_none">n</span></th>
+		<th><?php echo $paginator->sort(__('ID',true),'id');?></th>
+		<th><?php echo $paginator->sort(__('Name',true),'name');?></th>
+		<th class="actions"><?php __('Actions');?></th>
+	</tr>
+	<?php
 	$i = 0;
 	foreach ($posts as $post):
 		$class = ($i&1)?' class="altrow"':'';
 	?>
-		&lt;tr&lt;?php echo $class;?>>
-			&lt;td>
-				&lt;?php echo $form->input($post['Post']['id'],array(
+		<tr<?php echo $class;?>>
+			<td>
+				<?php echo $form->input($post['Post']['id'],array(
 					'type'=>'checkbox',
 					'label'=>false,
 					'name'=>'record['.$post['Post']['id'].']',
 					'id'=>'listRecord_'.$post['Post']['id'],
 				)); ?>
-			&lt;/td>
-			&lt;td>
-				&lt;?php echo $post['Post']['id']; ?>
-			&lt;/td>
-			&lt;td>
-				&lt;?php echo $post['Post']['name']; ?>
-			&lt;/td>
-			&lt;td class="actions">
-				&lt;?php echo $html->link(__('View', true), array('action'=>'view', $post['Post']['id'])); ?>
-				&lt;?php echo $html->link(__('Edit', true), array('action'=>'edit', $post['Post']['id'])); ?>
-				&lt;?php echo $html->link(__('Delete', true), array('action'=>'delete', $post['Post']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $post['Post']['id'])); ?>
-			&lt;/td>
-		&lt;/tr>
-	&lt;?php endforeach; ?>
-&lt;/table>
-&lt;div class="multi_actions">
-	&lt;input type="submit" name="data[action][admin_multi_delete]" value="Delete" onclick="return confirm('&lt;?php __('Are you sure you want to delete the selected records?'); ?>');"/>
-&lt;/div>
+			</td>
+			<td>
+				<?php echo $post['Post']['id']; ?>
+			</td>
+			<td>
+				<?php echo $post['Post']['name']; ?>
+			</td>
+			<td class="actions">
+				<?php echo $html->link(__('View', true), array('action'=>'view', $post['Post']['id'])); ?>
+				<?php echo $html->link(__('Edit', true), array('action'=>'edit', $post['Post']['id'])); ?>
+				<?php echo $html->link(__('Delete', true), array('action'=>'delete', $post['Post']['id']), null, sprintf(__('Are you sure you want to delete # %s?', true), $post['Post']['id'])); ?>
+			</td>
+		</tr>
+	<?php endforeach; ?>
+</table>
+<div class="multi_actions">
+	<input type="submit" name="data[action][admin_multi_delete]" value="Delete" onclick="return confirm('<?php __('Are you sure you want to delete the selected records?'); ?>');"/>
+</div>
 
-&lt;?php echo $form->end();?>
-&lt;?php echo $this->element('paging');?>
-</pre>
+<?php echo $form->end();?>
+<?php echo $this->element('paging');?>
+```
 
 
 
-<h2>A Touch of JavaScript</h2>
+## A Touch of JavaScript
 
-<p>Some JavaScript to hilight a hover and auto-select the checkboxes when the row is clicked.</p>
+Some JavaScript to hilight a hover and auto-select the checkboxes when the row is clicked.
 
-<p>This requires <a href="http://jquery.com/">jQuery</a>.</p>
+This requires <a href="http://jquery.com/">jQuery</a>.
 
-<pre class="brush:jscript">
+```javascript
 $(document).ready(function() {
 
     // tr hover
@@ -229,15 +231,15 @@ $(document).ready(function() {
 	}
 
 });
-</pre>
+```
 
 
 
-<h2>Tidy it up with some CSS</h2>
+## Tidy it up with some CSS
 
-<p>This will give the hover and selected rows a highlight colour.</p>
+This will give the hover and selected rows a highlight colour.
 
-<pre class="brush:css">
+```css
 .listTable tr.hover td {
 	background:#FBFFDF;
 }
@@ -257,12 +259,12 @@ $(document).ready(function() {
 .multi_actions_text {
 	font-size: 130%;
 }
-</pre>
+```
 
 
 
-<h2>The Final Product</h2>
+## The Final Product
 
-<p>Here is some screenshots from an application using the multi-delete function.</p>
+Here is some screenshots from an application using the multi-delete function.
 
 [inline:updating-multiple-records-cakephp-using-multi-actions_1.jpg] [inline:updating-multiple-records-cakephp-using-multi-actions_2.jpg] [inline:updating-multiple-records-cakephp-using-multi-actions_3.jpg]
