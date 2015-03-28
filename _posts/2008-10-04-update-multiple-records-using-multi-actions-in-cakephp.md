@@ -267,4 +267,9 @@ This will give the hover and selected rows a highlight colour.
 
 Here is some screenshots from an application using the multi-delete function.
 
-[inline:updating-multiple-records-cakephp-using-multi-actions_1.jpg] [inline:updating-multiple-records-cakephp-using-multi-actions_2.jpg] [inline:updating-multiple-records-cakephp-using-multi-actions_3.jpg]
+<img src="{{site.baseurl}}/assets/blog/2008-10-04-update-multiple-records-using-multi-actions-in-cakephp/updating-multiple-records-cakephp-using-multi-actions_1.jpg">
+
+<img src="{{site.baseurl}}/assets/blog/2008-10-04-update-multiple-records-using-multi-actions-in-cakephp/updating-multiple-records-cakephp-using-multi-actions_2.jpg">
+
+<img src="{{site.baseurl}}/assets/blog/2008-10-04-update-multiple-records-using-multi-actions-in-cakephp/updating-multiple-records-cakephp-using-multi-actions_3.jpg">
+

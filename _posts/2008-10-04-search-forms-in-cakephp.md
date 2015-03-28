@@ -283,4 +283,4 @@ $(document).ready(function(){
 
 Here is an example of how the form will look.
 
-[inline:search-forms-in-cakephp.jpg]
+<img src="{{site.baseurl}}/assets/blog/2008-10-04-search-forms-in-cakephp/search-forms-in-cakephp.jpg">
