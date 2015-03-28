@@ -30,3 +30,6 @@
 
 - slug: ubuntu
   name: Ubuntu
+
+- slug: security
+  name: Security
