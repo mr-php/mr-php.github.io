@@ -4,6 +4,10 @@ Yep, not a single line of PHP code to run MrPHP.com.au, how ironic.
 
 ## To-Do's
 
+### Inline Images
+
+Look for `[inline:filename.jpg]` and replace with img tag.
+
 ### Continuous Integration
 
 See: http://jekyllrb.com/docs/continuous-integration/
