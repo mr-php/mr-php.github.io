@@ -28,7 +28,7 @@
             <div class="col-md-4">
                 <h3>About Us</h3>
 
-                <p class="text-muted">{{ site.about }}</p>
+                <p>{{ site.about }}</p>
                 <ul class="list-inline quicklinks">
                     <li>
                         <a href="{{site.baseurl}}/blog/">Blog</a>
@@ -48,6 +48,6 @@
             </div>
         </div>
         <hr/>
-        <p class="copyright">Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}.</p>
+        <p class="copyright text-muted">Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}.</p>
     </div>
 </footer>
