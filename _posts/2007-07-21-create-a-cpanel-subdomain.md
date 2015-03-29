@@ -3,6 +3,8 @@ layout: post
 title: Create a cPanel Subdomain
 tags: [cpanel]
 redirect_from:
+- /blog/create-cpanel-subdomain/
+- /code/create-cpanel-subdomain/
 - /code/create-a-cpanel-subdomain/
 ---
 This snippet will allow you to create a cPanel subdomain using PHP.

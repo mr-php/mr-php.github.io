@@ -3,6 +3,8 @@ layout: post
 title: Create a cPanel Database
 tags: [cpanel]
 redirect_from:
+- /blog/create-cpanel-database/
+- /code/create-a-cpanel-database/
 - /code/create-a-cpanel-database/
 ---
 

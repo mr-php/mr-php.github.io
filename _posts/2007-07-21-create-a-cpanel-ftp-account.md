@@ -3,6 +3,8 @@ layout: post
 title: Create a cPanel FTP Account
 tags: [cpanel]
 redirect_from:
+- /blog/create-cpanel-ftp-account/
+- /code/create-cpanel-ftp-account/
 - /code/create-a-cpanel-ftp-account/
 ---
 
