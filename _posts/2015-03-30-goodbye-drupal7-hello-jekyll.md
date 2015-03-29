@@ -3,7 +3,7 @@ layout: post
 title: Goodbye Drupal7, Hello Jekyll
 tags: [mrphp]
 ---
-That's right!  MrPHP.com.au has officially unlatched from the shackles of, Drupal7, to a <strong>much nicer</strong> responsive theme using the new Twitter Bootstrap 3.
+MrPHP.com.au has been unlatched from the shackles of, Drupal7, to a <strong>much nicer</strong> responsive theme using the new Twitter Bootstrap 3.
 
 We're now powered by GitHub Pages.  That's right, no PHP on MrPHP.com.au.
 
