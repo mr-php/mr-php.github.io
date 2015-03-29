@@ -191,6 +191,6 @@ At the time of this writing CloudFlare's API does not support banning IPv6 addre
 ## References
 
 * <a href="https://github.com/fail2ban/fail2ban/blob/master/config/action.d/cloudflare.conf">cloudflare.conf by Mike Rushton</a>
-* <a href="http://www.normyee.net/blog/2012/02/02/adding-cloudflare-support-to-fail2ban">adding-cloudflare-support-to-fail2ban by NORM YEE</a>
- 
+* <a href="http://www.normyee.net/blog/2012/02/02/adding-cloudflare-support-to-fail2ban">Adding Cloudflare support to fail2ban by normyee.net</a>
+* <a href="http://kiteplans.info/2013/03/18/centos-virtualminfail2ban-protect-apache-from-ddos-attack/">CentOS 6 Virtualmin – fail2ban protect Apache from DDOS Attack by kiteplans.info</a> 
 
