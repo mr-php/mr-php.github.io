@@ -3,6 +3,8 @@ layout: post
 title: Search Forms in CakePHP
 tags: [cakephp]
 redirect_from:
+- /blog/search-forms-cakephp/
+- /code/search-forms-cakephp/
 - /code/search-forms-in-cakephp/
 ---
 In this CakePHP tutorial I would like to show you how I handle search forms, while preserving pagination.
