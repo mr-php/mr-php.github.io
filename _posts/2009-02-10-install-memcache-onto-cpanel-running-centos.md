@@ -3,6 +3,8 @@ layout: post
 title: Install Memcache onto cPanel running CentOS
 tags: [cpanel]
 redirect_from:
+- /blog/install-memcache-cpanel-running-centos/
+- /code/install-memcache-cpanel-running-centos/
 - /code/install-memcache-onto-cpanel-running-centos/
 ---
 Every time I install Memcache on cPanel I get a little bit stuck, so I wrote this quick guide in the hopes of helping myself next time and also helping other people who want the advantages of super fast caching.
