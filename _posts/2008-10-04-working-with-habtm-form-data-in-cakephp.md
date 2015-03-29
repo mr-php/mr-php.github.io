@@ -3,6 +3,8 @@ layout: post
 title: Working with HABTM Form Data in CakePHP
 tags: [cakephp]
 redirect_from:
+- /blog/working-habtm-form-data-cakephp/
+- /code/working-habtm-form-data-cakephp/
 - /code/working-with-habtm-form-data-in-cakephp/
 ---
 I would like to document several speedy ways I have of working with HABTM data.
