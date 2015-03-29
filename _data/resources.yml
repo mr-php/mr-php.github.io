@@ -147,6 +147,9 @@
   - name: Unitag QR Code
     url: https://www.unitag.io/qrcode
     description: Generate a fancy QR code with an embedded logo.
+  - name: Gravatar
+    url: https://en.gravatar.com/
+    description: Your Gravatar is an image that follows you from site to site appearing beside your name when you do things like comment or post on a blog.
 - name: Desktop Tools
   resources:
   - name: PHP Storm
