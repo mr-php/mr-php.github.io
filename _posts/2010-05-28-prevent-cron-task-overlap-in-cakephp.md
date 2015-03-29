@@ -3,6 +3,8 @@ layout: post
 title: Prevent Cron Task Overlap in CakePHP
 tags: [cakephp]
 redirect_from:
+- /blog/prevent-cron-task-overlap-cakephp/
+- /code/prevent-cron-task-overlap-cakephp/
 - /code/prevent-cron-task-overlap-in-cakephp/
 ---
 
