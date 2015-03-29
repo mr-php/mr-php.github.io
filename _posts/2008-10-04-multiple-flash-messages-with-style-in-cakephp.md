@@ -3,6 +3,8 @@ layout: post
 title: Multiple Flash Messages with Style in CakePHP
 tags: [cakephp]
 redirect_from:
+- /blog/multiple-flash-messages-style-cakephp/
+- /code/multiple-flash-messages-style-cakephp/
 - /code/multiple-flash-messages-with-style-in-cakephp/
 ---
 In this CakePHP tutorial I will explain how to output multiple flash messages.

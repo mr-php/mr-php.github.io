@@ -3,7 +3,8 @@ layout: post
 title: How to make a simple form module in Drupal
 tags: [drupal]
 redirect_from:
-- /code/how-to-make-a-simple-form-module-in-drupal/
+- /blog/how-make-simple-form-module-drupal/
+- /code/how-make-simple-form-module-drupal/
 - /code/how-to-make-a-simple-form-module-in-drupal/
 ---
 

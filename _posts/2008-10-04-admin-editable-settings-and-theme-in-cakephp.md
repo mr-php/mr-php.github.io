@@ -3,6 +3,8 @@ layout: post
 title: Admin Editable Settings and Theme in CakePHP
 tags: [cakephp]
 redirect_from:
+- /blog/admin-editable-settings-and-theme-cakephp/
+- /code/admin-editable-settings-and-theme-cakephp/
 - /code/admin-editable-settings-and-theme-in-cakephp/
 ---
 

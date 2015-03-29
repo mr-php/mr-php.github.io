@@ -3,6 +3,8 @@ layout: post
 title: Detect Page Start and Navigation Away in jQuery
 tags: [jquery]
 redirect_from:
+- /blog/detect-page-start-and-navigation-away-jquery/
+- /code/detect-page-start-and-navigation-away-jquery/
 - /code/detect-page-start-and-navigation-away-in-jquery/
 ---
 This quick snippet of jQuery that will allow you to so do something before the user navigates away from a page or closes the browser or tab.

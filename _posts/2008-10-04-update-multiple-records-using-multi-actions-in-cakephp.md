@@ -3,6 +3,8 @@ layout: post
 title: Update Multiple Records using Multi-Actions in CakePHP
 tags: [cakephp]
 redirect_from:
+- /blog/update-multiple-records-using-multi-actions-cakephp/
+- /code/update-multiple-records-using-multi-actions-cakephp/
 - /code/update-multiple-records-using-multi-actions-in-cakephp/
 ---
 In this CakePHP tutorial I will explain how to update multiple records in a single action.

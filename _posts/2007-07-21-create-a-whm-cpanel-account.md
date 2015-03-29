@@ -3,6 +3,8 @@ layout: post
 title: Create a WHM/cPanel Account
 tags: [cpanel]
 redirect_from:
+- /blog/create-whmcpanel-account/
+- /code/create-whmcpanel-account/
 - /blog/create-whm-cpanel-account/
 - /code/create-whm-cpanel-account/
 - /code/create-a-whm-cpanel-account/

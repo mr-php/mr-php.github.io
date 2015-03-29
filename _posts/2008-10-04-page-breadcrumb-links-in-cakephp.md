@@ -3,6 +3,8 @@ layout: post
 title: Page Breadcrumb Links in CakePHP
 tags: [cakephp]
 redirect_from:
+- /blog/page-breadcrumb-links-cakephp/
+- /code/page-breadcrumb-links-cakephp/
 - /code/page-breadcrumb-links-in-cakephp/
 ---
 I wanted to make a quick and easy breadcrumb that worked with a simple array.

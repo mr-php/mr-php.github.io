@@ -3,6 +3,8 @@ layout: post
 title: Merge your Add and Edit actions into a Single Form in CakePHP
 tags: [cakephp]
 redirect_from:
+- /blog/merge-your-add-and-edit-actions-single-form-cakephp/
+- /code/merge-your-add-and-edit-actions-single-form-cakephp/
 - /code/merge-your-add-and-edit-actions-into-a-single-form-in-cakephp/
 ---
 
