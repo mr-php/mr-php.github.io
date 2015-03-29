@@ -3,6 +3,8 @@ layout: post
 title: fuser taking 100% cpu on Ubuntu 11.10
 tags: [ubuntu]
 redirect_from:
+- /blog/fuser-taking-100-cpu-ubuntu-1110/
+- /code/fuser-taking-100-cpu-ubuntu-1110/
 - /code/fuser-taking-100-cpu-on-ubuntu-11-10/
 ---
 Server was running up super high load thanks to php5's cron task.

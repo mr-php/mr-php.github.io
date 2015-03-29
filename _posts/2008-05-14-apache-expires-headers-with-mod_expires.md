@@ -3,6 +3,8 @@ layout: post
 title: Apache Expires Headers with mod_expires
 tags: [performance]
 redirect_from:
+- /blog/apache-expires-headers-modexpires/
+- /code/apache-expires-headers-modexpires/
 - /code/apache-expires-headers-with-mod_expires/
 ---
 Quick example of how to set default expires headers.  This will help prevent browsers from re-downloading the same images more than once and therefore reduce the load on your image server.
