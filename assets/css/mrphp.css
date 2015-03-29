@@ -398,7 +398,7 @@ fieldset[disabled] .btn-xl.active {
 .intro-header .site-heading hr:after,
 .intro-header .post-heading hr:after,
 .intro-header .page-heading hr:after {
-    content: "\f1c0";
+    content: "\f0c2";
     display: inline-block;
     position: relative;
     top: -.8em;
