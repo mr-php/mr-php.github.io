@@ -138,6 +138,15 @@
   - name: Tinfoil Security
     url: https://www.tinfoilsecurity.com/
     description: provides a simple website application security solution by routinely monitoring and checking for vulnerabilities using a constantly updated scanner.
+  - name: DocToc
+    url: http://doctoc.herokuapp.com/
+    description: Generates table of content for markdown files inside github repositories.
+  - name: Patternify
+    url: http://www.patternify.com/
+    description: a simple CSS pattern generator.
+  - name: Unitag QR Code
+    url: https://www.unitag.io/qrcode
+    description: Generate a fancy QR code with an embedded logo.
 - name: Desktop Tools
   resources:
   - name: PHP Storm
