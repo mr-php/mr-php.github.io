@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mello World
+title: Hello World
 tags: [mrphp]
 ---
 Hello World from MrPHP.com.au!
