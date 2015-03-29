@@ -2,6 +2,8 @@
 layout: post
 title: Create a cPanel Database
 tags: [cpanel]
+redirect_from:
+- /code/create-a-cpanel-database/
 ---
 
 This snippet will allow you to create a cPanel database using PHP.

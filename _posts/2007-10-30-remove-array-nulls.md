@@ -2,6 +2,8 @@
 layout: post
 title: Remove Array Nulls
 tags: [php]
+redirect_from:
+- /code/remove-array-nulls/
 ---
 Recursively removes array keys with null values.
 <!--break-->

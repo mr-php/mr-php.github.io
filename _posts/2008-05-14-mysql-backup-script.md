@@ -2,6 +2,8 @@
 layout: post
 title: MySQL Backup Script
 tags: [mysql]
+redirect_from:
+- /code/mysql-backup-script/
 ---
 Here is what I use to make a backup library of MySQL daily that will keep backups for 30 days.
 

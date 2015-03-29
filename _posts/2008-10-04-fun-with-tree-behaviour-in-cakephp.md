@@ -2,6 +2,8 @@
 layout: post
 title: Fun with Tree Behaviour in CakePHP
 tags: [cakephp]
+redirect_from:
+- /code/fun-with-tree-behaviour-in-cakephp/
 ---
 I had a play with the Tree Behaviour in CakePHP and was very impressed at what you could create with such ease.
 

@@ -2,6 +2,8 @@
 layout: post
 title: Only display TinyMCE on certain node types in Drupal
 tags: [drupal]
+redirect_from:
+- /code/only-display-tinymce-on-certain-node-types-in-drupal/
 ---
 This example will show you how to choose which node types use the TinyMCE module.
 

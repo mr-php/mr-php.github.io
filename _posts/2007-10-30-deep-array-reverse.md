@@ -2,6 +2,8 @@
 layout: post
 title: Deep Array Reverse
 tags: [php]
+redirect_from:
+- /code/deep-array-reverse/
 ---
 Recursively reverses a multi-depth array.
 

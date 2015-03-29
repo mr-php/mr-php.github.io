@@ -3,6 +3,8 @@ layout: post
 title: Cache Function for PHP
 github_url: https://github.com/cornernote/php-cache-function
 tags: [php, performance]
+redirect_from:
+- /code/cache-function-for-php/
 ---
 This is a fantastic function that will allow you to cache your data.  By default it will cache using memcache, however if you do not have memcache installed or a connection cannot be achieved it will fall back to file based cache.
 

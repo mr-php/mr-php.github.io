@@ -2,6 +2,8 @@
 layout: post
 title: Pretty Bash Prompt
 tags: [linux]
+redirect_from:
+- /code/pretty-bash-prompt/
 ---
 Add this to your ~/.bash_profile to get a pretty prompt.
 

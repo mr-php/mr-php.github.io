@@ -3,6 +3,8 @@ layout: post
 title: Image Cache using phpThumb and Mod_Rewrite
 github_url: https://github.com/cornernote/php-image-cache
 tags: [php, performance]
+redirect_from:
+- /code/image-cache-using-phpthumb-and-mod_rewrite/
 ---
 Generate thumbs by visiting a URL such as `your.com/thumbs/50x50/images/image.jpg`.  This will create a 50x50px thumbnail of `your.com/images/image.jpg`.
 

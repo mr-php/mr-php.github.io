@@ -2,6 +2,8 @@
 layout: post
 title: Change Drupal7 Comments - Submitted by Guest (not verified)
 tags: [drupal]
+redirect_from:
+- /code/change-drupal7-comments-submitted-by-guest-not-verified/
 ---
 By default, if an anonymous user comments on some content in your drupal site, your comments box will show something like <strong>Submitted by Guest (not verified)</strong>.  The user may have left a username, so we would like to use that instead.
 

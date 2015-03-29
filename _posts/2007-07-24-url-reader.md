@@ -2,6 +2,8 @@
 layout: post
 title: URL Reader
 tags: [php]
+redirect_from:
+- /code/url-reader/
 ---
 This function will download the contents of any URL and return it as a string that you can save to a file or database.
 

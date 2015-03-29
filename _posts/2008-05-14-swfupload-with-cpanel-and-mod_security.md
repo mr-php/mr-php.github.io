@@ -2,6 +2,8 @@
 layout: post
 title: SWFUpload with cPanel and mod_security
 tags: [cpanel]
+redirect_from:
+- /code/swfupload-with-cpanel-and-mod_security/
 ---
 I searched long and hard to find what was causing swfupload to fail on my cPanel, but work on my test environment so I thought I better save the result incase I need it again.
 

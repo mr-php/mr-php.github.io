@@ -2,6 +2,8 @@
 layout: post
 title: View a Random Record in CakePHP
 tags: [cakephp]
+redirect_from:
+- /code/view-a-random-record-in-cakephp/
 ---
 This is a simple action to display a random record.  Possibly useful for sites wanting to keep people clicking on something.
 

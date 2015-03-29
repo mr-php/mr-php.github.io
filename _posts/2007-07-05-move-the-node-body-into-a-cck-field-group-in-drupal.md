@@ -2,6 +2,8 @@
 layout: post
 title: Move the Node Body into a CCK Field Group in Drupal
 tags: [drupal]
+redirect_from:
+- /code/move-the-node-body-into-a-cck-field-group-in-drupal/
 ---
 This code snippet will put the node body into a CCK Field Group for selected node types.
 

@@ -2,6 +2,8 @@
 layout: post
 title: Slideshow with Pause on Hover in jQuery
 tags: [javascript, jquery]
+redirect_from:
+- /code/slideshow-with-pause-on-hover-in-jquery/
 ---
 I searched and I could not find something similar already out there, so here is a simple slideshow that will pause when you mouseover.  With JavaScript disabled only the contents of the div inside the slideshow will be displayed.
 

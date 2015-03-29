@@ -2,6 +2,8 @@
 layout: post
 title: MySQL Ordering the Group By
 tags: [mysql]
+redirect_from:
+- /code/mysql-ordering-the-group-by/
 ---
 A problem that I have faced with SQL many times is pre-ordering the `GROUP BY` clause.
 

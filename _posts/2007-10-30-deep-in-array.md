@@ -2,6 +2,8 @@
 layout: post
 title: Deep In Array
 tags: [php]
+redirect_from:
+- /code/deep-in-array/
 ---
 Function similar to in_array() but it recursively searches a multi-depth array.
 

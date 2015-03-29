@@ -2,6 +2,8 @@
 layout: post
 title: Auto-Set the ID beforeSave in CakePHP
 tags: [cakephp]
+redirect_from:
+- /code/auto-set-the-id-beforesave-in-cakephp
 ---
 In this quick snippet of code I will be setting the ID of a model based on other fields given.
 

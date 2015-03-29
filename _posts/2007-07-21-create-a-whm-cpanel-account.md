@@ -2,6 +2,8 @@
 layout: post
 title: Create a WHM/cPanel Account
 tags: [cpanel]
+redirect_from:
+- /code/create-a-whm-cpanel-account/
 ---
 
 This snippet will allow you to create a cPanel account using PHP.

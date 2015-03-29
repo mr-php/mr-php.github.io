@@ -2,6 +2,8 @@
 layout: post
 title: Override Apache Settings Per Site in cPanel
 tags: [cpanel]
+redirect_from:
+- /code/override-apache-settings-per-site-in-cpanel/
 ---
 I have a domain where I keep all my pictures and I would like to be able to use multiple domains to access those images.
 

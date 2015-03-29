@@ -2,6 +2,8 @@
 layout: post
 title: Popular Searches Block in Drupal
 tags: [drupal]
+redirect_from:
+- /code/popular-searches-block-in-drupal/
 ---
 This php code can be used in a drupal block to display the most popular searches on your site.
 

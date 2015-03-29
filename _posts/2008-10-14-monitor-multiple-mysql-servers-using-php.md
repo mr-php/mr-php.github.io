@@ -2,6 +2,8 @@
 layout: post
 title: Monitor Multiple MySQL Servers using PHP
 tags: [php, mysql]
+redirect_from:
+- /code/monitor-multiple-mysql-servers-using-php/
 ---
 This is a quick 1 page application to monitor your replicated MySQL servers.
 

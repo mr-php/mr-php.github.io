@@ -1,7 +1,9 @@
 ---
 layout: post
 title: Useful Exim Commands
-tags: [exim]
+tags: [cpanel]
+redirect_from:
+- /code/useful-exim-commands/
 ---
 A list of a few commands useful for managing an exim mail server.
 
