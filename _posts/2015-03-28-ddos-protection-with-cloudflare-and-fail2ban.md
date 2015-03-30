@@ -1,7 +1,7 @@
 ---
 layout: post
 title: DDos Protection with Cloudflare and Fail2Ban
-excerpt: Use CloudFlare API to automatically block attacking IP addresses from visiting your server.
+excerpt: "<p>Use CloudFlare API to automatically block attacking IP addresses from visiting your server.</p>"
 tags: [security, ubuntu]
 ---
 

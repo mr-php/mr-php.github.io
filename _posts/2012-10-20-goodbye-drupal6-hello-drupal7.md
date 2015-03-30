@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Goodbye Drupal6, Hello Drupal7
-excerpt: "That's right!  MrPHP.com.au has officially upgraded from that 2000's feeling theme, powered by Drupal6, to a much nicer web 2.0 feeling theme powered by Drupal7 and Twitter Bootstrap."
+excerpt: "<p>That's right!  MrPHP.com.au has officially upgraded from that 2000's feeling theme, powered by Drupal6, to a much nicer web 2.0 feeling theme powered by Drupal7 and Twitter Bootstrap.</p>"
 tags: [mrphp]
 redirect_from:
 - /code/goodbye-drupal6-hello-drupal7/
