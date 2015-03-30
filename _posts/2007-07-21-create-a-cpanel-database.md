@@ -4,7 +4,7 @@ title: Create a cPanel Database
 tags: [cpanel]
 redirect_from:
 - /blog/create-cpanel-database/
-- /code/create-a-cpanel-database/
+- /code/create-cpanel-database/
 - /code/create-a-cpanel-database/
 ---
 
@@ -45,6 +45,3 @@ $result = file_get_contents("{$site}adddb.html?db=$db_name");
 $result .= file_get_contents("{$site}adduser.html?user={$db_username}&pass={$db_userpass}");
 $result .= file_get_contents("{$site}addusertodb.html?user={$cpanel_user}_{$db_username}&db={$cpanel_user}_{$db_name}&ALL=ALL");
 ```
-
-
-Full documentation is available here: <a href="http://documentation.cpanel.net/display/SDK/UAPI+Functions">http://documentation.cpanel.net/display/SDK/UAPI+Functions</a>.

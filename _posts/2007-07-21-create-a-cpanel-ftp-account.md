@@ -59,5 +59,3 @@ $request .= "&amp;quota={$ftp_quota}";
 $result = file_get_contents($request);
 echo $result;
 ```
-
-Full documentation is available here: <a href="http://documentation.cpanel.net/display/SDK/UAPI+Functions">http://documentation.cpanel.net/display/SDK/UAPI+Functions</a>.

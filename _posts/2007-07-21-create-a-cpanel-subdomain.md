@@ -54,4 +54,3 @@ echo $result;
 
 If you want to delete the subdomain then change <strong>doadddomain.html</strong> to <strong>dodeldomain.html</strong>.
 
-Full documentation is available here: <a href="http://documentation.cpanel.net/display/SDK/cPanel+API+2+-+SubDomain">http://documentation.cpanel.net/display/SDK/cPanel+API+2+-+SubDomain</a>.
