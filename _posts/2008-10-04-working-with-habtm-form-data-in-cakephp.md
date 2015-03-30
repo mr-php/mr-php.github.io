@@ -6,6 +6,7 @@ redirect_from:
 - /blog/working-habtm-form-data-cakephp/
 - /code/working-habtm-form-data-cakephp/
 - /code/working-with-habtm-form-data-in-cakephp/
+- /code/code-category/cakephp/cakephp-1-2/working-habtm-form-data-cakephp/
 ---
 I would like to document several speedy ways I have of working with HABTM data.
 

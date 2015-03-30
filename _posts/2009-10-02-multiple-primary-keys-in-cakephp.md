@@ -6,6 +6,7 @@ redirect_from:
 - /blog/multiple-primary-keys-cakephp/
 - /code/multiple-primary-keys-cakephp/
 - /code/multiple-primary-keys-in-cakephp/
+- /code/code-category/cakephp/cakephp-1-2/multiple-primary-keys-cakephp/
 ---
 If you have ever tried to deal with multiple primary keys in cakePHP then you have probably hit a brick wall at some stage.
 

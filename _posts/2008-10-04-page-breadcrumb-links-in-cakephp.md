@@ -6,6 +6,7 @@ redirect_from:
 - /blog/page-breadcrumb-links-cakephp/
 - /code/page-breadcrumb-links-cakephp/
 - /code/page-breadcrumb-links-in-cakephp/
+- /code/code-category/cakephp/cakephp-1-2/page-breadcrumb-links-cakephp/
 ---
 I wanted to make a quick and easy breadcrumb that worked with a simple array.
 
