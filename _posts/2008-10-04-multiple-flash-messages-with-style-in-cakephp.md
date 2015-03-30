@@ -117,4 +117,4 @@ This will set some colours and images.
 
 Here is how your messages will look.
 
-<img src="{{site.baseurl}}/assets/blog/2008-10-04-multiple-flash-messages-with-style-in-cakephp/multiple-flash-messages-with-style.jpg">
+<img src="{{site.baseurl}}/assets/blog/2008-10-04-multiple-flash-messages-with-style-in-cakephp/multiple-flash-messages-with-style.jpg" alt="multiple-flash-messages-with-style">
