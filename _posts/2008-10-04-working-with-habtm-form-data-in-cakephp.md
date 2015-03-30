@@ -79,7 +79,7 @@ This is the default CakePHP way of handling HABTM forms.
 
 It will allow you to add or remove HABTM data using a multiple select box (by holding CTRL).
 
-<img src="{{site.baseurl}}/assets/blog/2008-10-04-working-with-habtm-form-data-in-cakephp/habtm-select.jpg">
+<img src="{{site.baseurl}}/assets/blog/2008-10-04-working-with-habtm-form-data-in-cakephp/habtm-select.jpg" alt="habtm-select">
 
 `views/posts/form.ctp`
 
@@ -135,7 +135,7 @@ If you have too many options to list in a select box, or if the labels in the se
 
 It will allow you to add or remove HABTM data using a checkbox for each HABTM item.
 
-<img src="{{site.baseurl}}/assets/blog/2008-10-04-working-with-habtm-form-data-in-cakephp/habtm-checkbox.jpg">
+<img src="{{site.baseurl}}/assets/blog/2008-10-04-working-with-habtm-form-data-in-cakephp/habtm-checkbox.jpg" alt="habtm-checkbox">
 
 `views/posts/form.ctp`
 
@@ -222,7 +222,7 @@ If you want to allow users to enter tags that are added to the current tags.
 
 It will allow you to add but not remove HABTM data using a text input with comma seperated values.
 
-<img src="{{site.baseurl}}/assets/blog/2008-10-04-working-with-habtm-form-data-in-cakephp/habtm-textadd.jpg">
+<img src="{{site.baseurl}}/assets/blog/2008-10-04-working-with-habtm-form-data-in-cakephp/habtm-textadd.jpg" alt="habtm-textadd">
 
 `views/posts/form.ctp`
 
@@ -329,7 +329,7 @@ Finally, your admin may ask you if they can just edit all of the data as a comma
 
 It will allow you to add and remove HABTM data using a textarea input with comma separated values.
 
-<img src="{{site.baseurl}}/assets/blog/2008-10-04-working-with-habtm-form-data-in-cakephp/habtm-textareaedit.jpg">
+<img src="{{site.baseurl}}/assets/blog/2008-10-04-working-with-habtm-form-data-in-cakephp/habtm-textareaedit.jpg" alt="habtm-textareaedit">
 
 `views/posts/form.ctp`
 
