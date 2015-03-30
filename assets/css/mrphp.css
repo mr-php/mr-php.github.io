@@ -898,6 +898,10 @@ ul.social-buttons li a:active {
     background-color: #4d688b;
 }
 
+#newsletter-form {
+    max-width: 80%;
+}
+
 .btn:focus,
 .btn:active,
 .btn.active,
