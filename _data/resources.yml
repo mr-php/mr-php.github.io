@@ -153,6 +153,9 @@
   - name: Gravatar
     url: https://en.gravatar.com/
     description: Your Gravatar is an image that follows you from site to site appearing beside your name when you do things like comment or post on a blog.
+  - name: Authy
+    url: https://www.authy.com/developers
+    description: Protects people and the enterprise against malicious attack using Two-Factor Authentication security
 - name: Desktop Tools
   resources:
   - name: PHP Storm
