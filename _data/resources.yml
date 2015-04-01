@@ -126,6 +126,9 @@
   - name: Simple Form
     url: https://getsimpleform.com/
     description: allows you to setup forms with any kind of data (including file uploads) in 2 easy steps. Data can be accessed via email or api.
+  - name: Form Spree
+    url: http://formspree.io/
+    description: Send your form to their URL and they forward it to your email.
   - name: SendGrid
     url: https://sendgrid.com/
     description: provides transactional email delivery. Our cloud based email solution replaces your email infrastructure so you don't have to build, scale, and maintain these systems inhouse.
