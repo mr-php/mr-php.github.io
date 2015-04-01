@@ -156,6 +156,9 @@
   - name: Authy
     url: https://www.authy.com/developers
     description: Protects people and the enterprise against malicious attack using Two-Factor Authentication security
+  - name: IcoMoon
+    url: https://icomoon.io
+    description: Browse 4000+ free vector icons; Custom & crisp icon font generator; Import your own vectors to make fonts
 - name: Desktop Tools
   resources:
   - name: PHP Storm
