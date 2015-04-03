@@ -83,6 +83,9 @@
   - name: Codeception
     url: http://codeception.com/
     description: modern PHP testing for everyone.
+  - name: Nette
+    url: http://nette.org/
+    description: make your work easier, you will write less code yet more readable and you will really enjoy it. 
 - name: E-Commerce
   resources:
   - name: Magento
