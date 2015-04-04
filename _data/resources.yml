@@ -51,6 +51,12 @@
   - name: Packagist
     url: https://packagist.org/
     description: is the main Composer repository. It aggregates all sorts of PHP packages that are installable with Composer.
+  - name: Nagios
+    url: http://www.nagios.org/
+    description: an open source computer system monitoring, network monitoring and infrastructure monitoring software application.
+  - name: Sensu
+    url: http://sensuapp.org/
+    description: a monitoring framework that aims to be simple, malleable, and scalable.
 - name: Frameworks
   resources:
   - name: Yii Framework
