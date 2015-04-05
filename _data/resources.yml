@@ -57,6 +57,7 @@
   - name: Sensu
     url: http://sensuapp.org/
     description: a monitoring framework that aims to be simple, malleable, and scalable.
+
 - name: Frameworks
   resources:
   - name: Yii Framework
@@ -92,6 +93,7 @@
   - name: Nette
     url: http://nette.org/
     description: make your work easier, you will write less code yet more readable and you will really enjoy it. 
+
 - name: E-Commerce
   resources:
   - name: Magento
@@ -103,7 +105,8 @@
   - name: Zen-Cart
     url: http://www.zen-cart.com/
     description: truly is the art of e-commerce; free, user-friendly, open source shopping cart software.
-- name: Hosting and Services
+
+- name: Hosting and Storage
   resources:
   - name: GitHub
     url: https://github.com/
@@ -117,6 +120,9 @@
   - name: DigitalOcean
     url: https://www.digitalocean.com/
     description: Quick & Easy. Built For Developers. Deploy A Cloud Server In 55 Seconds - Launches in 55 seconds
+  - name: Heroku
+    url: https://www.heroku.com/
+    description: A platform as a service (PaaS) that enables developers to build and run applications entirely in the cloud. 
   - name: DreamHost
     url: http://www.dreamhost.com/r.cgi?224930
     description: provides unlimited shared web hosting and WordPress hosting.
@@ -126,6 +132,42 @@
   - name: Dropbox
     url: http://db.tt/DzhLr2G
     description: a free service that lets you bring your photos, docs, and videos anywhere and share them easily.
+
+- name: Security and Logging
+  resources:
+  - name: DataDogHQ
+    url: https://www.datadoghq.com/
+    description: a monitoring service for IT, Operations and Development teams who write and run applications at scale, and want to turn the massive amounts of data produced by their apps, tools and services into actionable insight.
+  - name: Detectify
+    url: https://detectify.com/
+    description: a SaaS based website security scanner that will help you stay safe.
+  - name: Tinfoil Security
+    url: https://www.tinfoilsecurity.com/
+    description: provides a simple website application security solution by routinely monitoring and checking for vulnerabilities using a constantly updated scanner.
+  - name: Authy
+    url: https://www.authy.com/developers
+    description: Protects people and the enterprise against malicious attack using Two-Factor Authentication security
+
+- name: Front-End Helpers
+  resources:
+  - name: Patternify
+    url: http://www.patternify.com/
+    description: a simple CSS pattern generator.
+  - name: Unitag QR Code
+    url: https://www.unitag.io/qrcode
+    description: Generate a fancy QR code with an embedded logo.
+  - name: Gravatar
+    url: https://en.gravatar.com/
+    description: Your Gravatar is an image that follows you from site to site appearing beside your name when you do things like comment or post on a blog.
+  - name: IcoMoon
+    url: https://icomoon.io
+    description: Browse 4000+ free vector icons; Custom & crisp icon font generator; Import your own vectors to make fonts
+  - name: DocToc
+    url: http://doctoc.herokuapp.com/
+    description: Generates table of content for markdown files inside github repositories.
+
+- name: Mail Utilities
+  resources:
   - name: Mailinator
     url: https://mailinator.com/
     description: Think up and give out a Mailinator address any time you need an email address but don't want to get spammed! All inboxes are public and usable by you!
@@ -141,37 +183,8 @@
   - name: SendGrid
     url: https://sendgrid.com/
     description: provides transactional email delivery. Our cloud based email solution replaces your email infrastructure so you don't have to build, scale, and maintain these systems inhouse.
-  - name: DataDogHQ
-    url: https://www.datadoghq.com/
-    description: a monitoring service for IT, Operations and Development teams who write and run applications at scale, and want to turn the massive amounts of data produced by their apps, tools and services into actionable insight.
-  - name: Detectify
-    url: https://detectify.com/
-    description: a SaaS based website security scanner that will help you stay safe.
-  - name: Tinfoil Security
-    url: https://www.tinfoilsecurity.com/
-    description: provides a simple website application security solution by routinely monitoring and checking for vulnerabilities using a constantly updated scanner.
-  - name: DocToc
-    url: http://doctoc.herokuapp.com/
-    description: Generates table of content for markdown files inside github repositories.
-  - name: Patternify
-    url: http://www.patternify.com/
-    description: a simple CSS pattern generator.
-  - name: Unitag QR Code
-    url: https://www.unitag.io/qrcode
-    description: Generate a fancy QR code with an embedded logo.
-  - name: Gravatar
-    url: https://en.gravatar.com/
-    description: Your Gravatar is an image that follows you from site to site appearing beside your name when you do things like comment or post on a blog.
-  - name: Authy
-    url: https://www.authy.com/developers
-    description: Protects people and the enterprise against malicious attack using Two-Factor Authentication security
-  - name: IcoMoon
-    url: https://icomoon.io
-    description: Browse 4000+ free vector icons; Custom & crisp icon font generator; Import your own vectors to make fonts
-  - name: Heroku
-    url: https://www.heroku.com/
-    description: A platform as a service (PaaS) that enables developers to build and run applications entirely in the cloud. 
-- name: Desktop Tools
+
+- name: Windows Desktop Software
   resources:
   - name: PHP Storm
     url: https://www.jetbrains.com/phpstorm/
