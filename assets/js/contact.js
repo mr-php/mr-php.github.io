@@ -7,8 +7,6 @@ $(function() {
         },
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
-            // reset errors
-            $('#success').html('');
             // get values from FORM
             var name = $('input#name').val();
             var email = $('input#email').val();
@@ -65,8 +63,7 @@ $(function() {
     });
 });
 
-
-/*When clicking on Full hide fail/success boxes */
-$('#name').focus(function() {
+// reset errors
+$('#contactForm').find('input,textarea').focus(function() {
     $('#success').html('');
 });
