@@ -9,16 +9,8 @@ $(function() {
             // prevent default submit behaviour
             event.preventDefault();
             // get values from FORM
-            var data = $form.serialize();
-            console.log(data);
-            console.log({
-                    _subject: 'mrphp.com.au contact - ' + name,
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    message: message
-                });
-            
+            console.log($form.serialize());
+
             var name = $('input#name').val();
             var email = $('input#email').val();
             var phone = $('input#phone').val();
