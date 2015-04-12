@@ -24,7 +24,6 @@ $(function() {
                 dataType: 'json',
                 data: {
                     _subject: 'mrphp.com.au contact - ' + name,
-                    _replyto: email,
                     name: name,
                     phone: phone,
                     email: email,
