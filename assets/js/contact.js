@@ -11,8 +11,7 @@ $(function() {
             // set subject
             $("input[name=_subject]").val('mrphp.com.au contact - ' + $("input[name=name]")); 
             // for Success/Failure Message
-            var firstName = $("input[name=name]"); 
-            console.log(firstName);
+            var firstName = $("input[name=name]").val(); 
             // check for white space in name
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
