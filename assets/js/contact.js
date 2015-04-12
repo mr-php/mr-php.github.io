@@ -8,11 +8,11 @@ $(function() {
         submitSuccess: function($form, event) {
             // prevent default submit behaviour
             event.preventDefault();
-            // get values from FORM
-            var data = $form.serializeArray();
-            console.log(data);
-            var firstName = data.name; // For Success/Failure Message
-            // Check for white space in name for Success/Fail message
+            // for Success/Failure Message
+            var firstName = $("input[name=name]"); 
+            // set subject
+            $("input[name=_subject]").val('mrphp.com.au contact - ' + $("input[name=name]")); 
+            // check for white space in name
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
@@ -21,26 +21,19 @@ $(function() {
                 url: '//formspree.io/hello@mrphp.com.au',
                 method: 'POST',
                 dataType: 'json',
-                data: {
-                    _subject: 'mrphp.com.au contact - ' + name,
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    message: message
-                },
+                data: $form.serialize(),
                 cache: false,
                 success: function() {
-                    // Success message
+                    // success message
                     $('#success').html('<div class="alert alert-success">');
                     $('#success > .alert-success').html('<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>');
                     $('#success > .alert-success').append('<strong>Your message has been sent. </strong>');
                     $('#success').append('</div>');
-
-                    //clear all fields
+                    // clear all fields
                     $('#contactForm').trigger('reset');
                 },
                 error: function() {
-                    // Fail message
+                    // fail message
                     $('#success').html('<div class="alert alert-danger">');
                     $('#success > .alert-danger').html('<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>');
                     $('#success > .alert-danger').append('<strong>Sorry ' + firstName + ', it seems that my mail server is not responding. Please try again later!');
