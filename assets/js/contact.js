@@ -9,7 +9,7 @@ $(function() {
             // prevent default submit behaviour
             event.preventDefault();
             // get values from FORM
-            console.log($form);
+            console.log($form.serialize());
 
             var name = $('input#name').val();
             var email = $('input#email').val();
