@@ -19,7 +19,7 @@ $(function() {
             }
             $.ajax({
                 url: "https://getsimpleform.com/messages/ajax?form_api_token=3c63094a4813397862f3ad282bf8232b",
-                type: "jsonp",
+                type: "post",
                 data: {
                     name: name,
                     phone: phone,
@@ -48,7 +48,7 @@ $(function() {
                     $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
-                    $('#contactForm').trigger("reset");
+                    //$('#contactForm').trigger("reset");
                 }
             })
         },
