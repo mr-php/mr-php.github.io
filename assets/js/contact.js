@@ -52,14 +52,9 @@ $(function() {
         }
     });
 
-//    $('a[data-toggle="tab"]').click(function(e) {
-//        e.preventDefault();
-//        $(this).tab('show');
-//    });
-    
-});
+    // reset errors
+    $('#contactForm').find('input,textarea').focus(function() {
+        $('#success').html('');
+    });
 
-// reset errors
-$('#contactForm').find('input,textarea').focus(function() {
-    $('#success').html('');
 });
