@@ -382,6 +382,7 @@ fieldset[disabled] .btn-xl.active {
 .intro-header .page-heading hr {
     width: 200px;
     border-top: 4px solid #fff;
+    color: #fff;
     margin: 25px auto 30px;
     padding: 0;
     max-width: 250px;
