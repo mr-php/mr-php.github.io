@@ -174,9 +174,9 @@
   - name: MailChimp
     url: http://mailchimp.com/
     description: Online email marketing solution to manage contacts, send emails and track results. Offers plug-ins for other programs.
-  - name: Simple Form
-    url: https://getsimpleform.com/
-    description: allows you to setup forms with any kind of data (including file uploads) in 2 easy steps. Data can be accessed via email or api.
+#  - name: Simple Form
+#    url: https://getsimpleform.com/
+#    description: allows you to setup forms with any kind of data (including file uploads) in 2 easy steps. Data can be accessed via email or api.
   - name: Form Spree
     url: http://formspree.io/
     description: Send your form to their URL and they forward it to your email.
