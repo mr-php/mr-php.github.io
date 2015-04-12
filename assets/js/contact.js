@@ -6,6 +6,8 @@ $(function() {
             // additional error messages or events
         },
         submitSuccess: function($form, event) {
+            // disable submit button
+            $form.find(":submit").attr("disabled", true);
             // prevent default submit behaviour
             event.preventDefault();
             // get name
@@ -31,6 +33,8 @@ $(function() {
                     $('#success').append('</div>');
                     // clear all fields
                     $('#contactForm').trigger('reset');
+                    // enable submit button
+                    $form.find(":submit").removeAttr("disabled");
                 },
                 error: function() {
                     // fail message
@@ -38,6 +42,8 @@ $(function() {
                     $('#success > .alert-danger').html('<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>');
                     $('#success > .alert-danger').append('<strong>Sorry ' + firstName + ', it seems that my mail server is not responding. Please try again later!');
                     $('#success').append('</div>');
+                    // enable submit button
+                    $form.find(":submit").removeAttr("disabled");
                 }
             })
         },
