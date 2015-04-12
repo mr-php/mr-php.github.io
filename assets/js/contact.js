@@ -8,13 +8,13 @@ $(function() {
         submitSuccess: function($form, event) {
             // prevent default submit behaviour
             event.preventDefault();
+            // get name
+            var name = $("input[name=name]").val(); 
             // set subject
             $("input[name=_subject]").val('mrphp.com.au contact - ' + $("input[name=name]")); 
-            // for Success/Failure Message
-            var firstName = $("input[name=name]").val(); 
-            // check for white space in name
-            if (firstName.indexOf(' ') >= 0) {
-                firstName = name.split(' ').slice(0, -1).join(' ');
+            // set name to first name
+            if (name.indexOf(' ') >= 0) {
+                name = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
                 //url: '//getsimpleform.com/messages/ajax?form_api_token=3c63094a4813397862f3ad282bf8232b',
