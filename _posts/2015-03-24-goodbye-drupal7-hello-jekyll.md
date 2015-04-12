@@ -9,7 +9,7 @@ We're now powered by GitHub Pages.  That's right, no PHP on MrPHP.com.au.
 
 <!--break-->
 
-Don't get me wrong, <a href="http://drupal.org/">Drupal</a> served us well for over 10 years, providing a solid CMS which we manage content with images and other media.  The posts allowed for threaded comments, and it was reasonably easy to manage.
+Don't get me wrong, <a href="http://www.drupal.org/">Drupal</a> served us well for over 10 years, providing a solid CMS which we manage content with images and other media.  The posts allowed for threaded comments, and it was reasonably easy to manage.
 
 Problems started because pages were not very fast to load.  It made it difficult to want to post new content because we would spend a lot of time waiting for pages to load.  In addition Drupal can be fiddly.  If you want to achieve something you need several modules, and they all need configuration.  Compounded with slow page loading, tinkering with settings can become very tedious.  
 
