@@ -1,13 +1,25 @@
 $(function() {
 
-    $('#contactForm').find('input,textarea').jqBootstrapValidation({
+    $contactForm = $('#contactForm');
+    $contactForm.find('input,textarea').jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
             // additional error messages or events
         },
         submitSuccess: function($form, event) {
-            event.preventDefault(); // prevent default submit behaviour
+            // prevent default submit behaviour
+            event.preventDefault();
             // get values from FORM
+            var data = $contactForm.serialize();
+            console.log(data);
+            console.log({
+                    _subject: 'mrphp.com.au contact - ' + name,
+                    name: name,
+                    phone: phone,
+                    email: email,
+                    message: message
+                });
+            
             var name = $('input#name').val();
             var email = $('input#email').val();
             var phone = $('input#phone').val();
