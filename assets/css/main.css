@@ -7,9 +7,6 @@ body {
     overflow-x: hidden;
     font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
     background: #ffffff url(../img/background/body.png);
-}
-
-body {
     margin-bottom: 580px;
 }
 
