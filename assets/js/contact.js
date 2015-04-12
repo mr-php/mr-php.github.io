@@ -11,7 +11,7 @@ $(function() {
             // get name
             var name = $("input[name=name]").val(); 
             // set subject
-            $("input[name=_subject]").val('mrphp.com.au contact - ' + $("input[name=name]")); 
+            $("input[name=_subject]").val('mrphp.com.au contact - ' + name); 
             // set name to first name
             if (name.indexOf(' ') >= 0) {
                 name = name.split(' ').slice(0, -1).join(' ');
