@@ -1,68 +1,63 @@
 <footer>
-    <div class="container text-left">
-        <div class="row">
-            <div class="col-md-4">
-                <h3>{{ site.title }}</h3>
-                <abbr title="Phone">P</abbr>: <a href="tel:{{ site.phone_int }}">{{ site.phone }}</a><br/>
-                <abbr title="Email">E</abbr>: <a href="mailto:{{ site.email }}">{{ site.email }}</a><br/>
-                <abbr title="Australian Business Number">ABN</abbr>: {{ site.abn }}<br/>
-                <address>{{ site.address }}</address>
-            </div>
-            <div class="col-md-4">
-                <h3>On the Web</h3>
-                <ul class="list-inline social-buttons">
-                    <li class="text-center">
-                        <a href="https://twitter.com/{{site.twitter_username}}" rel="publisher"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li class="text-center">
-                        <a href="https://www.facebook.com/{{site.facebook_page}}" rel="publisher"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li class="text-center">
-                        <a href="https://plus.google.com/{{site.google_plus_page}}" rel="publisher"><i class="fa fa-google-plus"></i></a>
-                    </li>
-                    <li class="text-center">
-                        <a href="https://www.linkedin.com/company/{{site.linkedin_company}}" rel="publisher"><i class="fa fa-linkedin"></i></a>
-                    </li>
-                    <li class="text-center">
-                        <a href="https://github.com/{{site.github_username}}" rel="publisher"><i class="fa fa-github"></i></a>
-                    </li>
-                </ul>
-                <!--
-                <br>
-                <form id="newsletter-form" action="//mrphp.us1.list-manage.com/subscribe/post?u=91727179f1c05b357b43bb4d3&amp;id=4122328387" method="post" role="form" target="_blank">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                        <input type="text" class="form-control" placeholder="your@email.com" name="EMAIL" id="mce-EMAIL">
-                        <span class="input-group-btn"><input type="submit" class="btn btn-primary" value="Subscribe"></span>
-                    </div>
-                </form>
-                -->
-            </div>
-            <div class="col-md-4">
-                <h3>About Us</h3>
-
-                <p>{{ site.about }}</p>
-                <ul class="list-inline quicklinks">
-                    <li>
-                        <a href="{{site.baseurl}}/blog/">Blog</a>
-                    </li>
-                    <li>
-                        <a href="{{site.baseurl}}/resources/">Resources</a>
-                    </li>
-                    <li>
-                        <a href="{{site.baseurl}}/contact/">Contact</a>
-                    </li>
+    <div class="footer-above">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>{{ site.title }}</h3>
+                    <abbr title="Phone">P</abbr>: <a href="tel:{{ site.phone_int }}">{{ site.phone }}</a><br/>
+                    <abbr title="Email">E</abbr>: <a href="mailto:{{ site.email }}">{{ site.email }}</a><br/>
+                    <abbr title="Australian Business Number">ABN</abbr>: {{ site.abn }}<br/>
+                    <address>{{ site.address }}</address>
+                </div>
+                <div class="col-md-4">
+                    <h3>On the Web</h3>
+                    <ul class="list-inline social-buttons">
+                        {% for network in site.social %}
+                        <li class="text-center">
+                            <a href="{{ network.url }}" rel="publisher"><i class="fa fa-fw fa-{{ network.title }}"></i></a>
+                        </li>
+                        {% endfor %}
+                    </ul>
                     <!--
-                    <li>
-                        <a href="{{site.baseurl}}/newsletter">Newsletter</a>
-                        <a href="http://us1.campaign-archive2.com/home/?u=91727179f1c05b357b43bb4d3&id=4122328387">Newsletter Archive</a>
-                        <a href="http://eepurl.com/BkN2H">Newsletter Subscribe</a>
-                    </li>
+                    <br>
+                    <form id="newsletter-form" action="//mrphp.us1.list-manage.com/subscribe/post?u=91727179f1c05b357b43bb4d3&amp;id=4122328387" method="post" role="form" target="_blank">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                            <input type="text" class="form-control" placeholder="your@email.com" name="EMAIL" id="mce-EMAIL">
+                            <span class="input-group-btn"><input type="submit" class="btn btn-primary" value="Subscribe"></span>
+                        </div>
+                    </form>
                     -->
-                </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3>About Us</h3>
+
+                    <p>{{ site.about }}</p>
+                    <ul class="list-inline quicklinks">
+                        <li>
+                            <a href="{{site.baseurl}}/blog/">Blog</a>
+                        </li>
+                        <li>
+                            <a href="{{site.baseurl}}/resources/">Resources</a>
+                        </li>
+                        <li>
+                            <a href="{{site.baseurl}}/contact/">Contact</a>
+                        </li>
+                        <!--
+                        <li>
+                            <a href="{{site.baseurl}}/newsletter">Newsletter</a>
+                            <a href="http://us1.campaign-archive2.com/home/?u=91727179f1c05b357b43bb4d3&id=4122328387">Newsletter Archive</a>
+                            <a href="http://eepurl.com/BkN2H">Newsletter Subscribe</a>
+                        </li>
+                        -->
+                    </ul>
+                </div>
             </div>
         </div>
-        <hr/>
-        <p class="copyright text-muted">Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}.</p>
+    </div>
+    <div class="footer-below">
+        <div class="container">
+            <p class="copyright text-muted">Copyright &copy; {{ site.title }} {{ 'now' | date: "%Y" }}.</p>
+        </div>
     </div>
 </footer>

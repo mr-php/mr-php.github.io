@@ -20,13 +20,18 @@ header_img: /assets/img/background/index.jpg
 url: https://mrphp.com.au
 baseurl: ""
 
-twitter_username: mrphp
-github_username:  cornernote
-facebook_page: pages/Mr-PHP/124929103375
-google_plus_page: 105251425294714122907
-linkedin_company: mr-php
-mailchimp_subscribe_url: http://mrphp.us1.list-manage.com/subscribe?u=91727179f1c05b357b43bb4d3&id=4122328387
-github_ribbon_img: https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67
+# Social networks
+social:
+  - title: twitter
+    url: https://twitter.com/mrphp
+  - title: facebook
+    url: https://www.facebook.com/pages/Mr-PHP/124929103375
+  - title: google-plus
+    url: https://plus.google.com/105251425294714122907
+  - title: linkedin
+    url: https://www.linkedin.com/company/mr-php
+  - title: github
+    url: https://github.com/cornernote
 
 # Build settings
 permalink: /blog/:title
