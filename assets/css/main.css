@@ -842,9 +842,17 @@ section#contact {
 }
 
 footer {
+    background: #000;
+    color: #ddd;
+}
+
+footer .footer-above {
     padding: 25px 0;
     background: #000 url("../img/background/footer.png");
-    color: #ddd;
+}
+
+footer .footer-below {
+    padding: 20px 0 0 0;
 }
 
 footer a:hover, footer a:active {
