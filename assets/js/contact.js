@@ -1,7 +1,6 @@
 $(function() {
 
-    $contactForm = $('#contactForm');
-    $contactForm.find('input,textarea').jqBootstrapValidation({
+    $('#contactForm').find('input,textarea').jqBootstrapValidation({
         preventSubmit: true,
         submitError: function($form, event, errors) {
             // additional error messages or events
@@ -10,7 +9,7 @@ $(function() {
             // prevent default submit behaviour
             event.preventDefault();
             // get values from FORM
-            var data = $contactForm.serialize();
+            var data = $form.serialize();
             console.log(data);
             console.log({
                     _subject: 'mrphp.com.au contact - ' + name,
