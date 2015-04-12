@@ -7,6 +7,8 @@ $(function() {
         },
         submitSuccess: function($form, event) {
             event.preventDefault(); // prevent default submit behaviour
+            // reset errors
+            $('#success').html('');
             // get values from FORM
             var name = $("input#name").val();
             var email = $("input#email").val();
