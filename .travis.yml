@@ -7,7 +7,7 @@ install:
   - gem install html-proofer
 script:
   - jekyll build
-  - htmlproof _site --href-ignore www.drupal.org
+  - htmlproof _site --href-ignore https://www.drupal.org/
 env:
   global:
   - NOKOGIRI_USE_SYSTEM_LIBRARIES=true # speeds up installation of html-proofer
