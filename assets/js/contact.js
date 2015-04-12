@@ -18,7 +18,8 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "https://getsimpleform.com/messages/ajax?form_api_token=3c63094a4813397862f3ad282bf8232b",
+                //url: "https://getsimpleform.com/messages/ajax?form_api_token=3c63094a4813397862f3ad282bf8232b",
+                url: "//formspree.io/hello@mrphp.com.au",
                 type: "post",
                 data: {
                     name: name,
