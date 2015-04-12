@@ -9,13 +9,9 @@ $(function() {
             // prevent default submit behaviour
             event.preventDefault();
             // get values from FORM
-            console.log($form.serialize());
-
-            var name = $('input#name').val();
-            var email = $('input#email').val();
-            var phone = $('input#phone').val();
-            var message = $('textarea#message').val();
-            var firstName = name; // For Success/Failure Message
+            var data = $form.serializeArray();
+            console.log(data);
+            var firstName = data.name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
