@@ -381,12 +381,7 @@ fieldset[disabled] .btn-xl.active {
 .intro-header .post-heading hr,
 .intro-header .page-heading hr {
     width: 200px;
-    border-top: 4px solid #eee;
-}
-
-.intro-header .site-heading hr,
-.intro-header .post-heading hr,
-.intro-header .page-heading hr {
+    border-top: 4px solid #fff;
     margin: 25px auto 30px;
     padding: 0;
     max-width: 250px;
