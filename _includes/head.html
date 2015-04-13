@@ -7,7 +7,7 @@
 
 <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
 <meta name="author" content="{{ site.title }}">
-<meta name="rights" content="Copyright 2000-{{ 'now' | date: " %Y" }} © {{ site.title }}. All rights reserved."/>
+<meta name="rights" content="Copyright 2000-{{ 'now' | date: "%Y" }} © {{ site.title }}. All rights reserved."/>
 
 <!-- Links -->
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
