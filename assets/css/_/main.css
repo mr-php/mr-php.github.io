@@ -6,7 +6,7 @@ html {
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background: #ffffff url(../img/background/body.png);
+    background: #eee;
     margin-bottom: 580px;
 }
 
@@ -89,11 +89,11 @@ h6 {
 }
 
 .bg-light-gray {
-    background: #f7f7f7 url(../img/background/light-grey.png);
+    background: #C8CAD0;
 }
 
 .bg-darkest-gray {
-    background: #222 url(../img/background/darkest-grey.png);
+    background: #222;
     color: #ccc;
 }
 
@@ -848,7 +848,7 @@ footer {
 
 footer .footer-above {
     padding: 25px 0;
-    background: #000 url("../img/background/footer.png");
+    background: #111;
 }
 
 footer .footer-below {
