@@ -93,16 +93,15 @@ class PostsController extends AppController {
 		//
 		// filter by id
 		//
-		if(isset($this->passedArgs['id'])) {
-
+		if(isset($this->passedArgs['Search.id'])) {
 			// set the conditions
-			$this->paginate['conditions'][]['Post.id'] = $this->passedArgs['id'];
+			$this->paginate['conditions'][]['Post.id'] = $this->passedArgs['Search.id'];
 
 			// set the Search data, so the form remembers the option
-			$this->data['Search']['id'] = $this->passedArgs['id'];
+			$this->data['Search']['id'] = $this->passedArgs['Search.id'];
 
 			// set the Page Title (not required)
-			$title[] = __('ID',true).': '.$this->passedArgs['id'];
+			$title[] = __('ID',true).': '.$this->passedArgs['Search.id'];
 		}
 
 		//
