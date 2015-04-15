@@ -18,8 +18,8 @@ The basic principal is to read the posted variables, and redirect the user to a 
 This guide is for CakePHP v1.x.
 
 For CakePHP v2.x you need to change:
-* Change `$this->data` to `$this->request->data`.
-* Change `$form` to `$this->Form`.
+- Change `$this->data` to `$this->request->data`.
+- Change `$form` to `$this->Form`.
 
 If you notice any other changes required in newer versions of CakePHP please leave a comment below.
 
