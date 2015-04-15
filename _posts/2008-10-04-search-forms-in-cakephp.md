@@ -13,6 +13,17 @@ The basic principal is to read the posted variables, and redirect the user to a 
 
 <!--break-->
 
+## Important
+
+This guide is for CakePHP v1.x.
+
+For CakePHP v2.x you need to change:
+* Change `$this->data` to `$this->request->data`.
+* Change `$form` to `$this->Form`.
+
+If you notice any other changes required in newer versions of CakePHP please leave a comment below.
+
+
 ## Add the Search Form
 
 Lets add a search form on the index page to search through the records.
@@ -22,7 +33,7 @@ Lets add a search form on the index page to search through the records.
 ```php
 <?php echo $form->create('Post',array('action'=>'search'));?>
 	<fieldset>
- 		<legend><?php __('Post Search');?></legend>
+ 		<legend><?php echo __('Post Search', true);?></legend>
 	<?php
 		echo $form->input('Search.keywords');
 		echo $form->input('Search.id');
