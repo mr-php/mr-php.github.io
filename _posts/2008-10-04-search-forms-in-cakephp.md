@@ -13,16 +13,18 @@ The basic principal is to read the posted variables, and redirect the user to a 
 
 <!--break-->
 
-## Important
+<div class="alert alert-warning" role="alert">
 
-This guide is for CakePHP v1.x.
+<strong>Warning</strong> This guide is for <span class="label label-primary">CakePHP v1.x</span>.
 
-For CakePHP v2.x you need to change:
+For <span class="label label-primary">CakePHP v2.x</span> you need to change:
 
 - Change `$this->data` to `$this->request->data`.
 - Change `$form` to `$this->Form`.
 
 If you notice any other changes required in newer versions of CakePHP please leave a comment below.
+
+</div>
 
 
 ## Add the Search Form
