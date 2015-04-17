@@ -11,8 +11,7 @@ redirect_from:
 ---
 
 <div class="alert alert-warning" role="alert">
-	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
-	<p>If you notice any changes required in newer versions of CakePHP please leave a comment below.</p>
+	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>. If you notice any changes required in newer versions of CakePHP please leave a comment below.</p>
 </div>
 
 This is a quick little method that lets you get some data from a CSV into a table.
