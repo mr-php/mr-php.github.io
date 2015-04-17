@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Admin Editable Settings and Theme in CakePHP
+excerpt: Usually the client will request for me to give them a way to edit simple settings in their application. I decided to read all the variables from the database in the beforeFilter to make them available in any controller.
 tags: [cakephp]
 redirect_from:
 - /blog/admin-editable-settings-and-theme-cakephp/
@@ -8,7 +9,13 @@ redirect_from:
 - /code/admin-editable-settings-and-theme-in-cakephp/
 ---
 
-Usually the client will request for me to give them a way to edit simple settings in their application.
+<div class="alert alert-warning" role="alert">
+	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
+	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
+</div>
+
+Usually the client will request for me to give them a way to edit simple settings in their application. 
+
 I decided to read all the variables from the database in the beforeFilter to make them available in any controller.
 
 <!--break-->
