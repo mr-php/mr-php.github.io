@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Multiple Primary Keys in CakePHP
+excerpt: If you have ever tried to deal with multiple primary keys in cakePHP then you have probably hit a brick wall at some stage. Although you still need to add a single id field, this example will allow you to save your data without needing to know the id.
 tags: [cakephp]
 redirect_from:
 - /blog/multiple-primary-keys-cakephp/
@@ -9,11 +10,15 @@ redirect_from:
 - /code/code-category/cakephp/cakephp-1-2/multiple-primary-keys-cakephp/
 ---
 
+<div class="alert alert-warning" role="alert">
+	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
+	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
+</div>
+
 If you have ever tried to deal with multiple primary keys in cakePHP then you have probably hit a brick wall at some stage.
 
 Although you still need to add a single id field, this example will allow you to save your data without needing to know the id.
 
-<!--break-->
 
 ## Usage
 
