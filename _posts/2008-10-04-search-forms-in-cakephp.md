@@ -14,16 +14,13 @@ The basic principal is to read the posted variables, and redirect the user to a 
 <!--break-->
 
 <div class="alert alert-warning" role="alert">
-
-<strong>Warning</strong> This guide is for <span class="label label-primary">CakePHP v1.x</span>.
-
-For <span class="label label-primary">CakePHP v2.x</span> you need to change:
-
-- Change `$this->data` to `$this->request->data`.
-- Change `$form` to `$this->Form`.
-
-If you notice any other changes required in newer versions of CakePHP please leave a comment below.
-
+	<p><strong>Warning</strong> This guide is for <span class="label label-primary">CakePHP v1.x</span>.</p>
+	<p>For <span class="label label-primary">CakePHP v2.x</span> you need to change:</p>
+	<ul>
+	<li>Change `$this->data` to `$this->request->data`.</li>
+	<li>Change `$form` to `$this->Form`.</li>
+	</ul>
+	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
 </div>
 
 
