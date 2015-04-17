@@ -1,17 +1,23 @@
 ---
 layout: post
 title: Simple Auth with Users HABTM Groups in CakePHP
+excerpt: In almost every project I need to setup some sort of login, and usually it requires group access to certain data depending on different criteria. For example I may have groups Admin+Member and I want Members to only be able to see other Users Profiles if the other Profile is active.
 tags: [cakephp]
 redirect_from:
 - /blog/simple-auth-users-habtm-groups-cakephp/
 - /code/simple-auth-users-habtm-groups-cakephp/
 - /code/simple-auth-with-users-habtm-groups-in-cakephp/
 ---
+
+<div class="alert alert-warning" role="alert">
+	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
+	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
+</div>
+
 In almost every project I need to setup some sort of login, and usually it requires group access to certain data depending on different criteria.
 
 For example I may have groups Admin+Member and I want Members to only be able to see other Users Profiles if the other Profile is active.
 
-<!--break-->
 
 ## Little Helper
 
