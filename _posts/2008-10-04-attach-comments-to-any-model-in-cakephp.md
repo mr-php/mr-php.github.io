@@ -1,15 +1,21 @@
 ---
 layout: post
 title: Attach Comments to Any Model in CakePHP
+excerpt: This method of linking models allows you to have a single table of data, say Comment, that is related to any one of a number of other Models (eg: Post, Event).
 tags: [cakephp]
 redirect_from:
 - /blog/attach-comments-any-model-cakephp/
 - /code/attach-comments-any-model-cakephp/
 - /code/attach-comments-to-any-model-in-cakephp/
 ---
+
+<div class="alert alert-warning" role="alert">
+	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
+	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
+</div>
+
 This method of linking models allows you to have a single table of data, say Comment, that is related to any one of a number of other Models (eg: Post, Event).
 
-<!--break-->
 
 ## The Tables
 
