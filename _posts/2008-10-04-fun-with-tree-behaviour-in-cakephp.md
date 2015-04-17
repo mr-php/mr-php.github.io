@@ -10,8 +10,7 @@ redirect_from:
 ---
 
 <div class="alert alert-warning" role="alert">
-	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
-	<p>If you notice any changes required in newer versions of CakePHP please leave a comment below.</p>
+	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>. If you notice any changes required in newer versions of CakePHP please leave a comment below.</p>
 </div>
 
 I had a play with the Tree Behaviour in CakePHP and was very impressed at what you could create with such ease.
