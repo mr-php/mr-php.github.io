@@ -12,13 +12,12 @@ redirect_from:
 <!--break-->
 
 <div class="alert alert-warning" role="alert">
-	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
+	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>. If you notice any changes required in newer versions of CakePHP please leave a comment below.</p>
 	<p>If you are using <span class="label label-primary">CakePHP v2.x</span> you need to change:</p>
 	<ul>
 	<li>Change <code>$this->data</code> to <code>$this->request->data</code>.</li>
 	<li>Change <code>$form</code> to <code>$this->Form</code>.</li>
 	</ul>
-	<p>If you notice any changes required in newer versions of CakePHP please leave a comment below.</p>
 </div>
 
 In this CakePHP tutorial I would like to show you how I handle search forms, while preserving pagination.
