@@ -17,8 +17,8 @@ The basic principal is to read the posted variables, and redirect the user to a 
 	<p><strong>Warning</strong> This guide is for <span class="label label-primary">CakePHP v1.x</span>.</p>
 	<p>For <span class="label label-primary">CakePHP v2.x</span> you need to change:</p>
 	<ul>
-	<li>Change `$this->data` to `$this->request->data`.</li>
-	<li>Change `$form` to `$this->Form`.</li>
+	<li>Change <code>$this->data</code> to <code>$this->request->data</code>.</li>
+	<li>Change <code>$form</code> to <code>$this->Form</code>.</li>
 	</ul>
 	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
 </div>
