@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Update Multiple Records using Multi-Actions in CakePHP
+excerpt: In this CakePHP tutorial I will explain how to update multiple records in a single action. This will typically be used as an extension to the index views in your application, allowing a user to select which rows they would like to update, and then performing an action.
 tags: [cakephp]
 redirect_from:
 - /blog/update-multiple-records-using-multi-actions-cakephp/
@@ -8,11 +9,16 @@ redirect_from:
 - /code/update-multiple-records-using-multi-actions-in-cakephp/
 - /code/code-category/cakephp/cakephp-1-2/updating-multiple-records-cakephp-using-multi-actions/
 ---
+
+<div class="alert alert-warning" role="alert">
+	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
+	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
+</div>
+
 In this CakePHP tutorial I will explain how to update multiple records in a single action.
 
 This will typically be used as an extension to the index views in your application, allowing a user to select which rows they would like to update, and then performing an action.
 
-<!--break-->
 
 ## The Multi-Action Function
 
