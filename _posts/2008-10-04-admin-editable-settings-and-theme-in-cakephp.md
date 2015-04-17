@@ -18,7 +18,6 @@ Usually the client will request for me to give them a way to edit simple setting
 
 I decided to read all the variables from the database in the beforeFilter to make them available in any controller.
 
-<!--break-->
 
 ## The Tables
 
