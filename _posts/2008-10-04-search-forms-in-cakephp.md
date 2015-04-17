@@ -80,7 +80,9 @@ class PostsController extends AppController {
 		// example.com/cake/posts/index/Search.keywords:mykeyword/Search.tag_id:3
 		foreach ($this->data as $k=>$v){ 
 			foreach ($v as $kk=>$vv){ 
-				$url[$k.'.'.$kk]=$vv; 
+				if ($vv) {
+					$url[$k.'.'.$kk]=$vv; 
+				}
 			} 
 		}
 
