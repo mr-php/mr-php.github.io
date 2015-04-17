@@ -14,8 +14,8 @@ The basic principal is to read the posted variables, and redirect the user to a 
 <!--break-->
 
 <div class="alert alert-warning" role="alert">
-	<p><strong>Warning</strong> This guide is for <span class="label label-primary">CakePHP v1.x</span>.</p>
-	<p>For <span class="label label-primary">CakePHP v2.x</span> you need to change:</p>
+	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
+	<p>If you are using <span class="label label-primary">CakePHP v2.x</span> you need to change:</p>
 	<ul>
 	<li>Change <code>$this->data</code> to <code>$this->request->data</code>.</li>
 	<li>Change <code>$form</code> to <code>$this->Form</code>.</li>
