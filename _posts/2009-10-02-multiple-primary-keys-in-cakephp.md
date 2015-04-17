@@ -12,7 +12,7 @@ redirect_from:
 
 <div class="alert alert-warning" role="alert">
 	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
-	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
+	<p>If you notice any changes required in newer versions of CakePHP please leave a comment below.</p>
 </div>
 
 If you have ever tried to deal with multiple primary keys in cakePHP then you have probably hit a brick wall at some stage.
