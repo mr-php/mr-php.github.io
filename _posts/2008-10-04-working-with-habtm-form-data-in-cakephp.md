@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Working with HABTM Form Data in CakePHP
+excerpt: I would like to document several speedy ways I have of working with HABTM data.
 tags: [cakephp]
 redirect_from:
 - /blog/working-habtm-form-data-cakephp/
@@ -8,9 +9,13 @@ redirect_from:
 - /code/working-with-habtm-form-data-in-cakephp/
 - /code/code-category/cakephp/cakephp-1-2/working-habtm-form-data-cakephp/
 ---
-I would like to document several speedy ways I have of working with HABTM data.
 
-<!--break-->
+<div class="alert alert-warning" role="alert">
+	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
+	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
+</div>
+
+I would like to document several speedy ways I have of working with HABTM data.
 
 * <a href="#tables">The Tables</a>
 * <a href="#models">The Models</a>
