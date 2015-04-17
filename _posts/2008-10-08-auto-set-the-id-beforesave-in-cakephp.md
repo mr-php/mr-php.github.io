@@ -1,17 +1,23 @@
 ---
 layout: post
 title: Auto-Set the ID beforeSave in CakePHP
+excerpt: In this quick snippet of code I will be setting the ID of a model based on other fields given. We want to save a note about each Post that is different for every Client, however we do not want to have to get the ID every time we save the data.
 tags: [cakephp]
 redirect_from:
 - /blog/auto-set-id-beforesave-cakephp/
 - /code/auto-set-id-beforesave-cakephp/
 - /code/auto-set-the-id-beforesave-in-cakephp/
 ---
+
+<div class="alert alert-warning" role="alert">
+	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
+	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
+</div>
+
 In this quick snippet of code I will be setting the ID of a model based on other fields given.
 
 We want to save a note about each Post that is different for every Client, however we do not want to have to get the ID every time we save the data.
 
-<!--break-->
 
 ## The Tables
 
