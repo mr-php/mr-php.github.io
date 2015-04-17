@@ -1,15 +1,21 @@
 ---
 layout: post
 title: View a Random Record in CakePHP
+excerpt: This is a simple action to display a random record.  Possibly useful for sites wanting to keep people clicking on something.
 tags: [cakephp]
 redirect_from:
 - /blog/view-random-record-cakephp/
 - /code/view-random-record-cakephp/
 - /code/view-a-random-record-in-cakephp/
 ---
+
+<div class="alert alert-warning" role="alert">
+	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
+	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
+</div>
+
 This is a simple action to display a random record.  Possibly useful for sites wanting to keep people clicking on something.
 
-<!--break-->
 
 ## The Controller
 
