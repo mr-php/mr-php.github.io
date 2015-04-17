@@ -11,7 +11,7 @@ redirect_from:
 
 <div class="alert alert-warning" role="alert">
 	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
-	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
+	<p>If you notice any changes required in newer versions of CakePHP please leave a comment below.</p>
 </div>
 
 If you have a task that runs every 5 minutes, and it takes more than 5 minutes to run then the next task will start causing even more server load.  This effect may stack up and eventually cause your server to come to a grinding halt.  For this reason it is very important that your scheduled tasks do not overlap.
