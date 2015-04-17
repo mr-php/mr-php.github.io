@@ -1,15 +1,13 @@
 ---
 layout: post
 title: Search Forms in CakePHP
+excerpt: In this CakePHP tutorial I would like to show you how I handle search forms, while preserving pagination. The basic principal is to read the posted variables, and redirect the user to a page with the appropriate filters in the URL.
 tags: [cakephp]
 redirect_from:
 - /blog/search-forms-cakephp/
 - /code/search-forms-cakephp/
 - /code/search-forms-in-cakephp/
 ---
-In this CakePHP tutorial I would like to show you how I handle search forms, while preserving pagination.
-
-The basic principal is to read the posted variables, and redirect the user to a page with the appropriate filters in the URL.
 
 <!--break-->
 
@@ -22,6 +20,10 @@ The basic principal is to read the posted variables, and redirect the user to a 
 	</ul>
 	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
 </div>
+
+In this CakePHP tutorial I would like to show you how I handle search forms, while preserving pagination.
+
+The basic principal is to read the posted variables, and redirect the user to a page with the appropriate filters in the URL.
 
 
 ## Add the Search Form
