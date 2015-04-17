@@ -1,12 +1,19 @@
 ---
 layout: post
 title: Multiple Flash Messages with Style in CakePHP
+excerpt: In this CakePHP tutorial I will explain how to output multiple flash messages. This forms a message stack that can be used to inform the user that multiple events have taken place.
 tags: [cakephp]
 redirect_from:
 - /blog/multiple-flash-messages-style-cakephp/
 - /code/multiple-flash-messages-style-cakephp/
 - /code/multiple-flash-messages-with-style-in-cakephp/
 ---
+
+<div class="alert alert-warning" role="alert">
+	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
+	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
+</div>
+
 In this CakePHP tutorial I will explain how to output multiple flash messages.
 
 This forms a message stack that can be used to inform the user that multiple events have taken place.
