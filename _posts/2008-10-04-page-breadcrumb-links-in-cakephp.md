@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Page Breadcrumb Links in CakePHP
+excerpt: "I wanted to make a quick and easy breadcrumb that worked with a simple array. The breadcrumb is an array containing multiple links from <code>html_helper::link()</code>."
 tags: [cakephp]
 redirect_from:
 - /blog/page-breadcrumb-links-cakephp/
@@ -8,6 +9,12 @@ redirect_from:
 - /code/page-breadcrumb-links-in-cakephp/
 - /code/code-category/cakephp/cakephp-1-2/page-breadcrumb-links-cakephp/
 ---
+
+<div class="alert alert-warning" role="alert">
+	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
+	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
+</div>
+
 I wanted to make a quick and easy breadcrumb that worked with a simple array.
 
 The breadcrumb is an array containing multiple links from `html_helper::link()`.
