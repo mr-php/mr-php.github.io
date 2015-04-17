@@ -1,15 +1,21 @@
 ---
 layout: post
 title: Fun with Tree Behaviour in CakePHP
+excerpt: I had a play with the Tree Behaviour in CakePHP and was very impressed at what you could create with such ease.
 tags: [cakephp]
 redirect_from:
 - /code/fun-tree-behaviour-cakephp/
 - /blog/fun-tree-behaviour-cakephp/
 - /code/fun-with-tree-behaviour-in-cakephp/
 ---
+
+<div class="alert alert-warning" role="alert">
+	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
+	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
+</div>
+
 I had a play with the Tree Behaviour in CakePHP and was very impressed at what you could create with such ease.
 
-<!--break-->
 
 ## The Models
 
