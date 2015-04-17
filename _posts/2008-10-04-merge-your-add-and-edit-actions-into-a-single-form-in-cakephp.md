@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Merge your Add and Edit actions into a Single Form in CakePHP
+excerpt: This CakePHP example will show you how to merge your Add and Edit forms into a Single Form action. This may be of benefit if you have a form with complex controller logic that you don't want to duplicate.
 tags: [cakephp]
 redirect_from:
 - /blog/merge-your-add-and-edit-actions-single-form-cakephp/
@@ -8,11 +9,15 @@ redirect_from:
 - /code/merge-your-add-and-edit-actions-into-a-single-form-in-cakephp/
 ---
 
+<div class="alert alert-warning" role="alert">
+	<p><strong>Warning:</strong> This guide was written for <span class="label label-primary">CakePHP v1.x</span>.</p>
+	<p>If you notice any other changes required in newer versions of CakePHP please leave a comment below.</p>
+</div>
+
 This CakePHP example will show you how to merge your Add and Edit forms into a Single Form action.
 
 This may be of benefit if you have a form with complex controller logic that you don't want to duplicate.
 
-<!--break-->
 
 ## The Controller
 
