@@ -6,7 +6,7 @@ _st('install','UfjNQb2D33csw9E3BFjv');
 
 $(function () {
     $.getJSON('//api.swiftype.com/api/v1/public/engines/search.json?callback=?', {
-        engine_key: '5eMMdfkKCgz5wxyhR9RL', 
+        engine_key: 'UfjNQb2D33csw9E3BFjv', 
         q: window.location.pathname.split(/[-/_]/).join(' ').trim(), 
         per_page: 10
     }).success(function (data) {
