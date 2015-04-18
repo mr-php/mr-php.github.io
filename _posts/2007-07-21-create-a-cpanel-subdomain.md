@@ -8,6 +8,7 @@ redirect_from:
 - /code/create-a-cpanel-subdomain/
 ---
 This snippet will allow you to create a cPanel subdomain using PHP.
+
 <!--break-->
 
 ```php
