@@ -5,13 +5,12 @@ e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
 _st('install','UfjNQb2D33csw9E3BFjv');
 
 $(function () {
-    console.log('load search');
     $.getJSON("//api.swiftype.com/api/v1/public/engines/search.json?callback=?", {
         engine_key: "5eMMdfkKCgz5wxyhR9RL", 
         q: window.location.pathname.split(/[-/_]/).join(" "), 
         per_page: 10
     }).success(function (data) {
-        console.log('loaded search?');
+        console.log(data);
         var $resultContainer = $("#st-results-container");
         $resultContainer.html("");
         if (data['records']['page'].length > 0) {
