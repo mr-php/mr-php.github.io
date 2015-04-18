@@ -19,10 +19,9 @@ if (page.path == '404.html') {
                 $resultContainer.append('<h2>Suggested pages based on this URL</h2>');
             }
             $.each(data['records']['page'], function(index, result) {
-                var resultHTML = '<hr><div class="post-preview"><a href="' + result['url'] + '"><h3>' + 
-                (result['highlight']['title'] || result['title']).replace('| Mr PHP', '').trim() + '</h3><p>' +
-                (result['highlight']['body'] || result['body'].substring(0, 300)).replace('Toggle navigation Mr PHP Blog Resources Contact', '').trim() +
-                '</p></a></div>';
+                var title = (result['highlight']['title'] || result['title']).replace('| Mr PHP', '').trim();
+                var body = (result['highlight']['body'] || result['body'].substring(0, 300)).replace(title, '').replace('Toggle navigation Mr PHP Blog Resources Contact', '').trim();
+                var resultHTML = '<hr><div class="post-preview"><a href="' + result['url'] + '"><h3>' + title + '</h3><p>' + body + '</p></a></div>';
                 $resultContainer.append(resultHTML);
             });
         });
