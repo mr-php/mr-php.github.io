@@ -19,10 +19,10 @@ $(function () {
             $resultContainer.append('<h2>Suggested pages based on this URL</h2>');
         }
         $.each(data['records']['page'], function(index, result) {
-            var resultHTML = '<p><a href="' + result['url'] + '">' + 
-            (result['highlight']['title'] || result['title']) + '</a><br>' +
+            var resultHTML = '<a href="' + result['url'] + '"><h3>' + 
+            (result['highlight']['title'] || result['title']) + '<h3><p>' +
             (result['highlight']['body'] || result['body'].substring(0, 300)) +
-            '</p>';
+            '</p></a>';
             $resultContainer.append(resultHTML);
         });
     });
