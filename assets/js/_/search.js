@@ -23,4 +23,4 @@ function renderAutomaticResults(data) {
     });
 }
 var searchParams = {engine_key: "5eMMdfkKCgz5wxyhR9RL", q: getKeywordsFromPath(), per_page: 10}
-$.getJSON("http://api.swiftype.com/api/v1/public/engines/search.json?callback=?", searchParams).success(renderAutomaticResults);
+$.getJSON("//api.swiftype.com/api/v1/public/engines/search.json?callback=?", searchParams).success(renderAutomaticResults);
