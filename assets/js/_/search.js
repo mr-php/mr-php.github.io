@@ -20,8 +20,8 @@ if (page.path == '404.html') {
             }
             $.each(data['records']['page'], function(index, result) {
                 var resultHTML = '<hr><div class="post-preview"><a href="' + result['url'] + '"><h3>' + 
-                (result['highlight']['title'] || result['title']) + '</h3><p>' +
-                (result['highlight']['body'] || result['body'].substring(0, 300)) +
+                (result['highlight']['title'] || result['title']).replace('| Mr PHP', '').trim() + '</h3><p>' +
+                (result['highlight']['body'] || result['body'].substring(0, 300)).replace('Toggle navigation Mr PHP Blog Resources Contact', '').trim() +
                 '</p></a></div>';
                 $resultContainer.append(resultHTML);
             });
