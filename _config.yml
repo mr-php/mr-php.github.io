@@ -34,8 +34,8 @@ social:
     url: https://github.com/cornernote
 
 # Build settings
-permalink: /blog/:title
-paginate_path: /blog/page:num
+permalink: /blog/:title/
+paginate_path: /blog/page:num/
 paginate: 20
 excerpt_separator: <!--break-->
 markdown: redcarpet
