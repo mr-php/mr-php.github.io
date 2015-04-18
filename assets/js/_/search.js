@@ -20,7 +20,7 @@ $(function () {
         }
         $.each(data['records']['page'], function(index, result) {
             var resultHTML = '<a href="' + result['url'] + '"><h3>' + 
-            (result['highlight']['title'] || result['title']) + '<h3><p>' +
+            (result['highlight']['title'] || result['title']) + '</h3><p>' +
             (result['highlight']['body'] || result['body'].substring(0, 300)) +
             '</p></a>';
             $resultContainer.append(resultHTML);
