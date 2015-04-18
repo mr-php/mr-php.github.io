@@ -44,7 +44,7 @@ ${FIND} ${BACKUPDIR} -mtime +${BACKUPDAYS} -delete -print
 
 ## MySQL Backup Script with MyDumper
 
-Similar script using the <a href="http://dammit.lt/2009/02/03/mydumper/">super fast mysql backup script <b>mydumper</b></a> by Doomas Mituzas which will backup each table to its own compressed file using multiple threads:
+Similar script using the <a href="http://dom.as/2009/02/03/mydumper/">super fast mysql backup script <b>mydumper</b></a> by Doomas Mituzas which will backup each table to its own compressed file using multiple threads:
 
 ```bash
 #!/bin/sh
