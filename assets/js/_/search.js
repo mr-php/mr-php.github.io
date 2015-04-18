@@ -3,7 +3,7 @@
 //(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
 //e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
 //})(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
-//_st('install','pzPCqKnYUkavsQVNZryZ');
+//_st('install','UfjNQb2D33csw9E3BFjv');
 
 // 404 search
 if (page.path == '404.html') {
@@ -13,7 +13,6 @@ if (page.path == '404.html') {
             q: window.location.pathname.split(/[-/_]/).join(' ').trim(), 
             per_page: 10
         }).success(function (data) {
-            console.log(data);
             var $resultContainer = $('#st-results-container');
             $resultContainer.html('');
             if (data['records']['page'].length > 0) {
