@@ -7,7 +7,7 @@ install:
   - gem install html-proofer
 script:
   - jekyll build
-  - htmlproof _site --href-ignore http://www.opencart.com/,https://www\.drupal\.org/.*
+  - htmlproof _site --href-ignore "'http://www.opencart.com/','https://www\.drupal\.org/.*'"
   #  - htmlproof _site --href-ignore http://www.opencart.com/,https://www.drupal.org/,https://www.drupal.org/drupal-6.0,https://www.drupal.org/drupal-7.0
 env:
   global:
