@@ -1,6 +1,6 @@
 ---
 ---
 
-{% include_relative _/bootstrap.min.css %}
-{% include_relative _/syntax.css %}
-{% include_relative _/main.css %}
+{% include_relative _includes/bootstrap.css %}
+{% include_relative _includes/syntax.css %}
+{% include_relative _includes/main.css %}
