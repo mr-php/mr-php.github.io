@@ -33,6 +33,12 @@ social:
   - title: github
     url: https://github.com/cornernote
 
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:title/
+
 # Build settings
 permalink: /blog/:title/
 paginate_path: /blog/page:num/
