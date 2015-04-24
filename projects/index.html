@@ -1,0 +1,33 @@
+---
+layout: page
+title: Project Portfolio
+#description: Exploring web development and related foobar.
+#header_img: /assets/img/background/blog.jpg
+---
+
+<div class="row">
+    {% for project in site.projects %}
+    <div class="col-md-4 col-sm-6 project-preview">
+        <a href="{{ project.url | prepend: site.baseurl }}" class="project-link">
+            <div class="project-hover">
+                <div class="project-hover-content">
+                    <i class="fa fa-plus fa-3x"></i>
+                </div>
+            </div>
+            <img src="{{ site.baseurl }}/assets/img/projects/placeholder.gif" data-original="{{ site.baseurl }}/assets/img/projects/{{ project.image }}" class="img-responsive lazy" alt="{{ project.title }}">
+        </a>
+
+        <div class="project-caption">
+            <h2 class="project-title"> {{ project.title }}</h2>
+            {% if project.subtitle %}
+            <h3 class="project-subtitle">{{ project.subtitle }}</h3>
+            {% endif %}
+
+            {{ project.excerpt }}
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+

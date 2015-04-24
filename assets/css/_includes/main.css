@@ -350,6 +350,7 @@ fieldset[disabled] .btn-xl.active {
 
 .intro-header .site-heading,
 .intro-header .post-heading,
+.intro-header .project-heading,
 .intro-header .page-heading {
     padding: 50px 0 100px;
     color: white;
@@ -358,17 +359,20 @@ fieldset[disabled] .btn-xl.active {
 @media only screen and (min-width: 768px) {
     .intro-header .site-heading,
     .intro-header .post-heading,
+    .intro-header .project-heading,
     .intro-header .page-heading {
         padding: 150px 0;
     }
 }
 
 .intro-header .site-heading,
+.intro-header .project-heading,
 .intro-header .page-heading {
     text-align: center;
 }
 
 .intro-header .site-heading h1,
+.intro-header .project-heading h1,
 .intro-header .page-heading h1 {
     margin-top: 0;
     font-size: 35px;
@@ -376,6 +380,7 @@ fieldset[disabled] .btn-xl.active {
 
 .intro-header .site-heading hr,
 .intro-header .post-heading hr,
+.intro-header .project-heading hr,
 .intro-header .page-heading hr {
     width: 200px;
     border-top: 4px solid #fff;
@@ -390,6 +395,7 @@ fieldset[disabled] .btn-xl.active {
 
 .intro-header .site-heading hr:after,
 .intro-header .post-heading hr:after,
+.intro-header .project-heading hr:after,
 .intro-header .page-heading hr:after {
     content: "\f0c2";
     display: inline-block;
@@ -407,6 +413,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .intro-header .site-heading .subheading,
+.intro-header .project-heading .subheading
 .intro-header .page-heading .subheading {
     font-size: 24px;
     line-height: 1.1;
@@ -418,6 +425,7 @@ fieldset[disabled] .btn-xl.active {
 
 @media only screen and (min-width: 768px) {
     .intro-header .site-heading h1,
+    .intro-header .project-heading h1,
     .intro-header .page-heading h1 {
         font-size: 80px;
     }
@@ -504,19 +512,19 @@ section h3.section-subheading {
     height: 230px;
 }
 
-#portfolio .portfolio-item {
+.project-preview {
     right: 0;
     margin: 0 0 15px;
 }
 
-#portfolio .portfolio-item .portfolio-link {
+.project-preview .project-link {
     display: block;
     position: relative;
     margin: 0 auto;
     max-width: 400px;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+.project-preview .project-link .project-hover {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -527,11 +535,11 @@ section h3.section-subheading {
     transition: all ease .5s;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
+.project-preview .project-link .project-hover:hover {
     opacity: 1;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+.project-preview .project-link .project-hover .project-hover-content {
     position: absolute;
     top: 50%;
     width: 100%;
@@ -542,16 +550,16 @@ section h3.section-subheading {
     color: #fff;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+.project-preview .project-link .project-hover .project-hover-content i {
     margin-top: -12px;
 }
 
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
-#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+.project-preview .project-link .project-hover .project-hover-content h3,
+.project-preview .project-link .project-hover .project-hover-content h4 {
     margin: 0;
 }
 
-#portfolio .portfolio-item .portfolio-caption {
+.project-preview .project-caption {
     margin: 0 auto;
     padding: 25px;
     max-width: 400px;
@@ -559,24 +567,20 @@ section h3.section-subheading {
     background-color: #fff;
 }
 
-#portfolio .portfolio-item .portfolio-caption h4 {
+.project-preview .project-caption h4 {
     margin: 0;
     text-transform: none;
 }
 
-#portfolio .portfolio-item .portfolio-caption p {
+.project-preview .project-caption p {
     margin: 0;
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
     font-style: italic;
 }
 
-#portfolio * {
-    z-index: 2;
-}
-
 @media (min-width: 767px) {
-    #portfolio .portfolio-item {
+    .project-preview {
         margin: 0 0 30px;
     }
 }
@@ -907,82 +911,6 @@ ul.social-buttons li a:active {
 .btn.active,
 .btn:active:focus {
     outline: 0;
-}
-
-.portfolio-modal .modal-content {
-    padding: 100px 0;
-    min-height: 100%;
-    border: 0;
-    border-radius: 0;
-    text-align: center;
-    background-clip: border-box;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
-.portfolio-modal .modal-content h2 {
-    margin-bottom: 15px;
-    font-size: 3em;
-}
-
-.portfolio-modal .modal-content p {
-    margin-bottom: 30px;
-}
-
-.portfolio-modal .modal-content p.item-intro {
-    margin: 20px 0 30px;
-    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-style: italic;
-}
-
-.portfolio-modal .modal-content ul.list-inline {
-    margin-top: 0;
-    margin-bottom: 30px;
-}
-
-.portfolio-modal .modal-content img {
-    margin-bottom: 30px;
-}
-
-.portfolio-modal .close-modal {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    width: 75px;
-    height: 75px;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.portfolio-modal .close-modal:hover {
-    opacity: .3;
-}
-
-.portfolio-modal .close-modal .lr {
-    z-index: 1051;
-    width: 1px;
-    height: 75px;
-    margin-left: 35px;
-    background-color: #222;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-}
-
-.portfolio-modal .close-modal .lr .rl {
-    z-index: 1052;
-    width: 1px;
-    height: 75px;
-    background-color: #222;
-    -webkit-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-}
-
-.portfolio-modal .modal-backdrop {
-    display: none;
-    opacity: 0;
 }
 
 .post-preview > a {
