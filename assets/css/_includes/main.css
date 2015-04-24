@@ -350,7 +350,7 @@ fieldset[disabled] .btn-xl.active {
 
 .intro-header .site-heading,
 .intro-header .post-heading,
-.intro-header .project-heading,
+.intro-header .portfolio-heading,
 .intro-header .page-heading {
     padding: 50px 0 100px;
     color: white;
@@ -359,20 +359,20 @@ fieldset[disabled] .btn-xl.active {
 @media only screen and (min-width: 768px) {
     .intro-header .site-heading,
     .intro-header .post-heading,
-    .intro-header .project-heading,
+    .intro-header .portfolio-heading,
     .intro-header .page-heading {
         padding: 150px 0;
     }
 }
 
 .intro-header .site-heading,
-.intro-header .project-heading,
+.intro-header .portfolio-heading,
 .intro-header .page-heading {
     text-align: center;
 }
 
 .intro-header .site-heading h1,
-.intro-header .project-heading h1,
+.intro-header .portfolio-heading h1,
 .intro-header .page-heading h1 {
     margin-top: 0;
     font-size: 35px;
@@ -380,7 +380,7 @@ fieldset[disabled] .btn-xl.active {
 
 .intro-header .site-heading hr,
 .intro-header .post-heading hr,
-.intro-header .project-heading hr,
+.intro-header .portfolio-heading hr,
 .intro-header .page-heading hr {
     width: 200px;
     border-top: 4px solid #fff;
@@ -395,7 +395,7 @@ fieldset[disabled] .btn-xl.active {
 
 .intro-header .site-heading hr:after,
 .intro-header .post-heading hr:after,
-.intro-header .project-heading hr:after,
+.intro-header .portfolio-heading hr:after,
 .intro-header .page-heading hr:after {
     content: "\f0c2";
     display: inline-block;
@@ -413,7 +413,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .intro-header .site-heading .subheading,
-.intro-header .project-heading .subheading
+.intro-header .portfolio-heading .subheading
 .intro-header .page-heading .subheading {
     font-size: 24px;
     line-height: 1.1;
@@ -425,7 +425,7 @@ fieldset[disabled] .btn-xl.active {
 
 @media only screen and (min-width: 768px) {
     .intro-header .site-heading h1,
-    .intro-header .project-heading h1,
+    .intro-header .portfolio-heading h1,
     .intro-header .page-heading h1 {
         font-size: 80px;
     }
@@ -512,19 +512,19 @@ section h3.section-subheading {
     height: 230px;
 }
 
-.project-preview {
+.portfolio-preview {
     right: 0;
     margin: 0 0 15px;
 }
 
-.project-preview .project-link {
+.portfolio-preview .portfolio-link {
     display: block;
     position: relative;
     margin: 0 auto;
     max-width: 400px;
 }
 
-.project-preview .project-link .project-hover {
+.portfolio-preview .portfolio-link .portfolio-hover {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -535,11 +535,11 @@ section h3.section-subheading {
     transition: all ease .5s;
 }
 
-.project-preview .project-link .project-hover:hover {
+.portfolio-preview .portfolio-link .portfolio-hover:hover {
     opacity: 1;
 }
 
-.project-preview .project-link .project-hover .project-hover-content {
+.portfolio-preview .portfolio-link .portfolio-hover .portfolio-hover-content {
     position: absolute;
     top: 50%;
     width: 100%;
@@ -550,16 +550,16 @@ section h3.section-subheading {
     color: #fff;
 }
 
-.project-preview .project-link .project-hover .project-hover-content i {
+.portfolio-preview .portfolio-link .portfolio-hover .portfolio-hover-content i {
     margin-top: -12px;
 }
 
-.project-preview .project-link .project-hover .project-hover-content h3,
-.project-preview .project-link .project-hover .project-hover-content h4 {
+.portfolio-preview .portfolio-link .portfolio-hover .portfolio-hover-content h3,
+.portfolio-preview .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
     margin: 0;
 }
 
-.project-preview .project-caption {
+.portfolio-preview .portfolio-caption {
     margin: 0 auto;
     padding: 25px;
     max-width: 400px;
@@ -567,12 +567,12 @@ section h3.section-subheading {
     background-color: #fff;
 }
 
-.project-preview .project-caption h4 {
+.portfolio-preview .portfolio-caption h4 {
     margin: 0;
     text-transform: none;
 }
 
-.project-preview .project-caption p {
+.portfolio-preview .portfolio-caption p {
     margin: 0;
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
@@ -580,7 +580,7 @@ section h3.section-subheading {
 }
 
 @media (min-width: 767px) {
-    .project-preview {
+    .portfolio-preview {
         margin: 0 0 30px;
     }
 }

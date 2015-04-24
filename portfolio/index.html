@@ -1,0 +1,32 @@
+---
+layout: page
+title: Portfolio
+#description: Exploring web development and related foobar.
+#header_img: /assets/img/background/blog.jpg
+---
+
+<div class="row">
+    {% for portfolio in site.portfolio reversed %}
+    <div class="col-md-4 col-sm-6 portfolio-preview">
+
+        <a href="{{ portfolio.url | prepend: site.baseurl }}" class="portfolio-link">
+            <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                    <i class="fa fa-plus fa-3x"></i>
+                </div>
+            </div>
+            <img src="{{ site.baseurl }}/assets/img/portfolio/placeholder.gif" data-original="{{ site.baseurl }}/assets/img/portfolio/{{ portfolio.image }}" class="img-responsive lazy" alt="{{ portfolio.title }}">
+        </a>
+
+        <div class="portfolio-caption">
+            <h4>{{ portfolio.title }}<br>
+                <small>{{ portfolio.subtitle }}</small>
+            </h4>
+            <p class="text-muted">{{ portfolio.description }}</p>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+
+
