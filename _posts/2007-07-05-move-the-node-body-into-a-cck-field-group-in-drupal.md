@@ -5,6 +5,7 @@ tags: [drupal]
 redirect_from:
 - /code/move-the-node-body-into-a-cck-field-group-in-drupal/
 ---
+
 This code snippet will put the node body into a CCK Field Group for selected node types.
 
 <!--break-->
@@ -44,4 +45,4 @@ The format is `$types = array('[NODE TYPE]'=>'[FIELD GROUP]');` where `[NODE TYP
 
 Upload these files to `sites/all/modules/mymodule`.
 
-Go to  `Admin > Site Building > Modules` and enable your new module.
+Go to `Admin > Site Building > Modules` and enable your new module.

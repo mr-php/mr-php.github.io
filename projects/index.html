@@ -6,8 +6,9 @@ title: Project Portfolio
 ---
 
 <div class="row">
-    {% for project in site.projects %}
+    {% for project in site.projects reversed %}
     <div class="col-md-4 col-sm-6 project-preview">
+
         <a href="{{ project.url | prepend: site.baseurl }}" class="project-link">
             <div class="project-hover">
                 <div class="project-hover-content">
@@ -18,12 +19,10 @@ title: Project Portfolio
         </a>
 
         <div class="project-caption">
-            <h2 class="project-title"> {{ project.title }}</h2>
-            {% if project.subtitle %}
-            <h3 class="project-subtitle">{{ project.subtitle }}</h3>
-            {% endif %}
-
-            {{ project.excerpt }}
+            <h4>{{ project.title }}<br>
+                <small>{{ project.subtitle }}</small>
+            </h4>
+            <p class="text-muted">{{ project.description }}</p>
         </div>
 
     </div>

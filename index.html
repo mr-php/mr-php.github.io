@@ -346,134 +346,29 @@ description: We specialise in custom web development and creating online applica
             </div>
         </div>
         <div class="row">
+            {% for project in site.projects reversed limit:6 %}
             <div class="col-md-4 col-sm-6 project-preview">
-                <a href="{{ site.baseurl }}/projects/cloudpad/" class="project-link">
+
+                <a href="{{ project.url | prepend: site.baseurl }}" class="project-link">
                     <div class="project-hover">
                         <div class="project-hover-content">
                             <i class="fa fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="{{ site.baseurl }}/assets/img/projects/placeholder.gif" data-original="{{ site.baseurl }}/assets/img/projects/cloudpad/cloudpad.png" class="img-responsive lazy" alt="cloudpad">
+                    <img src="{{ site.baseurl }}/assets/img/projects/placeholder.gif" data-original="{{ site.baseurl }}/assets/img/projects/{{ project.image }}" class="img-responsive lazy" alt="{{ project.title }}">
                 </a>
 
                 <div class="project-caption">
-                    <h4>cloudpad<br>
-                        <small>Adelaide</small>
+                    <h4>{{ project.title }}<br>
+                        <small>{{ project.subtitle }}</small>
                     </h4>
-
-                    <p class="text-muted">Beautiful and Simple Todo List</p>
+                    <p class="text-muted">{{ project.description }}</p>
                 </div>
+
             </div>
-            <!--
-            <div class="col-md-4 col-sm-6 project-preview">
-                <a href="{{ site.baseurl }}/projects/lulu-and-lipstick/" class="project-link">
-                    <div class="project-hover">
-                        <div class="project-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img src="{{ site.baseurl }}/assets/img/projects/placeholder.gif" data-original="{{ site.baseurl }}/assets/img/projects/luluandlipstick/luluandlipstick.png" class="img-responsive lazy" alt="luluandlipstick">
-                </a>
-
-                <div class="project-caption">
-                    <h4>Lulu and Lipstick<br><small>Brisbane</small></h4>
-
-                    <p class="text-muted">E-Commerce</p>
-                </div>
-            </div>
-            -->
-            <div class="col-md-4 col-sm-6 project-preview">
-                <a href="{{ site.baseurl }}/projects/afi-branding/" class="project-link">
-                    <div class="project-hover">
-                        <div class="project-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img src="{{ site.baseurl }}/assets/img/projects/placeholder.gif" data-original="{{ site.baseurl }}/assets/img/projects/afibranding/afibranding.png" class="img-responsive lazy" alt="afibranding">
-                </a>
-
-                <div class="project-caption">
-                    <h4>AFI Branding<br>
-                        <small>Melbourne</small>
-                    </h4>
-
-                    <p class="text-muted">Manufacturing Management</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 project-preview">
-                <a href="{{ site.baseurl }}/projects/serrano-australia/" class="project-link">
-                    <div class="project-hover">
-                        <div class="project-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img src="{{ site.baseurl }}/assets/img/projects/placeholder.gif" data-original="{{ site.baseurl }}/assets/img/projects/serranoaustralia/serranoaustralia.png" class="img-responsive lazy" alt="serranoaustralia">
-                </a>
-
-                <div class="project-caption">
-                    <h4>Serrano Australia<br>
-                        <small>Sydney</small>
-                    </h4>
-
-                    <p class="text-muted">Wholesale E-Commerce</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 project-preview">
-                <a href="{{ site.baseurl }}/projects/newsmaker/" class="project-link">
-                    <div class="project-hover">
-                        <div class="project-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img src="{{ site.baseurl }}/assets/img/projects/placeholder.gif" data-original="{{ site.baseurl }}/assets/img/projects/newsmaker/newsmaker.png" class="img-responsive lazy" alt="newsmaker">
-                </a>
-
-                <div class="project-caption">
-                    <h4>newsmaker<br>
-                        <small>Adelaide</small>
-                    </h4>
-
-                    <p class="text-muted">Press Release Distribution</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 project-preview">
-                <a href="{{ site.baseurl }}/projects/carbatec/" class="project-link">
-                    <div class="project-hover">
-                        <div class="project-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img src="{{ site.baseurl }}/assets/img/projects/placeholder.gif" data-original="{{ site.baseurl }}/assets/img/projects/carba-tec/carba-tec.png" class="img-responsive lazy" alt="carba-tec">
-                </a>
-
-                <div class="project-caption">
-                    <h4>Carba-Tec<br>
-                        <small>Brisbane</small>
-                    </h4>
-
-                    <p class="text-muted">Multi-Store E-Commerce</p>
-                </div>
-            </div>
-            <div class="col-md-4 col-sm-6 project-preview">
-                <a href="{{ site.baseurl }}/projects/mtgo-wikiprice/" class="project-link">
-                    <div class="project-hover">
-                        <div class="project-hover-content">
-                            <i class="fa fa-plus fa-3x"></i>
-                        </div>
-                    </div>
-                    <img src="{{ site.baseurl }}/assets/img/projects/placeholder.gif" data-original="{{ site.baseurl }}/assets/img/projects/mtgowikiprice/mtgowikiprice.png" class="img-responsive lazy" alt="mtgowikiprice">
-                </a>
-
-                <div class="project-caption">
-                    <h4>MTGO WikiPrice<br>
-                        <small>United States</small>
-                    </h4>
-
-                    <p class="text-muted">Data Aggregation and Reporting</p>
-                </div>
-            </div>
-
+            {% endfor %}
         </div>
+
     </div>
 </section>
 
