@@ -193,7 +193,7 @@
     url: http://improvmx.com/
     description: Free painless email forwarding for your domains. Set up catch-all email forwarding in seconds. No fees. No registration. No clutter.
 
-- name: Windows Desktop Software
+- name: Desktop Software
   resources:
   - name: PHP Storm
     url: https://www.jetbrains.com/phpstorm/
@@ -207,3 +207,6 @@
   - name: Agent Ransack
     url: https://www.mythicsoft.com/agentransack
     description: free software program for finding files on your PC or network drives.
+  - name: PlantUML
+    url: http://plantuml.sourceforge.net/
+    description: an open-source tool that uses simple textual descriptions to draw UML diagrams.
