@@ -57,6 +57,9 @@
   - name: Sensu
     url: http://sensuapp.org/
     description: a monitoring framework that aims to be simple, malleable, and scalable.
+  - name: Robo
+    url: http://robo.li/
+    description: Modern Task Runner for PHP
 
 - name: Frameworks
   resources:
