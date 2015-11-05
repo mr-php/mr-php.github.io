@@ -4,6 +4,7 @@ title: Apache Expires Headers with mod_expires
 tags: [performance]
 redirect_from:
 - /blog/apache-expires-headers-modexpires/
+- /code/apache-expires-headers-with-mod-expires/
 - /code/apache-expires-headers-modexpires/
 - /code/apache-expires-headers-with-mod_expires/
 ---
