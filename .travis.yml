@@ -3,7 +3,7 @@ rvm:
 - 2.1
 install:
   - sudo pip install Pygments
-  - gem install jekyll redcarpet jekyll-paginate jekyll-redirect-from html-proofer
+  - gem install jekyll redcarpet pygments.rb jekyll-paginate jekyll-redirect-from html-proofer
 script:
   - jekyll build
 #  - htmlproof _site --href-ignore http://www.opencart.com/,/https:\/\/www\.drupal\.org\/.*/,http://dom.as/2009/02/03/mydumper/,https://wordpress.com/
