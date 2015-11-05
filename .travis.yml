@@ -4,6 +4,7 @@ rvm:
 install:
   - gem install jekyll
   - gem install redcarpet
+  - gem install pygments
   - gem install jekyll-paginate
   - gem install jekyll-redirect-from
   - gem install html-proofer
