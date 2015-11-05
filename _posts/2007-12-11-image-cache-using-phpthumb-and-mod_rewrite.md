@@ -5,6 +5,7 @@ github_url: https://github.com/cornernote/php-image-cache
 tags: [php, performance]
 redirect_from:
 - /blog/image-cache-using-phpthumb-and-modrewrite/
+- /blog/image-cache-using-phpthumb-and-mod_rewrite/
 - /code/image-cache-using-phpthumb-and-modrewrite/
 - /code/image-cache-using-phpthumb-and-mod_rewrite/
 ---
