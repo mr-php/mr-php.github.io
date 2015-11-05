@@ -2,12 +2,8 @@ language: ruby
 rvm:
 - 2.1
 install:
-  - gem install jekyll
-  - gem install redcarpet
-  - gem install pygments
-  - gem install jekyll-paginate
-  - gem install jekyll-redirect-from
-  - gem install html-proofer
+  - sudo pip install Pygments
+  - gem install jekyll redcarpet jekyll-paginate jekyll-redirect-from html-proofer
 script:
   - jekyll build
 #  - htmlproof _site --href-ignore http://www.opencart.com/,/https:\/\/www\.drupal\.org\/.*/,http://dom.as/2009/02/03/mydumper/,https://wordpress.com/
