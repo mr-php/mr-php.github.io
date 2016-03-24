@@ -42,8 +42,8 @@ These things usually come with dedicated and shared hosting servers by default, 
 
 <h3>Upload phpThumb</h3>
 
-<p>Download phpThumb from here:<br/>
-<a href="http://phpthumb.sourceforge.net/">http://phpthumb.sourceforge.net/</a><p>
+Download phpThumb from here:
+<a href="http://phpthumb.sourceforge.net/">http://phpthumb.sourceforge.net/</a>
 
 Upload phpThumb to `yoursite.com/phpthumb`
 
