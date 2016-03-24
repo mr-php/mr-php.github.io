@@ -44,8 +44,8 @@ permalink: /blog/:title/
 paginate_path: /blog/page:num/
 paginate: 20
 excerpt_separator: <!--break-->
-markdown: redcarpet
-highlighter: pygments
+#markdown: redcarpet
+#highlighter: pygments
 exclude: ["README.md", "vendor"]
 gems:
 - jekyll-redirect-from
