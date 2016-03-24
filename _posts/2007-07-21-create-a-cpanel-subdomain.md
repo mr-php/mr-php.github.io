@@ -29,6 +29,9 @@ $cpanel_host = 'yourdomain.com';
 // subdomain name
 $subdomain = 'mysubdomain';
 
+// directory - defaults to public_html/subdomain_name
+$dir = 'public_html/mysubdomain';
+
 // create the subdomain
 
 $sock = fsockopen($cpanel_host,2082);
@@ -38,7 +41,7 @@ if(!$sock) {
 }
 
 $pass = base64_encode("$cpanel_user:$cpanel_pass");
-$in = "GET /frontend/$cpanel_skin/subdomain/doadddomain.html?rootdomain=$cpanel_host&domain=$subdomain\r\n";
+$in = "GET /frontend/$cpanel_skin/subdomain/doadddomain.html?rootdomain=$cpanel_host&domain=$subdomain&dir=$dir\r\n";
 $in .= "HTTP/1.0\r\n";
 $in .= "Host:$cpanel_host\r\n";
 $in .= "Authorization: Basic $pass\r\n";
@@ -55,3 +58,4 @@ echo $result;
 
 If you want to delete the subdomain then change <strong>doadddomain.html</strong> to <strong>dodeldomain.html</strong>.
 
+[API Documentation](https://documentation.cpanel.net/display/SDK/cPanel+API+2+Functions+-+SubDomain%3A%3Aaddsubdomain)
