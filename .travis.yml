@@ -4,7 +4,7 @@ rvm:
 install:
   - gem install jekyll redcarpet pygments.rb jekyll-paginate jekyll-redirect-from html-proofer
 script:
-  - jekyll build
+  - bundle exec jekyll build
   - bundle exec htmlproof _site --href-ignore https://www.linkedin.com/company/mr-php
 env:
   global:
