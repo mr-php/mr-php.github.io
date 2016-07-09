@@ -18,6 +18,7 @@ Consider a `Product` model that has multiple `Parcel` models related, which repr
 parcels that belong to the product.  In the form you want to allow adding any number of parcels 
 and each one should validate according to the model rules.
 
+## Table Models
 
 Start with the following tables:
 
@@ -102,7 +103,15 @@ class Parcel extends ActiveRecord
 }
 ```
 
-Now we get to the advanced form, but don't worry, it's all quite straight forward.  We need a `FormModel` to handle loading, validating and saving the data.
+## The Form Model
+
+Now we get to the advanced form, but don't worry, it's all quite straight forward.  We need a model to handle loading, validating and saving the data.  
+
+The purpose of `ProductForm` form is to:
+- handle loading `Product` and `Parcel` models
+- assigning the submitted data to model attributes
+- saving data after validation
+- displaying error summaries on the form
 
 `models/form/ProductForm`
 
@@ -250,7 +259,9 @@ class ProductForm extends Model
 }
 ```
 
-This model will be used by the controller in the create and update methods:
+## Controller Actions
+
+The `ProductForm` class is used in `actionUpdate()` and `actionCreate()` methods in `ProductController`.
 
 `controllers/ProductController.php`
 
@@ -268,33 +279,27 @@ class ProductController extends Controller
         $productForm = new ProductForm();
         $productForm->product = new Product;
         $productForm->setAttributes(Yii::$app->request->post());
-
         if (Yii::$app->request->post() && $productForm->save()) {
             Yii::$app->getSession()->setFlash('success', 'Product has been created.');
             return $this->redirect(['update', 'id' => $productForm->product->id]);
-        } elseif (!\Yii::$app->request->isPost) {
+        } elseif (!Yii::$app->request->isPost) {
             $productForm->load(Yii::$app->request->get());
         }
-
-        return $this->render('create', compact('productForm'));
+        return $this->render('create', ['productForm' => $productForm]);
     }
-
     public function actionUpdate($id)
     {
         $productForm = new ProductForm();
         $productForm->product = $this->findModel($id);
         $productForm->setAttributes(Yii::$app->request->post());
-
         if (Yii::$app->request->post() && $productForm->save()) {
             Yii::$app->getSession()->setFlash('success', 'Product has been updated.');
             return $this->redirect(['update', 'id' => $productForm->product->id]);
-        } elseif (!\Yii::$app->request->isPost) {
+        } elseif (!Yii::$app->request->isPost) {
             $productForm->load(Yii::$app->request->get());
         }
-
-        return $this->render('update', compact('productForm'));
+        return $this->render('update', ['productForm' => $productForm]);
     }
-
     protected function findModel($id)
     {
         if (($model = Product::findOne($id)) !== null) {
@@ -302,9 +307,10 @@ class ProductController extends Controller
         }
         throw new HttpException(404, 'The requested page does not exist.');
     }
-
 }
 ```
+
+## Form Views
 
 The views `views/product/create.php` and `views/product/update.php` will both render a form.
 
@@ -312,7 +318,15 @@ The views `views/product/create.php` and `views/product/update.php` will both re
 <?= $this->render('_form', ['productForm' => $productForm]); ?>
 ```
 
-The `views/product/_form.php` will look like this:
+The form will have a section for the Product, and another section for the Parcels.  
+
+Parcels can be added by clicking the "New Parcel" button, which will copy a hidden form.
+
+When updating a Product, the existing Parcel rows will be displayed.
+
+After saving, each Product and Parcel field will be validated individually, if any fail the error will be displayed at the top as well as on the errored field.
+
+`views/product/_form.php`
 
 ```php
 <?php
@@ -410,7 +424,9 @@ use yii\widgets\ActiveForm;
 </div>
 ```
 
-Inside the product form we render `views/product/_form-product-parcel.php` for each of the parcels:
+Inside the above form we render the form fields for the parcels.
+
+`views/product/_form-product-parcel.php`
 
 ```php
 <?php
