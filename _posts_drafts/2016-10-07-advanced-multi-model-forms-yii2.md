@@ -89,7 +89,10 @@ class Parcel extends ActiveRecord
             [['code', 'height', 'width', 'depth'], 'required'],
             [['product_id', 'height', 'width', 'depth'], 'integer'],
             [['code'], 'string', 'max' => 255],
-            [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'id']]
+            [['product_id'], 'exist', 
+              'skipOnError' => true, 
+              'targetClass' => Product::className(), 
+              'targetAttribute' => ['product_id' => 'id']]
         ];
     }
     public function getProduct()
@@ -184,7 +187,9 @@ class ProductForm extends Model
             if ($this->product->isNewRecord) {
                 $this->_parcels = [];
             } else {
-                $this->_parcels = Parcel::find()->andWhere(['product_id' => $this->product->id])->all();
+                $this->_parcels = Parcel::find()
+                  ->andWhere(['product_id' => $this->product->id])
+                  ->all();
             }
         }
         return $this->_parcels;
@@ -222,7 +227,9 @@ class ProductForm extends Model
     {
         $errorLists = [];
         foreach ($this->getAllModels() as $id => $model) {
-            $errorList = $form->errorSummary($model, ['header' => '<p>Please fix the following errors for <b>' . $id . '</b></p>']);
+            $errorList = $form->errorSummary($model, [
+              'header' => '<p>Please fix the following errors for <b>' . $id . '</b></p>',
+            ]);
             $errorList = str_replace('<li></li>', '', $errorList); // remove the empty error
             $errorLists[] = $errorList;
         }
@@ -331,7 +338,10 @@ use yii\widgets\ActiveForm;
         <legend>Parcels
             <?php
             // new parcel button
-            echo Html::a('New Parcel', 'javascript:void(0);', array('id' => 'product-new-parcel-button', 'class' => 'pull-right btn btn-default btn-xs'))
+            echo Html::a('New Parcel', 'javascript:void(0);', [
+              'id' => 'product-new-parcel-button', 
+              'class' => 'pull-right btn btn-default btn-xs'
+            ])
             ?>
         </legend>
         <?php
@@ -351,18 +361,22 @@ use yii\widgets\ActiveForm;
         echo '</tbody>';
         // existing parcels fields
         foreach ($productForm->parcels as $key => $_parcel) {
-            echo '<tr>' . $this->render('_form-product-parcel', array(
-                    'key' => $_parcel->isNewRecord ? (strpos($key, 'new') !== false ? $key : 'new' . $key) : $_parcel->id,
-                    'form' => $form,
-                    'parcel' => $_parcel,
-                )) . '</tr>';
+          echo '<tr>';
+          echo $this->render('_form-product-parcel', [
+            'key' => $_parcel->isNewRecord ? (strpos($key, 'new') !== false ? $key : 'new' . $key) : $_parcel->id,
+            'form' => $form,
+            'parcel' => $_parcel,
+          ]);
+          echo '</tr>'
         }
         // new parcel fields
-        echo '<tr id="product-new-parcel-block" style="display: none;">' . $this->render('_form-product-parcel', array(
-                'key' => '__id__',
-                'form' => $form,
-                'parcel' => $parcel,
-            )) . '</tr>';
+        echo '<tr id="product-new-parcel-block" style="display: none;">'
+        echo $this->render('_form-product-parcel', [
+            'key' => '__id__',
+            'form' => $form,
+            'parcel' => $parcel,
+        ]);
+        echo '</tr>'
         echo '</tbody>';
         echo '</table>';
         ?>
@@ -373,7 +387,8 @@ use yii\widgets\ActiveForm;
             var parcel_k = <?php echo isset($key) ? str_replace('new', '', $key) : 0; ?>;
             $('#product-new-parcel-button').on('click', function () {
                 parcel_k += 1;
-                $('#product-parcels').find('tbody').append('<tr>' + $('#product-new-parcel-block').html().replace(/__id__/g, 'new' + parcel_k) + '</tr>');
+                $('#product-parcels').find('tbody')
+                  .append('<tr>' + $('#product-new-parcel-block').html().replace(/__id__/g, 'new' + parcel_k) + '</tr>');
             });
             // remove parcel button
             $(document).on('click', '.product-remove-parcel-button', function () {
@@ -381,10 +396,11 @@ use yii\widgets\ActiveForm;
             });
             <?php
             // click add when the form first loads
-            if (!Yii::$app->request->isPost && $productForm->product->isNewRecord) echo "$('#product-new-parcel-button').click();";
+            if (!Yii::$app->request->isPost && $productForm->product->isNewRecord) 
+              echo "$('#product-new-parcel-button').click();";
             ?>
         </script>
-        <?php $this->registerJs(str_replace(array('<script>', '</script>'), '', ob_get_clean())); ?>
+        <?php $this->registerJs(str_replace(['<script>', '</script>'], '', ob_get_clean())); ?>
 
     </fieldset>
 
@@ -426,7 +442,9 @@ use yii\helpers\Html;
     ])->label(false) ?>
 </td>
 <td>
-    <?= Html::a('Remove Parcel', 'javascript:void(0);', array('class' => 'product-remove-parcel-button btn btn-default btn-xs')) ?>
+    <?= Html::a('Remove Parcel', 'javascript:void(0);', [
+      'class' => 'product-remove-parcel-button btn btn-default btn-xs',
+    ]) ?>
     <br>
     <small>Parcel.<?= $key ?></small>
 </td>
