@@ -442,10 +442,8 @@ use yii\helpers\Html;
     ])->label(false) ?>
 </td>
 <td>
-    <?= Html::a('Remove Parcel', 'javascript:void(0);', [
+    <?= Html::a('Remove ' . $key, 'javascript:void(0);', [
       'class' => 'product-remove-parcel-button btn btn-default btn-xs',
     ]) ?>
-    <br>
-    <small>Parcel.<?= $key ?></small>
 </td>
 ```
