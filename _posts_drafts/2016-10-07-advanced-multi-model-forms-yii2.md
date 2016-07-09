@@ -2,7 +2,7 @@
 layout: post
 title: Advanced Multi-Model Forms in Yii2
 excerpt: "<p>How to manage multiple child models in a form, supporting validation for each model.</p>"
-tags: [security, ubuntu]
+tags: [yii2, forms]
 ---
 
 How to manage multiple child models in a form, supporting validation for each model.
