@@ -247,7 +247,7 @@ This model will be used by the controller in the create and update methods:
 
 `controllers/ProductController.php`
 
-```
+```php
 <?php
 namespace app\controllers;
 use app\models\Product;
