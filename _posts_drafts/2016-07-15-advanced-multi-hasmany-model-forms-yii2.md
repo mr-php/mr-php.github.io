@@ -198,7 +198,7 @@ class ProductForm extends Model
         return $this->_parcels;
     }
 
-    public function getParcel($id)
+    private function getParcel($id)
     {
         $parcel = $id ? Parcel::findOne($id) : false;
         if (!$parcel) {
