@@ -309,9 +309,7 @@ use yii\widgets\ActiveForm;
 ?>
 <div class="product-form">
 
-    <?php $form = ActiveForm::begin([
-        'enableClientValidation' => false, // TODO get this working with client validation
-    ]); ?>
+    <?php $form = ActiveForm::begin(); ?>
 
     <?= $productForm->errorSummary($form); ?>
 
