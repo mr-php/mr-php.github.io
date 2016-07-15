@@ -2,7 +2,7 @@
 layout: post
 title: Advanced Multi-Model Forms with HASMANY Relations in Yii2
 excerpt: "<p>Manage multiple child models in a form, supporting validation for each model.</p>"
-tags: [yii2, forms]
+tags: [yii]
 ---
 
 Manage multiple child models in a form, supporting validation for each model.
