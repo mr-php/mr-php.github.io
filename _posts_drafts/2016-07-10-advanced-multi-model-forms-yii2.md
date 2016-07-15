@@ -46,6 +46,7 @@ And the models that represent the tables are:
 ```php
 <?php
 namespace app\models;
+
 use \yii\db\ActiveRecord;
 
 class Product extends ActiveRecord
@@ -54,6 +55,7 @@ class Product extends ActiveRecord
     {
         return 'product';
     }
+    
     public function rules()
     {
         return [
@@ -61,6 +63,7 @@ class Product extends ActiveRecord
             [['name'], 'string', 'max' => 255]
         ];
     }
+    
     public function getParcel()
     {
         return $this->hasOne(Parcel::className(), ['product_id' => 'id']);
@@ -74,6 +77,7 @@ class Product extends ActiveRecord
 ```php
 <?php
 namespace app\models;
+
 use \yii\db\ActiveRecord;
 
 class Parcel extends ActiveRecord
@@ -82,6 +86,7 @@ class Parcel extends ActiveRecord
     {
         return 'parcel';
     }
+    
     public function rules()
     {
         return [
@@ -94,6 +99,7 @@ class Parcel extends ActiveRecord
               'targetAttribute' => ['product_id' => 'id']]
         ];
     }
+    
     public function getProduct()
     {
         return $this->hasOne(Product::className(), ['id' => 'product_id']);
@@ -236,6 +242,7 @@ The `ProductForm` class is used in `actionUpdate()` and `actionCreate()` methods
 ```php
 <?php
 namespace app\controllers;
+
 use app\models\form\ProductForm;
 use app\models\Product;
 use Yii;
@@ -256,6 +263,7 @@ class ProductController extends Controller
         }
         return $this->render('create', ['productForm' => $productForm]);
     }
+    
     public function actionUpdate($id)
     {
         $productForm = new ProductForm();
@@ -269,6 +277,7 @@ class ProductController extends Controller
         }
         return $this->render('update', ['productForm' => $productForm]);
     }
+    
     protected function findModel($id)
     {
         if (($model = Product::findOne($id)) !== null) {
