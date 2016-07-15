@@ -236,6 +236,7 @@ The `ProductForm` class is used in `actionUpdate()` and `actionCreate()` methods
 ```php
 <?php
 namespace app\controllers;
+use app\models\form\ProductForm;
 use app\models\Product;
 use Yii;
 use yii\web\Controller;
