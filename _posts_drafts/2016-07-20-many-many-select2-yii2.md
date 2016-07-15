@@ -5,6 +5,8 @@ excerpt: "<p>Select multiple related records and add new related records using S
 tags: [yii]
 ---
 
+Select multiple related records and add new related records using Select2.
+
 ![Many to Many Select2 Widget](https://cloud.githubusercontent.com/assets/51875/16871072/e115285e-4ac3-11e6-8270-8eb4a506ffdd.png)
 
 ## Requirements
