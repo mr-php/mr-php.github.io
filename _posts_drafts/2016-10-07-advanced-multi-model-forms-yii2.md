@@ -206,14 +206,13 @@ class ProductForm extends Model
 
     public function getParcel($id)
     {
-        $parcel = Parcel::find()->where([
+        $parcel = $this->product ? Parcel::find()->where([
             'id' => $id,
             'product_id' => $this->product->id,
-        ])->one();
+        ])->one() : false;
         if (!$parcel) {
             $parcel = new Parcel();
             $parcel->loadDefaultValues();
-            $parcel->product_id = $this->product->id;
         }
         return $parcel;
     }
