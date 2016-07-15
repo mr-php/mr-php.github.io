@@ -220,7 +220,7 @@ class ProductForm extends Model
 
     public function setParcels($parcels)
     {
-        unset($parcels['__id__']);
+        unset($parcels['__id__']); // remove the hidden "new Parcel" row
         $this->_parcels = [];
         foreach ($parcels as $id => $parcel) {
             if (is_array($parcel)) {
@@ -462,4 +462,36 @@ use yii\helpers\Html;
       'class' => 'product-remove-parcel-button btn btn-default btn-xs',
     ]) ?>
 </td>
+```
+
+## Additional Information
+
+The `$_POST` data will look something like the following:
+
+```
+$_POST = [
+    'Product' => [
+        'name' => 'Keyboard and Mouse',
+    ],
+    'Parcels' => [
+        '__id__' => [
+            'code' => '',
+            'width' => '',
+            'height' => '',
+            'depth' => '',
+        ],
+        'new1' => [
+            'code' => 'keyboard',
+            'width' => '50',
+            'height' => '5',
+            'depth' => '20',
+        ],
+        'new2' => [
+            'code' => 'mouse',
+            'width' => '20',
+            'height' => '10',
+            'depth' => '20',
+        ],
+    ],
+];
 ```
