@@ -5,18 +5,15 @@ excerpt: "<p>Manage multiple child models in a form, supporting validation for e
 tags: [yii2, forms]
 ---
 
-How to manage multiple child models in a form, supporting validation for each model.
+Manage multiple child models in a form, supporting validation for each model.
 
 Simply click a button to add another child, and it will magically appear on the form.
-
-After submitting the form, any validation errors will be clearly displayed.
-
-![Yii2 Multi-Model Form](https://cloud.githubusercontent.com/assets/51875/16708229/58cdacfc-462a-11e6-96dc-3894f6e1cf6b.jpg)
-
 
 Consider a `Product` model that has multiple `Parcel` models related, which represent a list of
 parcels that belongs to the product.  In the form you want to allow adding any number of parcels 
 and each one should validate according to the model rules.
+
+![Yii2 Multi-Model Form](https://cloud.githubusercontent.com/assets/51875/16708229/58cdacfc-462a-11e6-96dc-3894f6e1cf6b.jpg)
 
 ## Table Models
 
