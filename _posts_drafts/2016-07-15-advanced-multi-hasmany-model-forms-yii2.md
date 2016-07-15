@@ -193,23 +193,14 @@ class ProductForm extends Model
     public function getParcels()
     {
         if ($this->_parcels === null) {
-            if ($this->product->isNewRecord) {
-                $this->_parcels = [];
-            } else {
-                $this->_parcels = Parcel::find()
-                  ->andWhere(['product_id' => $this->product->id])
-                  ->all();
-            }
+            $this->_parcels = $this->product->isNewRecord ? [] : $this->product->parcels;
         }
         return $this->_parcels;
     }
 
     public function getParcel($id)
     {
-        $parcel = $this->product ? Parcel::find()->where([
-            'id' => $id,
-            'product_id' => $this->product->id,
-        ])->one() : false;
+        $parcel = $id ? Parcel::findOne($id) : false;
         if (!$parcel) {
             $parcel = new Parcel();
             $parcel->loadDefaultValues();
