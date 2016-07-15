@@ -229,7 +229,6 @@ class ProductForm extends Model
             'Parcel' => $this->parcel,
         ];
     }
-
 }
 ```
 
