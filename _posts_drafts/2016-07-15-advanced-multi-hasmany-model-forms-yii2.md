@@ -57,6 +57,7 @@ class Product extends ActiveRecord
     {
         return 'product';
     }
+    
     public function rules()
     {
         return [
@@ -64,6 +65,7 @@ class Product extends ActiveRecord
             [['name'], 'string', 'max' => 255]
         ];
     }
+    
     public function getParcels()
     {
         return $this->hasMany(Parcel::className(), ['product_id' => 'id']);
@@ -86,6 +88,7 @@ class Parcel extends ActiveRecord
     {
         return 'parcel';
     }
+    
     public function rules()
     {
         return [
@@ -98,6 +101,7 @@ class Parcel extends ActiveRecord
               'targetAttribute' => ['product_id' => 'id']]
         ];
     }
+    
     public function getProduct()
     {
         return $this->hasOne(Product::className(), ['id' => 'product_id']);
@@ -247,7 +251,6 @@ class ProductForm extends Model
         }
         return $models;
     }
-
 }
 ```
 
@@ -281,6 +284,7 @@ class ProductController extends Controller
         }
         return $this->render('create', ['productForm' => $productForm]);
     }
+    
     public function actionUpdate($id)
     {
         $productForm = new ProductForm();
@@ -294,6 +298,7 @@ class ProductController extends Controller
         }
         return $this->render('update', ['productForm' => $productForm]);
     }
+    
     protected function findModel($id)
     {
         if (($model = Product::findOne($id)) !== null) {
