@@ -48,6 +48,7 @@ And the models that represent the tables are:
 ```php
 <?php
 namespace app\models;
+
 use \yii\db\ActiveRecord;
 
 class Product extends ActiveRecord
@@ -76,6 +77,7 @@ class Product extends ActiveRecord
 ```php
 <?php
 namespace app\models;
+
 use \yii\db\ActiveRecord;
 
 class Parcel extends ActiveRecord
@@ -258,6 +260,8 @@ The `ProductForm` class is used in `actionUpdate()` and `actionCreate()` methods
 ```php
 <?php
 namespace app\controllers;
+
+use app\models\form\ProductForm;
 use app\models\Product;
 use Yii;
 use yii\web\Controller;
