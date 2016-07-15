@@ -322,7 +322,6 @@ use yii\widgets\ActiveForm;
 
     <fieldset>
         <legend>Parcel</legend>
-        <?php
         <?= $form->field($productForm->product, 'code')->textInput() ?>
         <?= $form->field($productForm->product, 'width')->textInput() ?>
         <?= $form->field($productForm->product, 'height')->textInput() ?>
