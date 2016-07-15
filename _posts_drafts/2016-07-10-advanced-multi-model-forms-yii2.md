@@ -1,22 +1,20 @@
 ---
 layout: post
 title: Advanced Multi-Model Forms in Yii2
-excerpt: "<p>How to manage multiple child models in a form, supporting validation for each model.</p>"
+excerpt: "<p>Manage multiple models in a form, supporting validation for each model.</p>"
 tags: [yii2, forms]
 ---
 
-How to manage multiple child models in a form, supporting validation for each model.
-
-Simply click a button to add another child, and it will magically appear on the form.
+How to manage multiple models in a form, supporting validation for each model.
 
 After submitting the form, any validation errors will be clearly displayed.
 
 ![Yii2 Multi-Model Form](https://cloud.githubusercontent.com/assets/51875/16708229/58cdacfc-462a-11e6-96dc-3894f6e1cf6b.jpg)
 
 
-Consider a `Product` model that has multiple `Parcel` models related, which represent a list of
-parcels that belong to the product.  In the form you want to allow adding any number of parcels 
-and each one should validate according to the model rules.
+Consider a `Product` model that has a single `Parcel` model related, which represents a
+parcel that belongs to the product.  In the form you want to enter information for the 
+product and the parcel at the same time, and each one should validate according to the model rules.
 
 ## Table Models
 
@@ -63,9 +61,9 @@ class Product extends ActiveRecord
             [['name'], 'string', 'max' => 255]
         ];
     }
-    public function getParcels()
+    public function getParcel()
     {
-        return $this->hasMany(Parcel::className(), ['product_id' => 'id']);
+        return $this->hasOne(Parcel::className(), ['product_id' => 'id']);
     }
 }
 
@@ -128,13 +126,13 @@ use yii\widgets\ActiveForm;
 class ProductForm extends Model
 {
     private $_product;
-    private $_parcels;
+    private $_parcel;
 
     public function rules()
     {
         return [
             [['Product'], 'required'],
-            [['Parcels'], 'safe'],
+            [['Parcel'], 'safe'],
         ];
     }
 
@@ -144,10 +142,8 @@ class ProductForm extends Model
         if (!$this->product->validate()) {
             $error = true;
         }
-        foreach ($this->parcels as $parcel) {
-            if (!$parcel->validate()) {
-                $error = true;
-            }
+        if (!$this->parcel->validate()) {
+            $error = true;
         }
         if ($error) {
             $this->addError(null); // add an empty error to prevent saving
@@ -165,12 +161,10 @@ class ProductForm extends Model
             $transaction->rollBack();
             return false;
         }
-        foreach ($this->parcels as $parcel) {
-            $parcel->product_id = $this->product->id;
-            if (!$parcel->save(false)) {
-                $transaction->rollBack();
-                return false;
-            }
+        $this->parcel->product_id = $this->product->id;
+        if (!$this->parcel->save(false)) {
+            $transaction->rollBack();
+            return false;
         }
         $transaction->commit();
         return true;
@@ -190,44 +184,22 @@ class ProductForm extends Model
         }
     }
 
-    public function getParcels()
+    public function getParcel()
     {
-        if ($this->_parcels === null) {
-            if ($this->product->isNewRecord) {
-                $this->_parcels = [];
-            } else {
-                $this->_parcels = Parcel::find()
-                  ->andWhere(['product_id' => $this->product->id])
-                  ->all();
+        if ($this->_parcel === null) {
+            if (!$this->product->isNewRecord) {
+                $this->_parcel = $product->parcel;
             }
         }
-        return $this->_parcels;
+        return $this->_parcel;
     }
 
-    public function getParcel($id)
+    public function setParcel($parcel)
     {
-        $parcel = $this->product ? Parcel::find()->where([
-            'id' => $id,
-            'product_id' => $this->product->id,
-        ])->one() : false;
-        if (!$parcel) {
-            $parcel = new Parcel();
-            $parcel->loadDefaultValues();
-        }
-        return $parcel;
-    }
-
-    public function setParcels($parcels)
-    {
-        unset($parcels['__id__']); // remove the hidden "new Parcel" row
-        $this->_parcels = [];
-        foreach ($parcels as $id => $parcel) {
-            if (is_array($parcel)) {
-                $this->_parcels[$id] = $this->getParcel($id);
-                $this->_parcels[$id]->setAttributes($parcel);
-            } elseif ($parcel instanceof Parcel) {
-                $this->_parcels[$id] = $parcel;
-            }
+        if (is_array($parcel)) {
+            $this->parcel->setAttributes($parcel);
+        } elseif ($parcel instanceof Parcel) {
+            $this->_parcel = $parcel;
         }
     }
 
@@ -246,13 +218,10 @@ class ProductForm extends Model
 
     private function getAllModels()
     {
-        $models = [
+        return [
             'Product' => $this->product,
+            'Parcel' => $this->parcel,
         ];
-        foreach ($this->parcels as $id => $parcel) {
-            $models['Parcel.' . $id] = $this->parcels[$id];
-        }
-        return $models;
     }
 
 }
@@ -319,10 +288,6 @@ The views `views/product/create.php` and `views/product/update.php` will both re
 
 The form will have a section for the Product, and another section for the Parcels.  
 
-Parcels can be added by clicking the "New Parcel" button, which will copy a hidden form.
-
-When updating a Product, the existing Parcel rows will be displayed.
-
 After saving, each Product and Parcel field will be validated individually, if any fail the error will be displayed at the top as well as on the errored field.
 
 `views/product/_form.php`
@@ -348,119 +313,18 @@ use yii\widgets\ActiveForm;
     </fieldset>
 
     <fieldset>
-        <legend>Parcels
-            <?php
-            // new parcel button
-            echo Html::a('New Parcel', 'javascript:void(0);', [
-              'id' => 'product-new-parcel-button', 
-              'class' => 'pull-right btn btn-default btn-xs'
-            ])
-            ?>
-        </legend>
+        <legend>Parcel</legend>
         <?php
-        // parcel table
-        $parcel = new Parcel();
-        $parcel->loadDefaultValues();
-        echo '<table id="product-parcels" class="table table-condensed table-bordered">';
-        echo '<thead>';
-        echo '<tr>';
-        echo '<th>' . $parcel->getAttributeLabel('code') . '</th>';
-        echo '<th>' . $parcel->getAttributeLabel('width') . '</th>';
-        echo '<th>' . $parcel->getAttributeLabel('height') . '</th>';
-        echo '<th>' . $parcel->getAttributeLabel('depth') . '</th>';
-        echo '<td>&nbsp;</td>';
-        echo '</tr>';
-        echo '</thead>';
-        echo '</tbody>';
-        // existing parcels fields
-        foreach ($productForm->parcels as $key => $_parcel) {
-          echo '<tr>';
-          echo $this->render('_form-product-parcel', [
-            'key' => $_parcel->isNewRecord ? (strpos($key, 'new') !== false ? $key : 'new' . $key) : $_parcel->id,
-            'form' => $form,
-            'parcel' => $_parcel,
-          ]);
-          echo '</tr>'
-        }
-        // new parcel fields
-        echo '<tr id="product-new-parcel-block" style="display: none;">'
-        echo $this->render('_form-product-parcel', [
-            'key' => '__id__',
-            'form' => $form,
-            'parcel' => $parcel,
-        ]);
-        echo '</tr>'
-        echo '</tbody>';
-        echo '</table>';
-        ?>
-
-        <?php ob_start(); // output buffer the javascript to register later ?>
-        <script>
-            // add parcel button
-            var parcel_k = <?php echo isset($key) ? str_replace('new', '', $key) : 0; ?>;
-            $('#product-new-parcel-button').on('click', function () {
-                parcel_k += 1;
-                $('#product-parcels').find('tbody')
-                  .append('<tr>' + $('#product-new-parcel-block').html().replace(/__id__/g, 'new' + parcel_k) + '</tr>');
-            });
-            // remove parcel button
-            $(document).on('click', '.product-remove-parcel-button', function () {
-                $(this).closest('tbody tr').remove();
-            });
-            <?php
-            // click add when the form first loads
-            if (!Yii::$app->request->isPost && $productForm->product->isNewRecord) 
-              echo "$('#product-new-parcel-button').click();";
-            ?>
-        </script>
-        <?php $this->registerJs(str_replace(['<script>', '</script>'], '', ob_get_clean())); ?>
-
+        <?= $form->field($productForm->product, 'code')->textInput() ?>
+        <?= $form->field($productForm->product, 'width')->textInput() ?>
+        <?= $form->field($productForm->product, 'height')->textInput() ?>
+        <?= $form->field($productForm->product, 'depth')->textInput() ?>
     </fieldset>
 
     <?= Html::submitButton('Save'); ?>
     <?php ActiveForm::end(); ?>
 
 </div>
-```
-
-Inside the above form we render the form fields for the parcels.
-
-`views/product/_form-product-parcel.php`
-
-```php
-<?php
-use app\models\Parcel;
-use yii\helpers\Html;
-?>
-<td>
-    <?= $form->field($parcel, 'code')->textInput([
-        'id' => "Parcels_{$key}_code",
-        'name' => "Parcels[$key][code]",
-    ])->label(false) ?>
-</td>
-<td>
-    <?= $form->field($parcel, 'width')->textInput([
-        'id' => "Parcels_{$key}_width",
-        'name' => "Parcels[$key][width]",
-    ])->label(false) ?>
-</td>
-<td>
-    <?= $form->field($parcel, 'height')->textInput([
-        'id' => "Parcels_{$key}_height",
-        'name' => "Parcels[$key][height]",
-    ])->label(false) ?>
-</td>
-<td>
-    <?= $form->field($parcel, 'depth')->textInput([
-        'id' => "Parcels_{$key}_depth",
-        'name' => "Parcels[$key][depth]",
-    ])->label(false) ?>
-</td>
-<td>
-    <?= Html::a('Remove ' . $key, 'javascript:void(0);', [
-      'class' => 'product-remove-parcel-button btn btn-default btn-xs',
-    ]) ?>
-</td>
 ```
 
 ## Additional Information
@@ -472,25 +336,11 @@ $_POST = [
     'Product' => [
         'name' => 'Keyboard and Mouse',
     ],
-    'Parcels' => [
-        '__id__' => [
-            'code' => '',
-            'width' => '',
-            'height' => '',
-            'depth' => '',
-        ],
-        'new1' => [
-            'code' => 'keyboard',
-            'width' => '50',
-            'height' => '5',
-            'depth' => '20',
-        ],
-        'new2' => [
-            'code' => 'mouse',
-            'width' => '20',
-            'height' => '10',
-            'depth' => '20',
-        ],
+    'Parcel' => [
+        'code' => 'keyboard',
+        'width' => '50',
+        'height' => '5',
+        'depth' => '20',
     ],
 ];
 ```
