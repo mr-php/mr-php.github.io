@@ -294,7 +294,6 @@ After saving, each Product and Parcel field will be validated individually, if a
 
 ```php
 <?php
-use app\models\Parcel;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
