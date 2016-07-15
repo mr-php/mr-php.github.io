@@ -9,7 +9,7 @@ How to manage multiple models in a form, supporting validation for each model.
 
 After submitting the form, any validation errors will be clearly displayed.
 
-![Yii2 Multi-Model Form](https://cloud.githubusercontent.com/assets/51875/16708229/58cdacfc-462a-11e6-96dc-3894f6e1cf6b.jpg)
+![Yii2 Multi-Model Form](https://cloud.githubusercontent.com/assets/51875/16869338/7327a14e-4abb-11e6-9b46-0ac66564f2c0.jpg)
 
 
 Consider a `Product` model that has a single `Parcel` model related, which represents a
