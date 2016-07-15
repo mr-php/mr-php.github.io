@@ -15,7 +15,7 @@ After submitting the form, any validation errors will be clearly displayed.
 
 
 Consider a `Product` model that has multiple `Parcel` models related, which represent a list of
-parcels that belong to the product.  In the form you want to allow adding any number of parcels 
+parcels that belongs to the product.  In the form you want to allow adding any number of parcels 
 and each one should validate according to the model rules.
 
 ## Table Models
