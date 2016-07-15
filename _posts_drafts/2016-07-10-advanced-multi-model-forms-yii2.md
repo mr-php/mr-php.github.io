@@ -325,10 +325,10 @@ use yii\widgets\ActiveForm;
 
     <fieldset>
         <legend>Parcel</legend>
-        <?= $form->field($productForm->product, 'code')->textInput() ?>
-        <?= $form->field($productForm->product, 'width')->textInput() ?>
-        <?= $form->field($productForm->product, 'height')->textInput() ?>
-        <?= $form->field($productForm->product, 'depth')->textInput() ?>
+        <?= $form->field($productForm->parcel, 'code')->textInput() ?>
+        <?= $form->field($productForm->parcel, 'width')->textInput() ?>
+        <?= $form->field($productForm->parcel, 'height')->textInput() ?>
+        <?= $form->field($productForm->parcel, 'depth')->textInput() ?>
     </fieldset>
 
     <?= Html::submitButton('Save'); ?>
