@@ -1,4 +1,13 @@
-# Many to Many Select2 Widget
+---
+layout: post
+title: Many to Many Select2 Widget in Yii2
+excerpt: "<p>Select multiple related records and add new related records using Select2.</p>"
+tags: [yii]
+---
+
+![Many to Many Select2 Widget](https://cloud.githubusercontent.com/assets/51875/16871072/e115285e-4ac3-11e6-8270-8eb4a506ffdd.png)
+
+## Requirements
 
 requires `cornernote/yii2-linkall` and `kartik-v/yii2-widget-select2`:
 
@@ -6,6 +15,8 @@ requires `cornernote/yii2-linkall` and `kartik-v/yii2-widget-select2`:
 composer require cornernote/yii2-linkall "*"
 require kartik-v/yii2-widget-select2 "@dev"
 ```
+
+## Database and Models
 
 ```sql
 CREATE TABLE `post` (
@@ -28,9 +39,6 @@ CREATE TABLE `post_to_tag` (
   CONSTRAINT `post_to_tag_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`)
 );
 ```
-
-
-## Models
 
 `app/models/Post.php`
 
@@ -104,7 +112,7 @@ class Tag extends ActiveRecord
 }
 ```
 
-## Controller
+## Controller and  Views
 
 `app/controllers/PostController.php`
 
@@ -157,8 +165,6 @@ class PostController extends Controller
     }
 }
 ```
-
-## Views
 
 The views `views/post/create.php` and `views/post/update.php` will both render a form.
 
