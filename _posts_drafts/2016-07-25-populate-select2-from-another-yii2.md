@@ -1,4 +1,11 @@
-# Populate Select2 from Another Select2
+---
+layout: post
+title: Populate Select2 from Another Select2
+excerpt: "<p>Update the data in a select2 widget when another select2 widget changes.</p>"
+tags: [yii]
+---
+
+Update the data in a select2 widget when another select2 widget changes.
 
 ## Requirements
 
@@ -95,7 +102,7 @@ class OrderController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->getSession()->setFlash('success', 'Order has been created.');
             return $this->redirect(['update', 'id' => $model->id]);
-        } elseif (!\Yii::$app->request->isPost) {
+        } elseif (!Yii::$app->request->isPost) {
             $model->load(Yii::$app->request->get());
         }
 
@@ -108,7 +115,7 @@ class OrderController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->getSession()->setFlash('success', 'Order has been updated.');
             return $this->redirect(['update', 'id' => $model->id]);
-        } elseif (!\Yii::$app->request->isPost) {
+        } elseif (!Yii::$app->request->isPost) {
             $model->load(Yii::$app->request->get());
         }
 
