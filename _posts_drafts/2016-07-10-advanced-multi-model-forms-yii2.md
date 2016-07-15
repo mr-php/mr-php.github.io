@@ -193,8 +193,11 @@ class ProductForm extends Model
     public function getParcel()
     {
         if ($this->_parcel === null) {
-            if (!$this->product->isNewRecord) {
-                $this->_parcel = $product->parcel;
+            if ($this->product->isNewRecord) {
+                $this->_parcel = new Parcel();
+                $this->_parcel->loadDefaultValues();
+            } else {
+                $this->_parcel = $this->product->parcel;
             }
         }
         return $this->_parcel;
@@ -214,7 +217,7 @@ class ProductForm extends Model
         $errorLists = [];
         foreach ($this->getAllModels() as $id => $model) {
             $errorList = $form->errorSummary($model, [
-              'header' => '<p>Please fix the following errors for <b>' . $id . '</b></p>',
+                'header' => '<p>Please fix the following errors for <b>' . $id . '</b></p>',
             ]);
             $errorList = str_replace('<li></li>', '', $errorList); // remove the empty error
             $errorLists[] = $errorList;
