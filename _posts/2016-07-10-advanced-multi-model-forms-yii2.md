@@ -2,7 +2,7 @@
 layout: post
 title: Advanced Multi-Model Forms in Yii2
 excerpt: "<p>Manage multiple models in a form, supporting validation for each model.</p>"
-tags: [yii2, forms]
+tags: [yii2]
 ---
 
 How to manage multiple models in a form, supporting validation for each model.
