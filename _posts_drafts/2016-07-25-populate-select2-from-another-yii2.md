@@ -7,6 +7,8 @@ tags: [yii]
 
 Update the data in a select2 widget when another select2 widget changes.
 
+![Update Select2 From Another](https://cloud.githubusercontent.com/assets/51875/16891441/9b822aba-4b38-11e6-81e7-12fe3d352a9b.png)
+
 ## Requirements
 
 requires `kartik-v/yii2-widget-select2`:
