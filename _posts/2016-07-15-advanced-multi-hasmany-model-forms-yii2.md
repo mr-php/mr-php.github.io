@@ -377,16 +377,16 @@ use yii\widgets\ActiveForm;
             'form' => $form,
             'parcel' => $_parcel,
           ]);
-          echo '</tr>'
+          echo '</tr>';
         }
         // new parcel fields
-        echo '<tr id="product-new-parcel-block" style="display: none;">'
+        echo '<tr id="product-new-parcel-block" style="display: none;">';
         echo $this->render('_form-product-parcel', [
             'key' => '__id__',
             'form' => $form,
             'parcel' => $parcel,
         ]);
-        echo '</tr>'
+        echo '</tr>';
         echo '</tbody>';
         echo '</table>';
         ?>
