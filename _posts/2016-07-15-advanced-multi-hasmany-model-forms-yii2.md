@@ -279,29 +279,29 @@ class ProductController extends Controller
 {
     public function actionCreate()
     {
-        $productForm = new ProductForm();
-        $productForm->product = new Product;
-        $productForm->product->loadDefaultValues();
-        $productForm->setAttributes(Yii::$app->request->post());
+        $model = new ProductForm();
+        $model->product = new Product;
+        $model->product->loadDefaultValues();
+        $model->setAttributes(Yii::$app->request->post());
         
-        if (Yii::$app->request->post() && $productForm->save()) {
+        if (Yii::$app->request->post() && $model->save()) {
             Yii::$app->getSession()->setFlash('success', 'Product has been created.');
-            return $this->redirect(['update', 'id' => $productForm->product->id]);
+            return $this->redirect(['update', 'id' => $model->product->id]);
         }
-        return $this->render('create', ['productForm' => $productForm]);
+        return $this->render('create', ['model' => $model]);
     }
     
     public function actionUpdate($id)
     {
-        $productForm = new ProductForm();
-        $productForm->product = $this->findModel($id);
-        $productForm->setAttributes(Yii::$app->request->post());
+        $model = new ProductForm();
+        $model->product = $this->findModel($id);
+        $model->setAttributes(Yii::$app->request->post());
         
-        if (Yii::$app->request->post() && $productForm->save()) {
+        if (Yii::$app->request->post() && $model->save()) {
             Yii::$app->getSession()->setFlash('success', 'Product has been updated.');
-            return $this->redirect(['update', 'id' => $productForm->product->id]);
+            return $this->redirect(['update', 'id' => $model->product->id]);
         }
-        return $this->render('update', ['productForm' => $productForm]);
+        return $this->render('update', ['model' => $model]);
     }
     
     protected function findModel($id)
@@ -319,7 +319,7 @@ class ProductController extends Controller
 The views `views/product/create.php` and `views/product/update.php` will both render a form.
 
 ```php
-<?= $this->render('_form', ['productForm' => $productForm]); ?>
+<?= $this->render('_form', ['model' => $model]); ?>
 ```
 
 The form will have a section for the Product, and another section for the Parcels.  
@@ -345,11 +345,11 @@ use yii\widgets\ActiveForm;
         'enableClientValidation' => false, // TODO get this working with client validation
     ]); ?>
 
-    <?= $productForm->errorSummary($form); ?>
+    <?= $model->errorSummary($form); ?>
 
     <fieldset>
         <legend>Product</legend>
-        <?= $form->field($productForm->product, 'name')->textInput() ?>
+        <?= $form->field($model->product, 'name')->textInput() ?>
     </fieldset>
 
     <fieldset>
@@ -378,7 +378,7 @@ use yii\widgets\ActiveForm;
         echo '</thead>';
         echo '</tbody>';
         // existing parcels fields
-        foreach ($productForm->parcels as $key => $_parcel) {
+        foreach ($model->parcels as $key => $_parcel) {
           echo '<tr>';
           echo $this->render('_form-product-parcel', [
             'key' => $_parcel->isNewRecord ? (strpos($key, 'new') !== false ? $key : 'new' . $key) : $_parcel->id,
@@ -414,7 +414,7 @@ use yii\widgets\ActiveForm;
             });
             <?php
             // click add when the form first loads
-            if (!Yii::$app->request->isPost && $productForm->product->isNewRecord) 
+            if (!Yii::$app->request->isPost && $model->product->isNewRecord) 
               echo "$('#product-new-parcel-button').click();";
             ?>
         </script>
