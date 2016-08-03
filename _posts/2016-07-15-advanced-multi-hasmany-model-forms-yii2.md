@@ -175,7 +175,7 @@ class ProductForm extends Model
             if (!$parcel->save(false)) {
                 return false;
             }
-            $keep = $parcel->id;
+            $keep[] = $parcel->id;
         }
         $query = Parcel::find()->andWhere(['product_id' => $this->product->id]);
         if ($keep) {
