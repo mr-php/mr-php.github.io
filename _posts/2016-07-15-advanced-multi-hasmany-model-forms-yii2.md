@@ -116,7 +116,7 @@ The purpose of `ProductForm` form is to:
 - saving data after validation
 - displaying error summaries on the form
 
-`models/form/ProductForm`
+`models/form/ProductForm.php`
 
 ```php
 <?php
