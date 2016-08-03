@@ -143,16 +143,7 @@ class ProductForm extends Model
 
     public function afterValidate()
     {
-        $error = false;
-        if (!$this->product->validate()) {
-            $error = true;
-        }
-        foreach ($this->parcels as $parcel) {
-            if (!$parcel->validate()) {
-                $error = true;
-            }
-        }
-        if ($error) {
+        if (!Model::validateMultiple($this->getAllModels())) {
             $this->addError(null); // add an empty error to prevent saving
         }
         parent::afterValidate();
