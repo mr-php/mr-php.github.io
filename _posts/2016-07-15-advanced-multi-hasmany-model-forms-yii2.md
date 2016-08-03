@@ -287,8 +287,6 @@ class ProductController extends Controller
         if (Yii::$app->request->post() && $productForm->save()) {
             Yii::$app->getSession()->setFlash('success', 'Product has been created.');
             return $this->redirect(['update', 'id' => $productForm->product->id]);
-        } elseif (!Yii::$app->request->isPost) {
-            $productForm->load(Yii::$app->request->get());
         }
         return $this->render('create', ['productForm' => $productForm]);
     }
@@ -298,11 +296,10 @@ class ProductController extends Controller
         $productForm = new ProductForm();
         $productForm->product = $this->findModel($id);
         $productForm->setAttributes(Yii::$app->request->post());
+        
         if (Yii::$app->request->post() && $productForm->save()) {
             Yii::$app->getSession()->setFlash('success', 'Product has been updated.');
             return $this->redirect(['update', 'id' => $productForm->product->id]);
-        } elseif (!Yii::$app->request->isPost) {
-            $productForm->load(Yii::$app->request->get());
         }
         return $this->render('update', ['productForm' => $productForm]);
     }
