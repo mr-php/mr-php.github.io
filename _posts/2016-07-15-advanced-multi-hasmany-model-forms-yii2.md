@@ -281,7 +281,9 @@ class ProductController extends Controller
     {
         $productForm = new ProductForm();
         $productForm->product = new Product;
+        $productForm->product->loadDefaultValues();
         $productForm->setAttributes(Yii::$app->request->post());
+        
         if (Yii::$app->request->post() && $productForm->save()) {
             Yii::$app->getSession()->setFlash('success', 'Product has been created.');
             return $this->redirect(['update', 'id' => $productForm->product->id]);
