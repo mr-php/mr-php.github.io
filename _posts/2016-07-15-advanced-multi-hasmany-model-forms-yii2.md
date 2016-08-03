@@ -168,14 +168,31 @@ class ProductForm extends Model
             $transaction->rollBack();
             return false;
         }
+        if (!$this->saveParcels()) {
+            $transaction->rollBack();
+            return false;
+        }
+        $transaction->commit();
+        return true;
+    }
+    
+    public function saveParcels() 
+    {
+        $keep = [];
         foreach ($this->parcels as $parcel) {
             $parcel->product_id = $this->product->id;
             if (!$parcel->save(false)) {
-                $transaction->rollBack();
                 return false;
             }
+            $keep = $parcel->id;
         }
-        $transaction->commit();
+        $query = Parcel::find()->andWhere(['product_id' => $this->product->id]);
+        if ($keep) {
+            $query->andWhere(['not in', 'id', $keep]);
+        }
+        foreach ($query->all() as $parcel) {
+            $parcel->delete();
+        }        
         return true;
     }
 
