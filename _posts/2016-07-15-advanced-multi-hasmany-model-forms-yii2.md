@@ -273,6 +273,7 @@ use app\models\form\ProductForm;
 use app\models\Product;
 use Yii;
 use yii\web\Controller;
+use yii\web\HttpException;
 
 class ProductController extends Controller
 {
