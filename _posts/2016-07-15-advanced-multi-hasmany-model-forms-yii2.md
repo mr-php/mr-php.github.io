@@ -209,9 +209,9 @@ class ProductForm extends Model
         return $this->_parcels;
     }
 
-    private function getParcel($id)
+    private function getParcel($key)
     {
-        $parcel = $id ? Parcel::findOne($id) : false;
+        $parcel = $key && strpos($key, 'new') === false ? Parcel::findOne($key) : false;
         if (!$parcel) {
             $parcel = new Parcel();
             $parcel->loadDefaultValues();
@@ -223,12 +223,12 @@ class ProductForm extends Model
     {
         unset($parcels['__id__']); // remove the hidden "new Parcel" row
         $this->_parcels = [];
-        foreach ($parcels as $id => $parcel) {
+        foreach ($parcels as $key => $parcel) {
             if (is_array($parcel)) {
-                $this->_parcels[$id] = $this->getParcel($id);
-                $this->_parcels[$id]->setAttributes($parcel);
+                $this->_parcels[$key] = $this->getParcel($key);
+                $this->_parcels[$key]->setAttributes($parcel);
             } elseif ($parcel instanceof Parcel) {
-                $this->_parcels[$id] = $parcel;
+                $this->_parcels[$parcel->id] = $parcel;
             }
         }
     }
