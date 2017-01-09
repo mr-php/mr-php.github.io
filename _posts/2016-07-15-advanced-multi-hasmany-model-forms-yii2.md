@@ -362,6 +362,7 @@ use yii\widgets\ActiveForm;
             ?>
         </legend>
         <?php
+        
         // parcel table
         $parcel = new Parcel();
         $parcel->loadDefaultValues();
@@ -377,6 +378,7 @@ use yii\widgets\ActiveForm;
         echo '</tr>';
         echo '</thead>';
         echo '</tbody>';
+        
         // existing parcels fields
         foreach ($model->parcels as $key => $_parcel) {
           echo '<tr>';
@@ -387,6 +389,7 @@ use yii\widgets\ActiveForm;
           ]);
           echo '</tr>';
         }
+        
         // new parcel fields
         echo '<tr id="product-new-parcel-block" style="display: none;">';
         echo $this->render('_form-product-parcel', [
@@ -397,6 +400,8 @@ use yii\widgets\ActiveForm;
         echo '</tr>';
         echo '</tbody>';
         echo '</table>';
+        
+        // register JS assets required for widgets
         \zhuravljov\widgets\DatePickerAsset::register($this);
         ?>
 
