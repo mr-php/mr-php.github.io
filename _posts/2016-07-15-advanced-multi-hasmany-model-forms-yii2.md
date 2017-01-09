@@ -437,7 +437,7 @@ use yii\widgets\ActiveForm;
             ?>
             
             // datepicker on existing rows
-            $('input.addDatepicker').datepicker({
+            $('#product-parcels').find('.addDatepicker').datepicker({
                 "autoclose": true,
                 "todayHighlight": true,
                 "format": "yyyy-mm-dd",
