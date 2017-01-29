@@ -403,6 +403,8 @@ use yii\widgets\ActiveForm;
         
         // register JS assets required for widgets
         \zhuravljov\widgets\DatePickerAsset::register($this);
+        // register JS assets required for Autocomplete widgets
+        \yii\jui\JuiAsset::register($this);
         ?>
 
         <?php ob_start(); // output buffer the javascript to register later ?>
@@ -421,6 +423,15 @@ use yii\widgets\ActiveForm;
                     "todayHighlight": true,
                     "format": "yyyy-mm-dd",
                     "orientation": "top left"
+                });
+                
+                // autocomplete on copied row
+                $('#Parcels_new' + parcel_k + '_date_ordered').autocomplete({
+                    "source": function(request, response) {
+                            $.getJSON('<?=Url::to(['//moduleName/controller/actionName']);?>', {
+                            term: request.term
+                        }, response);
+                    }
                 });
                 
             });
