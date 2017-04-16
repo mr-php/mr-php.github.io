@@ -17,8 +17,8 @@ about: >
 
 image_src: /assets/img/logo/logo.png
 header_img: /assets/img/background/index.jpg
-url: https://mrphp.com.au
-baseurl: ""
+url: http://firecentaur.github.io/mr-php.github.io
+baseurl: "/mr-php.github.io"
 
 # Social networks
 social:
