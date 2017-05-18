@@ -5,7 +5,7 @@ excerpt: "<p>Manage multiple child models in a form, supporting validation for e
 tags: [yii]
 ---
 
-Manage multiple child models in a form, supporting validation for each model. For a single child model see [advanced-multi-model-forms-yii2](advanced-multi-model-forms-yii2).
+Manage multiple child models in a form, supporting validation for each model. For a single child model see [Advanced Multi-Model Forms](% post_url advanced-multi-model-forms-yii2 %).
 
 Simply click a button to add another child, and it will magically appear on the form.
 
