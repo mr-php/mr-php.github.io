@@ -5,7 +5,7 @@ excerpt: "<p>Manage multiple models in a form, supporting validation for each mo
 tags: [yii]
 ---
 
-Manage multiple models in a form, supporting validation for each model. For a multi child model see [Advanced Multi-Model Forms with HASMANY Relations]({% post_url advanced-multi-hasmany-model-forms-yii2 %}).
+Manage multiple models in a form, supporting validation for each model. For a multi child model see [Advanced Multi-Model Forms with HASMANY Relations]({% post_url 2016-07-15-advanced-multi-hasmany-model-forms-yii2 %}).
 
 Consider a `Product` model that has a single `Parcel` model related, which represents a
 parcel that belongs to the product.  In the form you want to enter information for the 
