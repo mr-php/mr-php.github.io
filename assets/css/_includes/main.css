@@ -1037,7 +1037,3 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: #4d688b;
 }
-
-#appointment-form .business-container {
-    display: none;
-}
