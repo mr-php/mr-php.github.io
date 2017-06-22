@@ -401,9 +401,9 @@ use yii\widgets\ActiveForm;
         echo '</tbody>';
         echo '</table>';
         
-        // register JS assets required for widgets
+        // OPTIONAL: register JS assets as required for widgets
         \zhuravljov\widgets\DatePickerAsset::register($this);
-        // register JS assets required for Autocomplete widgets
+        \kartik\select2\Select2Asset::register($this);
         \yii\jui\JuiAsset::register($this);
         ?>
 
@@ -417,7 +417,7 @@ use yii\widgets\ActiveForm;
                 $('#product-parcels').find('tbody')
                   .append('<tr>' + $('#product-new-parcel-block').html().replace(/__id__/g, 'new' + parcel_k) + '</tr>');
                 
-                // datepicker on copied row
+                // OPTIONAL: datepicker on copied row
                 $('#Parcels_new' + parcel_k + '_date_ordered').datepicker({
                     "autoclose": true,
                     "todayHighlight": true,
@@ -425,7 +425,15 @@ use yii\widgets\ActiveForm;
                     "orientation": "top left"
                 });
                 
-                // autocomplete on copied row
+                // OPTIONAL: select2 on copied row
+                $('#Parcels_new' + parcel_k + '_date_ordered').select2({
+                    theme: 'krajee',
+                    placeholder: '',
+                    language: 'en',
+                    tags: true
+                });
+
+                // OPTIONAL: autocomplete on copied row
                 $('#Parcels_new' + parcel_k + '_date_ordered').autocomplete({
                     "source": function(request, response) {
                             $.getJSON('<?=Url::to(['//moduleName/controller/actionName']);?>', {
@@ -442,19 +450,36 @@ use yii\widgets\ActiveForm;
             });
             
             <?php
-            // click add when the form first loads
+            // OPTIONAL: click add when the form first loads to display the first new row
             if (!Yii::$app->request->isPost && $model->product->isNewRecord) 
               echo "$('#product-new-parcel-button').click();";
             ?>
             
-            // datepicker on existing rows
-            $('#product-parcels').find('.addDatepicker').datepicker({
+            // OPTIONAL: datepicker on existing rows
+            $('#product-parcels').find('input.addDatepicker').datepicker({
                 "autoclose": true,
                 "todayHighlight": true,
                 "format": "yyyy-mm-dd",
                 "orientation": "top left"
             });
             
+            // OPTIONAL: select2 on existing rows
+            $('#product-parcels').find('select.addSelect2:visible').select2({
+                theme: 'krajee',
+                placeholder: '',
+                language: 'en',
+                tags: true
+            });
+            
+            // OPTIONAL: autocomplete on existing rows
+            $('#product-parcels').find('input.addAutocomplete:visible').autocomplete({
+                "source": function(request, response) {
+                        $.getJSON('<?=Url::to(['//moduleName/controller/actionName']);?>', {
+                        term: request.term
+                    }, response);
+                }
+            });
+
         </script>
         <?php $this->registerJs(str_replace(['<script>', '</script>'], '', ob_get_clean())); ?>
 
