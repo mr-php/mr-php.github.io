@@ -377,7 +377,7 @@ use yii\widgets\ActiveForm;
         echo '<td>&nbsp;</td>';
         echo '</tr>';
         echo '</thead>';
-        echo '</tbody>';
+        echo '<tbody>';
         
         // existing parcels fields
         foreach ($model->parcels as $key => $_parcel) {
