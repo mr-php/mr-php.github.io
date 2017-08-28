@@ -108,6 +108,12 @@
   - name: OpenCart
     url: http://www.opencart.com/
     description: A free shopping cart system. OpenCart is an open source PHP-based online e-commerce solution.
+  - name: CubeCart
+    url: https://www.cubecart.com/
+    description: A free responsive open source PHP ecommerce software system to sell online.
+  - name: X-Cart
+    url: https://www.x-cart.com/
+    description: Scalable, PHP shopping cart platform without monthly fees. Download for free, customize & launch!
   - name: Zen-Cart
     url: http://www.zen-cart.com/
     description: truly is the art of e-commerce; free, user-friendly, open source shopping cart software.
