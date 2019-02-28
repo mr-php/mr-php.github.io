@@ -47,7 +47,9 @@ Download phpThumb from here:
 
 Upload phpThumb to `yoursite.com/phpthumb`
 
-<h3>Setup Mod_Rewrite</h3>
+<h3>Setup Rewrite</h3>
+
+<h4>Apache mod_rewrite</h4>
 
 Create `yoursite.com/thumbs/.htaccess`
 
@@ -58,6 +60,36 @@ Create `yoursite.com/thumbs/.htaccess`
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.*)$ index.php?thumb=$1 [L,QSA]
 </IfModule>
+```
+
+<h4>Nginx Rewrite</h4>
+
+```
+http {
+	server {
+        listen 80;
+        root /app/pictures;
+        index index.php;
+        # thumbs
+        location ^~ /thumbs/ {
+            try_files $uri $uri/ /thumbs/index.php?$args;
+            # send php files to phpfpm
+            location ~ \.php$ {
+                include /etc/nginx/fastcgi_params;
+                fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+                fastcgi_pass php:9000;
+                try_files $uri =404;
+            }
+        }
+        # send php files to phpfpm
+        location ~ \.php$ {
+            include /etc/nginx/fastcgi_params;
+            fastcgi_param SCRIPT_FILENAME $document_root/$fastcgi_script_name;
+            fastcgi_pass php:9000;
+            try_files $uri =404;
+        }
+    }
+}
 ```
 
 
